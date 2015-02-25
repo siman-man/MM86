@@ -3,23 +3,20 @@
 #include <cstdio>
 #include <map>
 #include <algorithm>
-#include <boost/multiprecision/cpp_int.hpp>
 #include <string.h>
 #include <sstream>
 #include <cassert>
 
 using namespace std;
-using namespace boost::multiprecision;
 
 const int MAX_QUEEN = 200;
 const int UNDEFINED = -1;
 
 class C128 {
-  private:
-    unsigned long long lo;
-    unsigned long long hi;
-
   public:
+  unsigned long long lo;
+  unsigned long long hi;
+
   C128(){
     lo = 0;
     hi = 0;
@@ -40,7 +37,6 @@ class C128 {
       hi |= lo >> (64-n);
       lo <<= n;
     }
-
     return *this;
   }
 
@@ -104,12 +100,16 @@ class C128 {
   }
   C128 operator|(C128 c) const { return C128(*this) |= c; }
   C128 operator^(C128 c) const { return C128(*this) ^= c; }
-  C128 operator~() const { return C128(~lo, ~hi); };
+  C128 operator~() const { 
+    return C128(~lo, ~hi); 
+  };
   C128 operator+(unsigned long long u) const { return C128(*this) += u; }
   C128 operator+(C128 c) const { return C128(*this) += c; }
   C128 operator-(unsigned long long u) const { return C128(*this) -= u; }
   C128 operator-(C128 c) const { return C128(*this) -= c; }
-  C128 operator-() const { return C128() -= *this; }
+  C128 operator-() const { 
+    return C128() -= *this; 
+  }
 
   C128& operator&=(C128 c){
     lo &= c.lo;
@@ -145,20 +145,112 @@ struct Queen {
 Queen queenList[MAX_QUEEN];
 int N;
 int board[MAX_QUEEN][MAX_QUEEN];
+C128 MASK;
+int cnt = 0;
+
+unsigned long long MASK_LIST[65] = {
+  0,
+  1,
+  3,
+  7,
+  15,
+  31,
+  63,
+  127,
+  255,
+  511,
+  1023,
+  2047,
+  4095,
+  8191,
+  16383,
+  32767,
+  65535,
+  131071,
+  262143,
+  524287,
+  1048575,
+  2097151,
+  4194303,
+  8388607,
+  16777215,
+  33554431,
+  67108863,
+  134217727,
+  268435455,
+  536870911,
+  1073741823,
+  2147483647,
+  4294967295,
+  8589934591,
+  17179869183,
+  34359738367,
+  68719476735,
+  137438953471,
+  274877906943,
+  549755813887,
+  1099511627775,
+  2199023255551,
+  4398046511103,
+  8796093022207,
+  17592186044415,
+  35184372088831,
+  70368744177663,
+  140737488355327,
+  281474976710655,
+  562949953421311,
+  1125899906842623,
+  2251799813685247,
+  4503599627370495,
+  9007199254740991,
+  18014398509481983,
+  36028797018963967,
+  72057594037927935,
+  144115188075855871,
+  288230376151711743,
+  576460752303423487,
+  1152921504606846975,
+  2305843009213693951,
+  4611686018427387903,
+  9223372036854775807,
+  18446744073709551615
+};
+
+unsigned long long xor128() {
+  static unsigned long long rx=123456789, ry=362436069, rz=521288629, rw=88675123;
+  unsigned long long rt = (rx ^ (rx<<11));
+  rx=ry; ry=rz; rz=rw;
+  return (rw=(rw^(rw>>19))^(rt^(rt>>8)));
+}
 
 class MovingNQueens {
   public:
   void init(){
     memset(board, 0, sizeof(board)); 
+
+    fprintf(stderr,"N = %d\n", N);
+
+    if(N >= 64){
+      MASK.lo = 18446744073709551615;
+      MASK.hi = MASK_LIST[N-64];
+    }else{
+      MASK.lo = MASK_LIST[N];
+      MASK.hi = 0;
+    }
+
+    fprintf(stderr,"MASK.hi = %llu, MASK.lo = %llu\n", MASK.hi, MASK.lo);
   }
+
+
 
   vector<string> rearrange(vector<int> queenRows, vector<int> queenCols){
     vector<string> ret;
     N = queenRows.size();
+
+    init();
+
     int index, row, col;
     index = 0;
-    C128 c1(0);
-    C128 c2(2);
 
     for(int id = 0; id < N; ++id){
       row = queenRows[id];
@@ -169,11 +261,35 @@ class MovingNQueens {
       board[row][col] = 1;
     }
 
+    backTrack(0, 0, 0, 0);
     ret.push_back(int2str(0) + " " + int2str(3) + " " + int2str(1));
 
-    showBoard();
+    //showBoard();
 
     return ret;
+  }
+
+  void backTrack(int y, C128 left, C128 down, C128 right){
+    C128 bitmap, bit;
+
+    if(y > 0 && xor128()%100 > 15) return;
+
+    if(y == 1){
+      fprintf(stderr,"down.hi = %llu down.lo = %llu\n", down.hi, down.lo);
+    }
+
+    if(y == N){
+      cnt++;
+      fprintf(stderr,"N = %d, hello world! %d\n", N, cnt);
+    }else{
+      bitmap = MASK & ~(left | down | right);
+
+      while(bitmap.hi | bitmap.lo){
+        bit = -bitmap & bitmap;
+        bitmap ^= bit;
+        backTrack(y+1, ((left|bit)<<1), (down|bit), ((right|bit)>>1));
+      }
+    }
   }
 
   /*
@@ -242,7 +358,6 @@ int main(){
   vector<int> queenCols;
   vector<string> ret;
   MovingNQueens mq;
-  int128_t b;
 
   cin >> len;
   for(int i = 0; i < len; ++i){

@@ -1,7 +1,9 @@
 #include <iostream>
 #include <vector>
+#include <cstdio>
 #include <map>
 #include <algorithm>
+#include <string.h>
 #include <sstream>
 #include <cassert>
 
@@ -24,22 +26,32 @@ struct Queen {
 
 Queen queenList[MAX_QUEEN];
 int N;
+int board[MAX_QUEEN][MAX_QUEEN];
 
 class MovingNQueens {
   public:
+  void init(){
+    memset(board, 0, sizeof(board)); 
+  }
 
   vector<string> rearrange(vector<int> queenRows, vector<int> queenCols){
     vector<string> ret;
     N = queenRows.size();
     int index, row, col;
+    index = 0;
 
-    for(int i = 0; i < N; i++){
-      index = i;
-      row = queenRows[0];
-      col = queenCols[0];
-      ret.push_back(int2str(0) + " " + int2str(row+i+1) + " " + int2str(col+i+1));
-      fprintf(stderr,"index = %d, row = %d, col = %d\n", index, row, col);
+    for(int id = 0; id < N; ++id){
+      row = queenRows[id];
+      col = queenCols[id];
+
+      queenList[id] = Queen(id, row, col);
+      fprintf(stderr,"index = %d, row = %d, col = %d\n", id, row, col);
+      board[row][col] = 1;
     }
+
+    ret.push_back(int2str(0) + " " + int2str(3) + " " + int2str(1));
+
+    showBoard();
 
     return ret;
   }
@@ -78,6 +90,29 @@ class MovingNQueens {
     stringstream ss;
     ss << i;
     return ss.str();
+  }
+
+  void showBoard(){
+    fprintf(stderr,"\n");
+
+    for(int y = 0; y < N; ++y){
+      for(int x = 0; x < N; x++){
+        fprintf(stderr,"+-"); 
+      }
+      fprintf(stderr,"+\n");
+
+      for(int x = 0; x < N; ++x){
+        fprintf(stderr,"|");
+
+        fprintf(stderr,"%c", (board[y][x] == 0)? ' ' : 'o');
+      }
+      fprintf(stderr,"|\n");
+    }
+
+    for(int x = 0; x < N; x++){
+      fprintf(stderr,"+-"); 
+    }
+    fprintf(stderr,"+\n");
   }
 };
 

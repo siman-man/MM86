@@ -31,3 +31,9 @@ used invalid moves or resulted in a pair of queens threatening each other), your
 case will be 0. Your overall score will be the sum of MIN/YOUR over all test cases, where YOUR is your 
 raw score on a test case, and MIN is the smallest score achieved by anyone on that test case (test cases 
 on which you scored 0 don't contribute to the sum).
+
+
+# 方針
+- [ ] バックトラック法によりNクイーンの問題の解を生成
+- [ ] 生成された解と現在のクイーンの位置から、どれだけ移動すれば解の位置に移動できるかを計算
+- [ ] 移動が定まったら、それを回答形式にして返却する

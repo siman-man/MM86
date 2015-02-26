@@ -11,13 +11,17 @@
 using namespace std;
 
 const int MAX_QUEEN = 200;
+const int MAX_SIZE  = 100000;
+const int OFFSET    = 50000;
 const int UNDEFINED = -1;
 const double PI = 3.141592653589793;
 
 struct Queen {
   int id;
   int y;
+  int originalY;
   int x;
+  int originalX;
   int degree;
 
   Queen(int id = UNDEFINED, int y = UNDEFINED, int x = UNDEFINED){
@@ -44,6 +48,11 @@ int cnt = 0;
 int DY[13] = { 0, -1, -1, -1, -1,  0,  0,  1,  1,  1,  1,  0,  0};
 int DX[13] = { 1,  1,  0,  0, -1, -1, -1, -1,  0,  0,  1,  1,  0};
 
+int horizontalCnt[MAX_SIZE];
+int verticalCnt[MAX_SIZE];
+int diagonalUpCnt[MAX_SIZE];
+int diagonalDownCnt[MAX_SIZE];
+
 Coord center;
 
 unsigned long long xor128() {
@@ -56,24 +65,86 @@ unsigned long long xor128() {
 class MovingNQueens {
   public:
   void init(vector<int> queenRows, vector<int> queenCols){
-    N = queenRows.size();
-    memset(board, 0, sizeof(board)); 
-    int index, row, col;
-    index = 0;
+    int row;
+    int col;
 
+    // サイズの取得
+    N = queenRows.size();
+    // ボードの初期化
+    memset(board, 0, sizeof(board)); 
+    // 重複個数リストの初期化
+    memset(horizontalCnt, 0, sizeof(horizontalCnt));
+    memset(verticalCnt, 0, sizeof(verticalCnt));
+    memset(diagonalUpCnt, 0, sizeof(diagonalUpCnt));
+    memset(diagonalDownCnt, 0, sizeof(diagonalDownCnt));
+
+    // クイーンの情報の初期化を行う
     for(int id = 0; id < N; ++id){
       row = queenRows[id];
       col = queenCols[id];
 
       queenList[id] = Queen(id, row, col);
-      fprintf(stderr,"index = %d, row = %d, col = %d\n", id, row, col);
+      queenList[id].originalY = row;
+      queenList[id].originalX = col;
+      fprintf(stderr,"id = %d, row = %d, col = %d\n", id, row, col);
       board[row][col] = 1;
     }
-    center = calcCenter();
+
+    // 各クイーンの重心を求める
+    center = calcCenterCoord();
 
     fprintf(stderr,"N = %d\n", N);
   }
 
+  /*
+   * Queenの移動を行う
+   */
+  void moveQueen(int id, int y, int x){
+    Queen *queen = getQueen(id);
+    removeQueen(id, queen->y, queen->x);
+    setQueen(id, y, x);
+  }
+
+  // クイーンを設置
+  void setQueen(int id, int y, int x){
+    Queen *queen = getQueen(id);
+    queen->y = y;
+    queen->x = x;
+
+    horizontalCnt[OFFSET + y] += 1;
+    verticalCnt[OFFSET + x] += 1;
+    diagonalUpCnt[OFFSET + y - x] += 1;
+    diagonalDownCnt[OFFSET + y + x] += 1;
+  }
+
+  // クイーンの削除
+  void removeQueen(int id, int y, int x){ 
+    Queen *queen = getQueen(id);
+
+    horizontalCnt[OFFSET + y] -= 1;
+    verticalCnt[OFFSET + x] -= 1;
+    diagonalUpCnt[OFFSET + y - x] -= 1;
+    diagonalDownCnt[OFFSET + y + x] -= 1;
+  }
+
+  // ボード全体のスコア計算
+  int calcScoreALl(){
+    int score = 0;
+    bool success = true;  // 各クイーンが重複していないかどうかのフラグ
+
+    for(int id = 0; id < N; ++id){
+      Queen *queen = getQueen(id);  
+      score -= horizontalCnt[queen->y];
+      score -= verticalCnt[queen->x];
+      score -= diagonalUpCnt[queen->y - queen->x];
+      score -= diagonalDownCnt[queen->y + queen->x];
+      score -= max(abs(queen->y - center.y), abs(queen->x - center.x));
+    }
+
+    return score + success * 1000;
+  }
+
+  // 最初に重心から離れる方向を決める
   int checkDirection(Queen *queen){
     if(queen->degree != 180){
       return queen->degree / 30;
@@ -111,6 +182,9 @@ class MovingNQueens {
       fprintf(stderr,"id = %d, dist = %4.1f, degree = %d, direct = %d\n", id, dist, queen->degree, direct);
     }
 
+    int score = calcScoreALl();
+    fprintf(stderr,"Score = %d\n", score);
+
     showBoard();
 
     return ret;
@@ -119,7 +193,7 @@ class MovingNQueens {
   /*
    * 重心の座標を調べる
    */
-  Coord calcCenter(){
+  Coord calcCenterCoord(){
     int y = 0;
     int x = 0;
 

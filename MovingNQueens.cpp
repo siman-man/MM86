@@ -20,14 +20,26 @@ struct Queen {
   int id;
   int y;
   int originalY;
+  int beforeY;
   int x;
   int originalX;
+  int beforeX;
   int degree;
 
   Queen(int id = UNDEFINED, int y = UNDEFINED, int x = UNDEFINED){
     this->id  = id;
     this->y   = y;
     this->x   = x;
+  }
+};
+
+struct Eval {
+  int value;
+  int direct;
+
+  Eval(int value = UNDEFINED, int direct = UNDEFINED){
+    this->value = value;
+    this->direct = direct;
   }
 };
 
@@ -47,6 +59,8 @@ int board[MAX_QUEEN][MAX_QUEEN];
 int cnt = 0;
 int DY[13] = { 0, -1, -1, -1, -1,  0,  0,  1,  1,  1,  1,  0,  0};
 int DX[13] = { 1,  1,  0,  0, -1, -1, -1, -1,  0,  0,  1,  1,  0};
+int MY[8] = {-1, -1, -1, 0, 0, 1, 1, 1};
+int MX[8] = {-1, 0, 1, -1, 1, -1, 0, 1};
 
 int horizontalCnt[MAX_SIZE];
 int verticalCnt[MAX_SIZE];
@@ -163,6 +177,25 @@ class MovingNQueens {
     }
   }
 
+  // 一番最初の行動
+  void firstMove(){
+    for(int id = 0; id < N; ++id){
+      Queen *queen = getQueen(id);
+      int direct = checkDirection(queen);
+      int dist = max(abs(queen->y - center.y), abs(queen->x - center.x));
+
+      queen->y += N * dist * DY[direct];
+      queen->x += N * dist * DX[direct];
+    }
+  }
+
+  // 評価を行う前に行う処理
+  void eachTurnProc(int id){
+    Queen *queen = getQueen(id);
+    queen->beforeY = queen->y;
+    queen->beforeX = queen->x;
+  }
+
   vector<string> rearrange(vector<int> queenRows, vector<int> queenCols){
     vector<string> ret;
 
@@ -182,12 +215,30 @@ class MovingNQueens {
       fprintf(stderr,"id = %d, dist = %4.1f, degree = %d, direct = %d\n", id, dist, queen->degree, direct);
     }
 
+    firstMove();
+
     int score = calcScoreALl();
     fprintf(stderr,"Score = %d\n", score);
 
     showBoard();
 
     return ret;
+  }
+
+  int updateQueen(int id){
+    Queen *queen = getQueen(id);
+    int maxValue = 0;
+    int bestDirect = UNDEFINED;
+
+    for(int i = 0; i < 8; ++i){
+
+    }
+  }
+
+  // クイーンの一部座標の交換を行う
+  int swapQueen(int idA, int idB){
+    Queen *queenA = getQueen(idA);
+    Queen *queenB = getQueen(idB);
   }
 
   /*

@@ -3,6 +3,7 @@
 #include <cstdio>
 #include <cmath>
 #include <map>
+#include <queue>
 #include <algorithm>
 #include <string.h>
 #include <sstream>
@@ -25,21 +26,28 @@ struct Queen {
   int originalX;
   int beforeX;
   int degree;
+  int value;
 
   Queen(int id = UNDEFINED, int y = UNDEFINED, int x = UNDEFINED){
     this->id  = id;
     this->y   = y;
     this->x   = x;
   }
+
+  bool operator >(const Queen &e) const{
+    return value > e.value;
+  }    
 };
 
-struct Eval {
+struct EvalResult {
   int value;
-  int direct;
+  int y;
+  int x;
 
-  Eval(int value = UNDEFINED, int direct = UNDEFINED){
+  EvalResult(int value = UNDEFINED, int y = UNDEFINED, int x = UNDEFINED){
     this->value = value;
-    this->direct = direct;
+    this->y = y;
+    this->x = x;
   }
 };
 
@@ -50,6 +58,18 @@ struct Coord {
   Coord(int y = UNDEFINED, int x = UNDEFINED){
     this->y = y;
     this->x = x;
+  }
+};
+
+struct Edge {
+  int from;
+  int to;
+  int cost;
+
+  Edge(int from = UNDEFINED, int to = UNDEFINED, int cost = UNDEFINED){
+    this->from  = from;
+    this->to    = to;
+    this->cost  = cost;
   }
 };
 
@@ -67,6 +87,9 @@ int verticalCnt[MAX_SIZE];
 int diagonalUpCnt[MAX_SIZE];
 int diagonalDownCnt[MAX_SIZE];
 
+int bestRows[MAX_QUEEN];
+int bestCols[MAX_QUEEN];
+
 Coord center;
 
 unsigned long long xor128() {
@@ -75,6 +98,8 @@ unsigned long long xor128() {
   rx=ry; ry=rz; rz=rw;
   return (rw=(rw^(rw>>19))^(rt^(rt>>8)));
 }
+
+int matrix[MAX_QUEEN][MAX_QUEEN];
 
 class MovingNQueens {
   public:
@@ -92,6 +117,9 @@ class MovingNQueens {
     memset(diagonalUpCnt, 0, sizeof(diagonalUpCnt));
     memset(diagonalDownCnt, 0, sizeof(diagonalDownCnt));
 
+    // 行列の初期化
+    memset(matrix, 0, sizeof(matrix));
+
     // クイーンの情報の初期化を行う
     for(int id = 0; id < N; ++id){
       row = queenRows[id];
@@ -100,6 +128,7 @@ class MovingNQueens {
       queenList[id] = Queen(id, row, col);
       queenList[id].originalY = row;
       queenList[id].originalX = col;
+      setQueen(id, row, col);
       fprintf(stderr,"id = %d, row = %d, col = %d\n", id, row, col);
       board[row][col] = 1;
     }
@@ -108,6 +137,15 @@ class MovingNQueens {
     center = calcCenterCoord();
 
     fprintf(stderr,"N = %d\n", N);
+  }
+
+  void updateBestPositions(){
+    for(int id = 0; id < N; ++id){
+      Queen *queen = getQueen(id);
+
+      bestRows[id] = queen->y;
+      bestCols[id] = queen->x;
+    }
   }
 
   /*
@@ -142,20 +180,41 @@ class MovingNQueens {
   }
 
   // ボード全体のスコア計算
-  int calcScoreALl(){
+  int calcScoreAll(){
     int score = 0;
+    int cnt;
     bool success = true;  // 各クイーンが重複していないかどうかのフラグ
 
     for(int id = 0; id < N; ++id){
       Queen *queen = getQueen(id);  
-      score -= horizontalCnt[queen->y];
-      score -= verticalCnt[queen->x];
-      score -= diagonalUpCnt[queen->y - queen->x];
-      score -= diagonalDownCnt[queen->y + queen->x];
+
+      cnt = horizontalCnt[OFFSET + queen->y] + verticalCnt[OFFSET + queen->x];
+      cnt += diagonalUpCnt[OFFSET + queen->y - queen->x] + diagonalDownCnt[OFFSET + queen->y + queen->x];
+
+      if(cnt > 4) success = false;
+
+      score -= cnt;
       score -= max(abs(queen->y - center.y), abs(queen->x - center.x));
     }
 
-    return score + success * 1000;
+    return score + success * 100000;
+  }
+
+  // Queen単体のスコア計算
+  int calcScoreSingle(int id){
+    int score = 0;
+    int cnt;
+    bool success = true;
+    Queen *queen = getQueen(id);  
+
+    cnt = horizontalCnt[OFFSET + queen->y] + verticalCnt[OFFSET + queen->x];
+    cnt += diagonalUpCnt[OFFSET + queen->y - queen->x] + diagonalDownCnt[OFFSET + queen->y + queen->x];
+    score -= 4 * cnt;
+    //score -= max(abs(queen->y - center.y), abs(queen->x - center.x));
+
+    if(cnt > 16) success = false;
+
+    return score + 10 * success;
   }
 
   // 最初に重心から離れる方向を決める
@@ -184,8 +243,9 @@ class MovingNQueens {
       int direct = checkDirection(queen);
       int dist = max(abs(queen->y - center.y), abs(queen->x - center.x));
 
-      queen->y += N * dist * DY[direct];
-      queen->x += N * dist * DX[direct];
+      int ny = queen->y + N * dist * DY[direct];
+      int nx = queen->x + N * dist * DX[direct];
+      moveQueen(id, ny, nx);
     }
   }
 
@@ -194,6 +254,12 @@ class MovingNQueens {
     Queen *queen = getQueen(id);
     queen->beforeY = queen->y;
     queen->beforeX = queen->x;
+  }
+
+  // 行動のロールバック
+  void rollback(int id){
+    Queen *queen = getQueen(id);
+    moveQueen(id, queen->beforeY, queen->beforeX);
   }
 
   vector<string> rearrange(vector<int> queenRows, vector<int> queenCols){
@@ -210,35 +276,223 @@ class MovingNQueens {
       int dx = center.x - queen->x;
       int degree = 180 - (int)(atan2(dy,dx) * 180.0 / PI);
       queen->degree = degree;
-      int direct = checkDirection(queen);
       double dist = sqrt(dy*dy + dx*dx);
-      fprintf(stderr,"id = %d, dist = %4.1f, degree = %d, direct = %d\n", id, dist, queen->degree, direct);
+      //fprintf(stderr,"id = %d, dist = %4.1f, degree = %d, direct = %d\n", id, dist, queen->degree, direct);
     }
 
+    // 初期移動
     firstMove();
 
-    int score = calcScoreALl();
+    int maxScore = INT_MIN;
+
+    for(int i = 0; i < 100000; ++i){
+      // ランダムにIDを選択
+      int id = xor128() % N;
+
+      assert(id >= 0);
+      eachTurnProc(id);
+
+      int r = xor128() % N;
+      assert(r >= 0);
+
+      EvalResult result = updateQueen(id);
+      moveQueen(id, result.y, result.x);
+      //swapQueen(id, (r % N));
+
+      int score = calcScoreAll();
+
+      if(maxScore < score){
+        maxScore = score;
+        updateBestPositions();
+      }
+    }
+
+    for(int id = 0; id < N; ++id){
+      Queen *queen = getQueen(id);
+
+      queen->y = bestRows[id];
+      queen->x = bestCols[id];
+
+      fprintf(stderr,"id = %d, y = %d, x = %d\n", id, queen->y, queen->x);
+    }
+
+    int score = calcScoreAll();
     fprintf(stderr,"Score = %d\n", score);
 
-    showBoard();
+    resetAllPosition();
+    //createAnswer();
+
+    //showBoard();
 
     return ret;
   }
 
-  int updateQueen(int id){
+  vector<int> checkPosition(){
+    vector<int> position(N, UNDEFINED);
+     priority_queue< Queen, vector<Queen>, greater<Queen>  > que;
+
+    for(int id = 0; id < N; ++id){
+      Queen *queen = getQueen(id);
+
+      Queen q(id, queen->y, queen->x);
+      q.value = abs(queen->y - center.y) + abs(queen->x - center.x);
+
+      que.push(q);
+    }
+
+    while(!que.empty()){
+      Queen q = que.top(); que.pop();
+      int minDist = INT_MAX;
+      int bestPosition = UNDEFINED;
+
+      for(int nodeId = 0; nodeId < N; ++nodeId){
+        if(position[nodeId] != UNDEFINED) continue;
+
+        int dist = max(abs(q.y - bestRows[nodeId]), abs(q.x - bestCols[nodeId]));
+
+        if(minDist > dist){
+          minDist = dist;
+          bestPosition = nodeId;
+        }
+      }
+
+      position[bestPosition] = q.id;
+    }
+
+    return position;
+  }
+
+  void initMatrix(){
+    for(int id = 0; id < N; ++id){
+      Queen *queen = getQueen(id);
+
+      for(int nodeId = 0; nodeId < N; ++nodeId){
+        int cost = max(abs(queen->y - bestRows[nodeId]), abs(queen->x - bestCols[nodeId]));
+
+        matrix[id][nodeId] = cost;
+      }
+    }
+  }
+
+  vector<int> createAnswer(){
+    int p, q;
+
+    initMatrix();
+
+    vector<int> fx(N, INT_MIN);
+    vector<int> fy(N, 0);
+    vector<int> x(N, UNDEFINED);  // 左側頂点に対応する右側頂点
+    vector<int> y(N, UNDEFINED);  // 右側頂点に対応する左側頂点
+
+    // 各クイーンの最小値を記録
+    for(int id = 0; id < N; ++id){
+      for(int j = 0; j < N; ++j){
+        fx[id] = min(fx[id], matrix[id][j]);
+      }
+    }
+
+    for(int id = 0; id < N;){
+      vector<int> t(N, UNDEFINED);
+      vector<int> s(N+1, id);
+
+      for(p = q = 0; p <= q && x[id] < 0; ++p){
+        for(int k = s[p], j = 0; j < N && x[id] < 0; ++j){
+          if(fx[k] + fy[j] == matrix[k][j] && t[j] < 0){
+            s[++q] = y[j];
+            t[j] = k;
+
+            if(s[q] < 0){
+              for(p = j; p >= 0; j = p){
+                y[j] = k = t[j];
+                p = x[k];
+                x[k] = j;
+              }
+            }
+          }
+        }
+      }
+
+      // 最適なマッチングがまだ決まっていない場合
+      if(x[id] < 0){
+        int d = INT_MIN;
+
+        for(int k = 0; k <= q; ++k){
+          for(int j = 0; j < N; ++j){
+            if(t[j] < 0){
+              d = min(d, fx[s[k]] + fy[j] - matrix[s[k]][j]);
+            }
+          }
+
+          for(int j = 0; j < N; ++j){
+            fy[j] += (t[j] < 0 ? 0 : d);
+          }
+          for(int k = 0; k <= q; ++k){
+            fx[s[k]] -= d;
+          }
+        }
+      }else{
+        ++id;
+      }
+    }
+
+    return x;
+  }
+
+  // 全てのクイーンの位置を元に戻す
+  void resetAllPosition(){
+    for(int id = 0; id < N; ++id){
+      Queen *queen = getQueen(id);
+
+      queen->y = queen->originalY;
+      queen->x = queen->originalX;
+    }
+  }
+
+  EvalResult updateQueen(int id){
     Queen *queen = getQueen(id);
-    int maxValue = 0;
-    int bestDirect = UNDEFINED;
+    int maxScore = INT_MIN;
+    int bestY;
+    int bestX;
+    int score;
 
     for(int i = 0; i < 8; ++i){
+      int ny = queen->y + MY[i];
+      int nx = queen->x + MX[i];
+      moveQueen(id, ny, nx);
 
+      score = calcScoreSingle(id);
+
+      if(maxScore < score){
+        maxScore = score;
+        bestY = ny;
+        bestX = nx;
+      }
+
+      rollback(id);
     }
+
+    return EvalResult(maxScore, bestY, bestX);
   }
 
   // クイーンの一部座標の交換を行う
   int swapQueen(int idA, int idB){
+    if(idA == idB) return 0;
+
     Queen *queenA = getQueen(idA);
     Queen *queenB = getQueen(idB);
+
+    int r = xor128() % 100;
+    int tmp;
+
+    if(r > 50){
+      tmp = queenA->x;
+      queenA->x = queenB->x;
+      queenB->x = tmp;
+    }else{
+      tmp = queenA->y;
+      queenA->y = queenB->y;
+      queenB->y = tmp;
+    }
   }
 
   /*

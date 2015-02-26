@@ -4,16 +4,18 @@
 #include <cmath>
 #include <map>
 #include <queue>
+#include <stack>
 #include <algorithm>
 #include <string.h>
 #include <sstream>
 #include <cassert>
 
 using namespace std;
+typedef long long ll;
 
 const int MAX_QUEEN = 200;
 const int MAX_SIZE  = 100000;
-const int OFFSET    = 50000;
+const int OFFSET    = 30000;
 const int UNDEFINED = -1;
 const double PI = 3.141592653589793;
 
@@ -61,6 +63,29 @@ struct Coord {
   }
 };
 
+struct Cell {
+  int y;
+  int x;
+  int dist;
+  int value;
+  int pd;
+  int py;
+  int px;
+
+  Cell(int y = UNDEFINED, int x = UNDEFINED, int dist = 0, int value = UNDEFINED, int parentDirect = UNDEFINED){
+    this->y     = y;
+    this->x     = x;
+    this->dist  = dist;
+    this->value = value;
+    this->pd    = parentDirect;
+  }
+
+  bool operator >(const Cell &e) const{
+    return value + dist > e.value + e.dist;
+  }    
+};
+
+
 struct Edge {
   int from;
   int to;
@@ -89,6 +114,8 @@ int diagonalDownCnt[MAX_SIZE];
 
 int bestRows[MAX_QUEEN];
 int bestCols[MAX_QUEEN];
+
+map<ll, bool> queenCheck;
 
 Coord center;
 
@@ -130,6 +157,10 @@ class MovingNQueens {
       queenList[id].originalX = col;
       setQueen(id, row, col);
       fprintf(stderr,"id = %d, row = %d, col = %d\n", id, row, col);
+
+      ll hash = calcHash(row, col);
+      queenCheck[hash] = true;
+
       board[row][col] = 1;
     }
 
@@ -153,7 +184,7 @@ class MovingNQueens {
    */
   void moveQueen(int id, int y, int x){
     Queen *queen = getQueen(id);
-    removeQueen(id, queen->y, queen->x);
+    removeQueen(queen->y, queen->x);
     setQueen(id, y, x);
   }
 
@@ -170,13 +201,17 @@ class MovingNQueens {
   }
 
   // クイーンの削除
-  void removeQueen(int id, int y, int x){ 
-    Queen *queen = getQueen(id);
-
+  void removeQueen(int y, int x){ 
     horizontalCnt[OFFSET + y] -= 1;
     verticalCnt[OFFSET + x] -= 1;
     diagonalUpCnt[OFFSET + y - x] -= 1;
     diagonalDownCnt[OFFSET + y + x] -= 1;
+  }
+
+  ll calcHash(int y, int x){
+    ll hash = (OFFSET + y + 1) * OFFSET + x;
+    assert(hash >= 0);
+    return hash;
   }
 
   // ボード全体のスコア計算
@@ -267,7 +302,6 @@ class MovingNQueens {
 
     init(queenRows, queenCols);
 
-    ret.push_back(int2str(0) + " " + int2str(3) + " " + int2str(1));
     fprintf(stderr,"centerY = %d, centerX = %d\n", center.y, center.x);
 
     for(int id = 0; id < N; ++id){
@@ -276,7 +310,6 @@ class MovingNQueens {
       int dx = center.x - queen->x;
       int degree = 180 - (int)(atan2(dy,dx) * 180.0 / PI);
       queen->degree = degree;
-      double dist = sqrt(dy*dy + dx*dx);
       //fprintf(stderr,"id = %d, dist = %4.1f, degree = %d, direct = %d\n", id, dist, queen->degree, direct);
     }
 
@@ -308,18 +341,50 @@ class MovingNQueens {
     }
 
     for(int id = 0; id < N; ++id){
+      fprintf(stderr,"nodeId = %d, y = %d, x = %d\n", id, bestRows[id], bestCols[id]);
+    }
+
+
+    resetAllPosition();
+    vector<int> positionList = checkPosition();
+
+    priority_queue< Queen, vector<Queen>, greater<Queen>  > que;
+
+    for(int id = 0; id < N; ++id){
       Queen *queen = getQueen(id);
 
-      queen->y = bestRows[id];
-      queen->x = bestCols[id];
+      Queen q(id, queen->y, queen->x);
+      q.value = -1 * (abs(queen->y - center.y) + abs(queen->x - center.x));
 
-      fprintf(stderr,"id = %d, y = %d, x = %d\n", id, queen->y, queen->x);
+      que.push(q);
+    }
+
+    while(!que.empty()){
+      Queen q = que.top(); que.pop();
+
+      Queen *queen = getQueen(q.id);
+      int nodeId = positionList[queen->id];
+
+      fprintf(stderr,"id = %d, queen->y = %d, queen->x = %d, bestRow = %d, bestCol = %d\n", 
+          queen->id, queen->y, queen->x, bestRows[nodeId], bestCols[nodeId]);
+
+      /*
+      queen->y = bestRows[nodeId];
+      queen->x = bestCols[nodeId];
+      */
+
+      searchPath(queen->id, bestRows[nodeId], bestCols[nodeId], ret);
+      ll hash = calcHash(queen->y, queen->x);
+      queenCheck[hash] = false;
+      hash = calcHash(bestRows[nodeId], bestCols[nodeId]);
+      queenCheck[hash] = true;
+
+      fprintf(stderr,"id = %d, position = %d\n", queen->id, positionList[queen->id]);
     }
 
     int score = calcScoreAll();
-    fprintf(stderr,"Score = %d\n", score);
+    fprintf(stderr,"Current score = %d\n", score);
 
-    resetAllPosition();
     //createAnswer();
 
     //showBoard();
@@ -329,7 +394,7 @@ class MovingNQueens {
 
   vector<int> checkPosition(){
     vector<int> position(N, UNDEFINED);
-     priority_queue< Queen, vector<Queen>, greater<Queen>  > que;
+    priority_queue< Queen, vector<Queen>, greater<Queen>  > que;
 
     for(int id = 0; id < N; ++id){
       Queen *queen = getQueen(id);
@@ -340,13 +405,15 @@ class MovingNQueens {
       que.push(q);
     }
 
+    map<int, bool> checkList;
+
     while(!que.empty()){
       Queen q = que.top(); que.pop();
       int minDist = INT_MAX;
       int bestPosition = UNDEFINED;
 
       for(int nodeId = 0; nodeId < N; ++nodeId){
-        if(position[nodeId] != UNDEFINED) continue;
+        if(checkList[nodeId]) continue;
 
         int dist = max(abs(q.y - bestRows[nodeId]), abs(q.x - bestCols[nodeId]));
 
@@ -356,10 +423,68 @@ class MovingNQueens {
         }
       }
 
-      position[bestPosition] = q.id;
+      position[q.id] = bestPosition;
+      checkList[bestPosition] = true;
     }
 
     return position;
+  }
+
+  void searchPath(int id, int destY, int destX, vector<string> &ret){
+    Queen *queen = getQueen(id);
+    ll hash;
+    priority_queue< Cell, vector<Cell>, greater<Cell>  > que;
+    que.push(Cell(queen->y, queen->x, 0, 0));
+    map<ll, Cell> history;
+    map<int, bool> checkList;
+
+    while(!que.empty()){
+      Cell c = que.top(); que.pop();
+      hash = calcHash(c.y, c.x);
+
+      if(checkList[hash]) continue;
+      checkList[hash] = true;
+
+      if(c.y == destY && c.x == destX){
+        stack<string> list;
+        list.push(int2str(id) + " " + int2str(c.y) + " " + int2str(c.x));
+
+        while(c.pd != UNDEFINED){
+          hash = calcHash(c.y, c.x);
+          Cell pc = history[hash];
+          //fprintf(stderr,"c.y = %d, c.x = %d, c.pd = %d, pc.pd = %d, hash = %lld\n", c.y, c.x, c.pd, pc.pd, hash);
+
+          if(c.pd != pc.pd && pc.pd != UNDEFINED){
+            list.push(int2str(id) + " " + int2str(pc.y) + " " + int2str(pc.x));
+          }
+
+          c = pc;
+        }
+
+        while(!list.empty()){
+          string str = list.top(); list.pop();
+          ret.push_back(str);
+        }
+
+        return;
+      }
+
+      for(int i = 0; i < 8; ++i){
+        int ny = c.y + MY[i];
+        int nx = c.x + MX[i];
+        hash = calcHash(ny, nx);
+
+        if(!queenCheck[hash]){
+          int cost = abs(ny - destY) + abs(nx - destX);
+          Cell cell(ny, nx, c.dist+1, cost, i);
+
+          if(!checkList[hash]){
+            history[hash] = c;
+          }
+          que.push(cell);
+        }
+      }
+    }
   }
 
   void initMatrix(){

@@ -8,7 +8,7 @@ class Summary
           score = line.chomp.split(' ')[2].to_f
 
           if score.zero?
-            p cnt
+            puts "Seed #{cnt+1} is over"
             score = Float::INFINITY
           end
           sum += score

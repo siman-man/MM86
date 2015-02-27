@@ -260,9 +260,8 @@ class MovingNQueens {
 
     if(cnt > 4) success = false;
 
-    score -= 20 * cnt;
+    score -= 2 * cnt;
     //score -= max(abs(queen->y - center.y), abs(queen->x - center.x));
-
 
     return score + 100 * success;
   }
@@ -299,9 +298,19 @@ class MovingNQueens {
     }
   }
 
+	void randomMove(){
+    for(int id = 0; id < N; ++id){
+      Queen *queen = getQueen(id);
+      int direct = xor128() % 13;
+
+      int ny = queen->y + DY[direct];
+      int nx = queen->x + DX[direct];
+      moveQueen(id, ny, nx);
+    }
+	}
+
   // 評価を行う前に行う処理
-  void eachTurnProc(int id){
-    Queen *queen = getQueen(id);
+  void eachTurnProc(Queen *queen){
     queen->beforeY = queen->y;
     queen->beforeX = queen->x;
   }
@@ -339,7 +348,7 @@ class MovingNQueens {
     int turn = 0;
     double T = 10000.0; 
     double k = 10.0;
-    double alpha = 0.999;
+    double alpha = 0.995;
     int notChangeCnt = 0;
     int idA, idB;
 
@@ -352,19 +361,27 @@ class MovingNQueens {
       // ランダムにIDを選択
       int id = xor128() % N;
 
-      assert(id >= 0);
-      eachTurnProc(id);
+			Queen *queen = getQueen(id);
 
-      int r = xor128() % N;
-      assert(r >= 0);
+      //assert(id >= 0);
+      eachTurnProc(queen);
 
-      if(r > 2){
+      int r = xor128() % 100;
+      //assert(r >= 0);
+
+      if(r > 3){
         EvalResult result = updateQueen(id);
         moveQueen(id, result.y, result.x);
-      }else if(notChangeCnt > 100){
-        idA = id;
-        idB = xor128() % N;
-        swapQueen(idA, idB);
+      }else if(bestScore > 0){
+			//}else{
+      //}else if(notChangeCnt > 10){
+        //idA = id;
+        //idB = xor128() % N;
+      	//eachTurnProc(idB);
+        //swapQueen(idA, idB);
+				resetPosition(id);
+        EvalResult result = updateQueen(id);
+        moveQueen(id, result.y, result.x);
       }
 
       int score = calcScoreAll();
@@ -376,14 +393,11 @@ class MovingNQueens {
       }
 
       double rate = exp(-(goodScore-score)/(k*T));
-      if(T < 0.001){
-        //fprintf(stderr,"turn = %d, rate = %f\n", turn, rate);
-      }
 
       if(goodScore < score){
         goodScore = score;
         notChangeCnt = 0;
-      }else if(T > 0 && xor128() % 100 < 100.0 * rate){
+      }else if(T > 0.01 && xor128() % 100 < 100.0 * rate){
         //fprintf(stderr,"turn = %d, rate = %f\n", turn, rate);
         goodScore = score;
         notChangeCnt = 0;
@@ -392,16 +406,28 @@ class MovingNQueens {
         rollback(id);
 
         if(idB != UNDEFINED){
-          rollback(idB);
+          //rollback(idB);
         }
 
-        if(notChangeCnt > 1000){
-          //fprintf(stderr,"re burn!\n");
-          T = 10000.0;
+        if(notChangeCnt > 100){
+    			resetAllPosition();
+    			firstMove();
+					//randomMove();
+    			//firstMove();
+         	T = 10000.0;
+					notChangeCnt = 0;
+					
+					if(goodScore < 0){
+						alpha += 0.0001;
+					}else{
+						alpha -= 0.0001;
+					}
         }
       }
 
-      currentTime = getTime();
+			if(turn % 100 == 0){
+      	currentTime = getTime();
+			}
       T *= alpha;
     }
 
@@ -455,8 +481,8 @@ class MovingNQueens {
         int size = que.size();
         fprintf(stderr,"queue size = %d\n", size);
         Queen q(queen->id, queen->y, queen->x);
-        q.value = 2 * (abs(queen->y - center.y) + abs(queen->x - center.x));
-        //que.push(q);
+        q.value = OFFSET + 2 * (abs(queen->y - center.y) + abs(queen->x - center.x));
+        que.push(q);
       }
 
       //fprintf(stderr,"id = %d, position = %d\n", queen->id, positionList[queen->id]);
@@ -658,6 +684,11 @@ class MovingNQueens {
     return x;
   }
 
+	void resetPosition(int id){
+   	Queen *queen = getQueen(id);
+   	moveQueen(id, queen->originalY, queen->originalX);
+	}
+
   // 全てのクイーンの位置を元に戻す
   void resetAllPosition(){
     for(int id = 0; id < N; ++id){
@@ -676,13 +707,13 @@ class MovingNQueens {
 
     for(int i = 0; i < 8; ++i){
       //int diff = 2;
-      int diff = (xor128() % 1) + 1;
+      int diff = (xor128() % 2) + 1;
       int ny = queen->y + diff * MY[i];
       int nx = queen->x + diff * MX[i];
       moveQueen(id, ny, nx);
 
       score = calcScoreSingle(id);
-      //score = calcScoreAll(id);
+      //score = calcScoreAll();
 
       if(maxScore < score){
         maxScore = score;

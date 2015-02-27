@@ -2,6 +2,7 @@
 #include <vector>
 #include <cstdio>
 #include <cmath>
+#include <sys/time.h>
 #include <limits.h>
 #include <map>
 #include <queue>
@@ -16,9 +17,12 @@ typedef long long ll;
 
 const int MAX_QUEEN = 200;
 const int MAX_SIZE  = 50000;
-const int OFFSET    = 20000;
+const ll  OFFSET    = 30000;
 const int UNDEFINED = -1;
 const double PI = 3.141592653589793;
+
+ll timeLimit = 9500;
+ll currentTime;
 
 struct Queen {
   int id;
@@ -86,6 +90,12 @@ struct Cell {
   }    
 };
 
+ll getTime() {
+  struct timeval tv;
+  gettimeofday(&tv, NULL);
+  ll result =  tv.tv_sec * 1000LL + tv.tv_usec / 1000LL;
+  return result;
+}
 
 struct Edge {
   int from;
@@ -210,13 +220,13 @@ class MovingNQueens {
   }
 
   ll calcHash(int y, int x){
-    ll hash = (OFFSET + y + 1) * OFFSET + x;
+    ll hash = ((OFFSET + y + 1) * OFFSET) + x;
     assert(hash >= 0);
     return hash;
   }
 
   // ボード全体のスコア計算
-  int calcScoreAll(bool debug = false){
+  int calcScoreAll(){
     int score = 0;
     int cnt = 0;
     bool success = true;  // 各クイーンが重複していないかどうかのフラグ
@@ -228,7 +238,6 @@ class MovingNQueens {
       cnt += diagonalUpCnt[OFFSET + queen->y - queen->x] + diagonalDownCnt[OFFSET + queen->y + queen->x];
 
       if(cnt > 4){
-        if(debug) fprintf(stderr,"id = %d: hit, y = %d, x = %d, cnt = %d\n", id, queen->y, queen->x, cnt);
         success = false;
       }
 
@@ -248,12 +257,14 @@ class MovingNQueens {
 
     cnt = horizontalCnt[OFFSET + queen->y] + verticalCnt[OFFSET + queen->x];
     cnt += diagonalUpCnt[OFFSET + queen->y - queen->x] + diagonalDownCnt[OFFSET + queen->y + queen->x];
-    score -= 10 * cnt;
+
+    if(cnt > 4) success = false;
+
+    score -= 20 * cnt;
     //score -= max(abs(queen->y - center.y), abs(queen->x - center.x));
 
-    if(cnt > 40) success = false;
 
-    return score + 10 * success;
+    return score + 100 * success;
   }
 
   // 最初に重心から離れる方向を決める
@@ -282,8 +293,8 @@ class MovingNQueens {
       int direct = checkDirection(queen);
       int dist = max(abs(queen->y - center.y), abs(queen->x - center.x));
 
-      int ny = queen->y + N * dist * DY[direct];
-      int nx = queen->x + N * dist * DX[direct];
+      int ny = queen->y + (N/8) * dist * DY[direct];
+      int nx = queen->x + (N/8) * dist * DX[direct];
       moveQueen(id, ny, nx);
     }
   }
@@ -320,9 +331,24 @@ class MovingNQueens {
     // 初期移動
     firstMove();
 
-    int maxScore = INT_MIN;
+    int bestScore = INT_MIN;
+    int goodScore = INT_MIN;
+    const ll startTime = getTime();
+    const ll endTime = startTime + timeLimit;
+    currentTime = startTime;
+    int turn = 0;
+    double T = 10000.0; 
+    double k = 10.0;
+    double alpha = 0.999;
+    int notChangeCnt = 0;
+    int idA, idB;
 
-    for(int i = 0; i < 400000; ++i){
+    //for(int i = 0; i < 400000; ++i){
+    while(currentTime < endTime){
+      turn++;
+      idA = UNDEFINED;
+      idB = UNDEFINED;
+
       // ランダムにIDを選択
       int id = xor128() % N;
 
@@ -332,17 +358,54 @@ class MovingNQueens {
       int r = xor128() % N;
       assert(r >= 0);
 
-      EvalResult result = updateQueen(id);
-      moveQueen(id, result.y, result.x);
-      //swapQueen(id, (r % N));
+      if(r > 2){
+        EvalResult result = updateQueen(id);
+        moveQueen(id, result.y, result.x);
+      }else if(notChangeCnt > 100){
+        idA = id;
+        idB = xor128() % N;
+        swapQueen(idA, idB);
+      }
 
       int score = calcScoreAll();
 
-      if(maxScore < score){
-        maxScore = score;
+      if(bestScore < score){
+        bestScore = score;
+        //fprintf(stderr,"update best score = %d\n", bestScore);
         updateBestPositions();
       }
+
+      double rate = exp(-(goodScore-score)/(k*T));
+      if(T < 0.001){
+        //fprintf(stderr,"turn = %d, rate = %f\n", turn, rate);
+      }
+
+      if(goodScore < score){
+        goodScore = score;
+        notChangeCnt = 0;
+      }else if(T > 0 && xor128() % 100 < 100.0 * rate){
+        //fprintf(stderr,"turn = %d, rate = %f\n", turn, rate);
+        goodScore = score;
+        notChangeCnt = 0;
+      }else{
+        notChangeCnt += 1;
+        rollback(id);
+
+        if(idB != UNDEFINED){
+          rollback(idB);
+        }
+
+        if(notChangeCnt > 1000){
+          //fprintf(stderr,"re burn!\n");
+          T = 10000.0;
+        }
+      }
+
+      currentTime = getTime();
+      T *= alpha;
     }
+
+    fprintf(stderr,"turn = %d, T = %4.2f\n", turn, T);
 
     resetAllPosition();
     vector<int> positionList = checkPosition();
@@ -375,10 +438,7 @@ class MovingNQueens {
       Queen *queen = getQueen(q.id);
       int nodeId = positionList[queen->id];
 
-      /*
-      fprintf(stderr,"id = %d, queen->y = %d, queen->x = %d, bestRow = %d, bestCol = %d\n", 
-          queen->id, queen->y, queen->x, bestRows[nodeId], bestCols[nodeId]);
-          */
+      //fprintf(stderr,"id = %d, queen->y = %d, queen->x = %d, bestRow = %d, bestCol = %d\n", queen->id, queen->y, queen->x, bestRows[nodeId], bestCols[nodeId]);
 
       /*
       queen->y = bestRows[nodeId];
@@ -395,14 +455,14 @@ class MovingNQueens {
         int size = que.size();
         fprintf(stderr,"queue size = %d\n", size);
         Queen q(queen->id, queen->y, queen->x);
-        q.value = -2 * (abs(queen->y - center.y) + abs(queen->x - center.x));
+        q.value = 2 * (abs(queen->y - center.y) + abs(queen->x - center.x));
         //que.push(q);
       }
 
       //fprintf(stderr,"id = %d, position = %d\n", queen->id, positionList[queen->id]);
     }
 
-    int score = calcScoreAll(true);
+    int score = calcScoreAll();
     fprintf(stderr,"Current score = %d\n", score);
 
     //createAnswer();
@@ -615,7 +675,8 @@ class MovingNQueens {
     int score;
 
     for(int i = 0; i < 8; ++i){
-      int diff = (xor128() % 2) + 1;
+      //int diff = 2;
+      int diff = (xor128() % 1) + 1;
       int ny = queen->y + diff * MY[i];
       int nx = queen->x + diff * MX[i];
       moveQueen(id, ny, nx);
@@ -739,6 +800,7 @@ int main(){
   vector<int> queenCols;
   vector<string> ret;
   MovingNQueens mq;
+  timeLimit = 1000;
 
   cin >> len;
   for(int i = 0; i < len; ++i){

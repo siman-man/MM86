@@ -7,7 +7,10 @@ class Summary
         if line =~ /Score/
           score = line.chomp.split(' ')[2].to_f
 
-          score = Float::INFINITY if score.zero?
+          if score.zero?
+            p cnt
+            score = Float::INFINITY
+          end
           sum += score
           cnt += 1
         end 

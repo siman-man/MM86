@@ -1,30 +1,42 @@
 N = 8
-Current score = 99872
-Score = 90.0
+turn = 3574339, T = 0.00
+Current score = 99936
+Score = 24.0
 N = 41
-Current score = 93268
-Score = 6522.0
+turn = 2392954, T = 0.00
+Current score = -1232
+Score = 979.0
 N = 18
-Current score = 99348
-Score = 570.0
+turn = 2987814, T = 0.00
+queue size = 2
+Current score = -229
+After all moves queens 0 and 11 threaten each other.
+Score = 0.0
 N = 89
-Current score = 51802
-Score = 47759.0
+turn = 1745462, T = 0.00
+Current score = 92499
+Score = 6984.0
 N = 10
-Current score = 99732
-Score = 232.0
+turn = 3420674, T = 0.00
+Current score = 99899
+Score = 47.0
 N = 56
-Current score = 88084
-Score = 11634.0
+turn = 2160991, T = 0.00
+Current score = 97737
+Score = 1984.0
 N = 11
-Current score = 99690
-Score = 259.0
+turn = 3339819, T = 0.00
+Current score = 99900
+Score = 46.0
 N = 60
-Current score = 83241
-Score = 16484.0
+turn = 2055170, T = 0.00
+Current score = -3573
+Score = 3298.0
 N = 87
-Current score = 64841
-Score = 34770.0
+turn = 1782996, T = 0.00
+Current score = 94238
+Score = 5333.0
 N = 33
-Current score = 96562
-Score = 3295.0
+turn = 2570073, T = 0.00
+Current score = 99099
+Score = 753.0

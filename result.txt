@@ -1,41 +1,41 @@
 N = 8
-turn = 95100, T = 111.62
-Current score = 99940
-Score = 17.0
+turn = 1038000, T = 10000.00
+Current score = 99947
+Score = 12.0
 N = 41
-turn = 29900, T = 5870.93
-Current score = 98819
-Score = 936.0
+turn = 554000, T = 0.00
+Current score = 99119
+Score = 592.0
 N = 18
-turn = 81500, T = 0.01
-Current score = 99781
-Score = 139.0
+turn = 779000, T = 0.59
+Current score = 99811
+Score = 110.0
 N = 89
-turn = 17100, T = 0.00
-Current score = 95197
-Score = 4170.0
+turn = 356000, T = 0.00
+Current score = 95611
+Score = 3674.0
 N = 10
-turn = 98200, T = 323.52
+turn = 1001000, T = -10000.00
 queue size = 3
-Current score = 99918
-Score = 28.0
+Current score = 99923
+Score = 35.0
 N = 56
-turn = 23900, T = 320.56
-Current score = 98041
-Score = 1700.0
+turn = 501000, T = 515.12
+Current score = 98408
+Score = 1271.0
 N = 11
-turn = 91100, T = 623.48
-Current score = 99905
-Score = 30.0
+turn = 944000, T = -10000.00
+Current score = 99914
+Score = 25.0
 N = 60
-turn = 35200, T = 0.00
-Current score = 97715
-Score = 1950.0
+turn = 488000, T = 2269.63
+Current score = 97954
+Score = 1684.0
 N = 87
-turn = 30300, T = 6.06
-Current score = 95719
-Score = 3702.0
+turn = 385000, T = 10000.00
+Current score = 95906
+Score = 3532.0
 N = 33
-turn = 58000, T = 54.99
-Current score = 99298
-Score = 524.0
+turn = 638000, T = 0.00
+Current score = 99443
+Score = 387.0

@@ -212,16 +212,16 @@ class MovingNQueens {
   }
 
   // クイーンの削除
-  void removeQueen(int y, int x){ 
-    horizontalCnt[OFFSET + y] -= 1;
-    verticalCnt[OFFSET + x] -= 1;
-    diagonalUpCnt[OFFSET + y - x] -= 1;
-    diagonalDownCnt[OFFSET + y + x] -= 1;
+  inline void removeQueen(int y, int x){ 
+    --horizontalCnt[OFFSET + y];
+    --verticalCnt[OFFSET + x];
+    --diagonalUpCnt[OFFSET + y - x];
+    --diagonalDownCnt[OFFSET + y + x];
   }
 
   ll calcHash(int y, int x){
     ll hash = ((OFFSET + y + 1) * OFFSET) + x;
-    assert(hash >= 0);
+    //assert(hash >= 0);
     return hash;
   }
 
@@ -300,17 +300,18 @@ class MovingNQueens {
 
 	void randomMove(){
     for(int id = 0; id < N; ++id){
-      Queen *queen = getQueen(id);
-      int direct = xor128() % 13;
+			int dy = (xor128() % (2*N)) - N;
+			int dx = (xor128() % (2*N)) - N;
 
-      int ny = queen->y + DY[direct];
-      int nx = queen->x + DX[direct];
+      int ny = center.y + dy;
+      int nx = center.x + dx;
       moveQueen(id, ny, nx);
     }
 	}
 
   // 評価を行う前に行う処理
-  void eachTurnProc(Queen *queen){
+  void eachTurnProc(int id){
+    Queen *queen = getQueen(id);
     queen->beforeY = queen->y;
     queen->beforeX = queen->x;
   }
@@ -350,21 +351,16 @@ class MovingNQueens {
     double k = 10.0;
     double alpha = 0.995;
     int notChangeCnt = 0;
-    int idA, idB;
 
     //for(int i = 0; i < 400000; ++i){
     while(currentTime < endTime){
-      turn++;
-      idA = UNDEFINED;
-      idB = UNDEFINED;
+      ++turn;
 
       // ランダムにIDを選択
       int id = xor128() % N;
 
-			Queen *queen = getQueen(id);
-
       //assert(id >= 0);
-      eachTurnProc(queen);
+      eachTurnProc(id);
 
       int r = xor128() % 100;
       //assert(r >= 0);
@@ -375,10 +371,12 @@ class MovingNQueens {
       }else if(bestScore > 0){
 			//}else{
       //}else if(notChangeCnt > 10){
-        //idA = id;
-        //idB = xor128() % N;
-      	//eachTurnProc(idB);
-        //swapQueen(idA, idB);
+				/*
+        idA = id;
+        idB = xor128() % N;
+      	eachTurnProc(idB);
+        swapQueen(idA, idB);
+				*/
 				resetPosition(id);
         EvalResult result = updateQueen(id);
         moveQueen(id, result.y, result.x);
@@ -402,30 +400,25 @@ class MovingNQueens {
         goodScore = score;
         notChangeCnt = 0;
       }else{
-        notChangeCnt += 1;
+        ++notChangeCnt;
         rollback(id);
-
-        if(idB != UNDEFINED){
-          //rollback(idB);
-        }
 
         if(notChangeCnt > 100){
     			resetAllPosition();
     			firstMove();
 					//randomMove();
-    			//firstMove();
          	T = 10000.0;
 					notChangeCnt = 0;
 					
 					if(goodScore < 0){
-						alpha += 0.0001;
+						alpha += 0.001;
 					}else{
-						alpha -= 0.0001;
+						alpha -= 0.001;
 					}
         }
       }
 
-			if(turn % 100 == 0){
+			if(turn % 1000 == 0){
       	currentTime = getTime();
 			}
       T *= alpha;
@@ -765,32 +758,6 @@ class MovingNQueens {
     return Coord(y/N, x/N);
   }
 
-  /*
-   * 重なっているクイーンがいるかどうかを調べる
-   */
-  bool isOver(){
-    map<int, bool> horizontal;
-    map<int, bool> vertical;
-    map<int, bool> diagonal1;
-    map<int, bool> diagonal2;
-
-    for(int id = 0; id < N; ++id){
-      Queen *queen = getQueen(id);
-
-      if(horizontal[queen->y]) return false;
-      if(vertical[queen->x]) return false;
-      if(diagonal1[queen->x + queen->y]) return false;
-      if(diagonal2[queen->x - queen->y]) return false;
-
-      horizontal[queen->y] = true;
-      vertical[queen->x] = true;
-      diagonal1[queen->x + queen->y] = true;
-      diagonal2[queen->x - queen->y] = true;
-    }
-
-    return true;
-  }
-
   Queen* getQueen(int id){
     return &queenList[id];
   }
@@ -831,7 +798,7 @@ int main(){
   vector<int> queenCols;
   vector<string> ret;
   MovingNQueens mq;
-  timeLimit = 1000;
+  timeLimit = 200;
 
   cin >> len;
   for(int i = 0; i < len; ++i){

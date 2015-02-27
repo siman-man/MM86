@@ -15,7 +15,7 @@
 using namespace std;
 typedef long long ll;
 
-const int MAX_QUEEN = 200;
+const int MAX_QUEEN = 250;
 const int MAX_SIZE  = 50000;
 const int INF       = INT_MAX;
 const ll  OFFSET    = 30000;
@@ -144,8 +144,6 @@ unsigned long long xor128() {
   return (rw=(rw^(rw>>19))^(rt^(rt>>8)));
 }
 
-int matrix[MAX_QUEEN][MAX_QUEEN];
-
 class MovingNQueens {
   public:
   void init(vector<int> queenRows, vector<int> queenCols){
@@ -162,9 +160,6 @@ class MovingNQueens {
     memset(diagonalUpCnt, 0, sizeof(diagonalUpCnt));
     memset(diagonalDownCnt, 0, sizeof(diagonalDownCnt));
 
-    // 行列の初期化
-    memset(matrix, 0, sizeof(matrix));
-
     // クイーンの情報の初期化を行う
     for(int id = 0; id < N; ++id){
       row = queenRows[id];
@@ -174,7 +169,7 @@ class MovingNQueens {
       queenList[id].originalY = row;
       queenList[id].originalX = col;
       setQueen(id, row, col);
-      fprintf(stderr,"id = %d, row = %d, col = %d\n", id, row, col);
+      //fprintf(stderr,"id = %d, row = %d, col = %d\n", id, row, col);
 
       ll hash = calcHash(row, col);
       queenCheck[hash] += 1;
@@ -240,6 +235,7 @@ class MovingNQueens {
 
   // ボード全体のスコア計算
   int calcScoreAll(){
+    //fprintf(stderr,"calcScoreAll =>\n");
     int score = 0;
     int cnt = 0;
     bool success = true;  // 各クイーンが重複していないかどうかのフラグ
@@ -322,8 +318,22 @@ class MovingNQueens {
     }
 	}
 
+  // 少しだけ全体を揺らす
+  void littleMoveAll(){
+    for(int id = 0; id < N; ++id){
+      Queen *queen = getQueen(id);
+      int direct = xor128() % 8;
+
+      int ny = queen->y + (N/8) * MY[direct];
+      int nx = queen->x + (N/8) * MX[direct];
+
+      moveQueen(id, ny, nx);
+    }
+  }
+
   // 評価を行う前に行う処理
   void eachTurnProc(int id){
+    //fprintf(stderr,"eachTurnProc =>\n");
     Queen *queen = getQueen(id);
     queen->beforeY = queen->y;
     queen->beforeX = queen->x;
@@ -331,6 +341,7 @@ class MovingNQueens {
 
   // 行動のロールバック
   void rollback(int id){
+    //fprintf(stderr,"rollback =>\n");
     Queen *queen = getQueen(id);
     moveQueen(id, queen->beforeY, queen->beforeX);
   }
@@ -362,12 +373,15 @@ class MovingNQueens {
     int turn = 0;
     double T = 10000.0; 
     double k = 10.0;
-    double alpha = 0.995;
+    double alpha = 0.998;
     int notChangeCnt = 0;
+    int idA, idB;
 
     //for(int i = 0; i < 400000; ++i){
     while(currentTime < endTime){
       ++turn;
+      //fprintf(stderr,"turn = %d start =>\n", turn);
+      idB = UNDEFINED;
 
       // ランダムにIDを選択
       int id = xor128() % N;
@@ -381,18 +395,24 @@ class MovingNQueens {
       if(r > 3){
         EvalResult result = updateQueen(id);
         moveQueen(id, result.y, result.x);
-      }else if(bestScore > 0){
+      }else if(goodScore > 0){
 			//}else{
       //}else if(notChangeCnt > 10){
-				/*
         idA = id;
-        idB = xor128() % N;
+        idB = (xor128() % N);
       	eachTurnProc(idB);
         swapQueen(idA, idB);
-				*/
+        /*
 				resetPosition(id);
         EvalResult result = updateQueen(id);
         moveQueen(id, result.y, result.x);
+				*/
+      }else{
+        /*
+				resetPosition(id);
+        EvalResult result = updateQueen(id);
+        moveQueen(id, result.y, result.x);
+        */
       }
 
       int score = calcScoreAll();
@@ -407,7 +427,7 @@ class MovingNQueens {
       if(goodScore < score){
         goodScore = score;
         notChangeCnt = 0;
-      }else if(T > 0.01 && xor128() % 100 < 100.0 * rate){
+      }else if(T > 0.001 && xor128() % 100 < 100.0 * rate){
         //fprintf(stderr,"turn = %d, rate = %f\n", turn, rate);
         goodScore = score;
         notChangeCnt = 0;
@@ -415,15 +435,21 @@ class MovingNQueens {
         ++notChangeCnt;
         rollback(id);
 
-        if(notChangeCnt > 100){
+        if(idB != UNDEFINED){
+          rollback(idB);
+        }
+
+        if(notChangeCnt > 200){
+          //fprintf(stderr,"ReBrun =>\n");
     			resetAllPosition();
-    			//firstMove();
-					randomMove();
+    			firstMove();
+          //littleMoveAll();
+					//randomMove();
          	T = 10000.0;
 					notChangeCnt = 0;
 					
 					if(goodScore < 0){
-						alpha += 0.001;
+						//alpha += 0.001;
 					}else{
 						alpha -= 0.001;
 					}
@@ -435,12 +461,13 @@ class MovingNQueens {
 			}
 
       T *= alpha;
+      //fprintf(stderr,"turn = %d end =>\n", turn);
     }
 
     fprintf(stderr,"turn = %d, T = %4.2f\n", turn, T);
 
     for(int id = 0; id < N; ++id){
-      fprintf(stderr,"nodeId = %d, y = %d, x = %d\n", id, bestRows[id], bestCols[id]);
+      //fprintf(stderr,"nodeId = %d, y = %d, x = %d\n", id, bestRows[id], bestCols[id]);
     }
 
     resetAllPosition();
@@ -499,7 +526,7 @@ class MovingNQueens {
         fprintf(stderr,"queue size = %d\n", size);
         Queen q(queen->id, queen->y, queen->x);
         q.value = OFFSET + 2 * (abs(queen->y - center.y) + abs(queen->x - center.x));
-        que.push(q);
+        //que.push(q);
       }
 
       //fprintf(stderr,"id = %d, position = %d\n", queen->id, positionList[queen->id]);
@@ -507,8 +534,6 @@ class MovingNQueens {
 
     int score = calcScoreAll();
     fprintf(stderr,"Current score = %d\n", score);
-
-    //createAnswer();
 
     //showBoard();
 
@@ -625,83 +650,8 @@ class MovingNQueens {
     return false;
   }
 
-  void initMatrix(){
-    for(int id = 0; id < N; ++id){
-      Queen *queen = getQueen(id);
-
-      for(int nodeId = 0; nodeId < N; ++nodeId){
-        int cost = max(abs(queen->y - bestRows[nodeId]), abs(queen->x - bestCols[nodeId]));
-
-        matrix[id][nodeId] = cost;
-      }
-    }
-  }
-
-  vector<int> createAnswer(){
-    int p, q;
-
-    initMatrix();
-
-    vector<int> fx(N, INT_MIN);
-    vector<int> fy(N, 0);
-    vector<int> x(N, UNDEFINED);  // 左側頂点に対応する右側頂点
-    vector<int> y(N, UNDEFINED);  // 右側頂点に対応する左側頂点
-
-    // 各クイーンの最小値を記録
-    for(int id = 0; id < N; ++id){
-      for(int j = 0; j < N; ++j){
-        fx[id] = min(fx[id], matrix[id][j]);
-      }
-    }
-
-    for(int id = 0; id < N;){
-      vector<int> t(N, UNDEFINED);
-      vector<int> s(N+1, id);
-
-      for(p = q = 0; p <= q && x[id] < 0; ++p){
-        for(int k = s[p], j = 0; j < N && x[id] < 0; ++j){
-          if(fx[k] + fy[j] == matrix[k][j] && t[j] < 0){
-            s[++q] = y[j];
-            t[j] = k;
-
-            if(s[q] < 0){
-              for(p = j; p >= 0; j = p){
-                y[j] = k = t[j];
-                p = x[k];
-                x[k] = j;
-              }
-            }
-          }
-        }
-      }
-
-      // 最適なマッチングがまだ決まっていない場合
-      if(x[id] < 0){
-        int d = INT_MIN;
-
-        for(int k = 0; k <= q; ++k){
-          for(int j = 0; j < N; ++j){
-            if(t[j] < 0){
-              d = min(d, fx[s[k]] + fy[j] - matrix[s[k]][j]);
-            }
-          }
-
-          for(int j = 0; j < N; ++j){
-            fy[j] += (t[j] < 0 ? 0 : d);
-          }
-          for(int k = 0; k <= q; ++k){
-            fx[s[k]] -= d;
-          }
-        }
-      }else{
-        ++id;
-      }
-    }
-
-    return x;
-  }
-
   void addEdge(int from, int to, int cap, int cost){
+    //fprintf(stderr,"from = %d, to = %d\n", from, to);
     Edge edgeA(to, cap, cost, G[to].size());
     Edge edgeB(from, 0, -cost, G[from].size());
     G[from].push_back(edgeA);
@@ -709,6 +659,7 @@ class MovingNQueens {
   }
 
   void solve(){
+    //fprintf(stderr,"solve =>\n");
     // マッチンググラフを作成
     int s = N + N + 1;
     int t = s + 1;
@@ -726,16 +677,19 @@ class MovingNQueens {
       }
     }
 
+    //fprintf(stderr,"Add Queen Edge =>\n");
     // 始点sに対してQueenに辺を張る
     for(int i = 0; i < N; i++){
       addEdge(s, i, 1, 0);
       F += 1;
     }
 
+    //fprintf(stderr,"Add Node Edge =>\n");
     // 終点tに対してNodeに辺を張る
     for(int i = 0; i < N; i++){
       addEdge(N + i, t, 1, 0);
     }
+    //fprintf(stderr,"Add Node Edge end =>\n");
 
     int minCost = minCostFlow(s, t, F);
 
@@ -743,13 +697,12 @@ class MovingNQueens {
   }
 
   int minCostFlow(int s, int t, int f){
+    //fprintf(stderr,"minCostFlow =>\n");
     int res = 0;
     int V = 2 * N + 3;
     int dist[V];  // 最短距離
     int prevv[V]; // 直前の頂点
     int preve[V]; // 直前の辺
-
-    fprintf(stderr,"minCostFlow =>\n");
 
     while(f > 0){
       for(int i = 0; i < V; i++){
@@ -832,7 +785,7 @@ class MovingNQueens {
 
     for(int i = 0; i < 8; ++i){
       //int diff = 2;
-      int diff = (xor128() % 4) + 1;
+      int diff = (xor128() % (N/8)) + 1;
       int ny = queen->y + diff * MY[i];
       int nx = queen->x + diff * MX[i];
       moveQueen(id, ny, nx);
@@ -860,16 +813,17 @@ class MovingNQueens {
     Queen *queenB = getQueen(idB);
 
     int r = xor128() % 100;
-    int tmp;
+    int ay = queenB->y;
+    int ax = queenB->x;
+    int by = queenA->y;
+    int bx = queenA->x;
 
     if(r > 50){
-      tmp = queenA->x;
-      queenA->x = queenB->x;
-      queenB->x = tmp;
+      moveQueen(idA, queenA->y, ax);
+      moveQueen(idB, queenB->y, bx);
     }else{
-      tmp = queenA->y;
-      queenA->y = queenB->y;
-      queenB->y = tmp;
+      moveQueen(idA, ay, queenA->x);
+      moveQueen(idB, by, queenB->x);
     }
   }
 
@@ -945,7 +899,7 @@ int main(){
   vector<int> queenCols;
   vector<string> ret;
   MovingNQueens mq;
-  timeLimit = 200;
+  timeLimit = 1000;
 
   cin >> len;
   for(int i = 0; i < len; ++i){

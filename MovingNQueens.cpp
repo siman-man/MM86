@@ -17,6 +17,7 @@ typedef long long ll;
 
 const int MAX_QUEEN = 200;
 const int MAX_SIZE  = 50000;
+const int INF       = INT_MAX;
 const ll  OFFSET    = 30000;
 const int UNDEFINED = -1;
 const double PI = 3.141592653589793;
@@ -98,16 +99,20 @@ ll getTime() {
 }
 
 struct Edge {
-  int from;
   int to;
+  int cap;
   int cost;
+  int rev;
 
-  Edge(int from = UNDEFINED, int to = UNDEFINED, int cost = UNDEFINED){
-    this->from  = from;
+  Edge(int to = UNDEFINED, int cap = UNDEFINED, int cost = UNDEFINED, int rev = UNDEFINED){
     this->to    = to;
+    this->cap   = cap;
     this->cost  = cost;
+    this->rev   = rev;
   }
 };
+
+vector<Edge> G[MAX_QUEEN];
 
 Queen queenList[MAX_QUEEN];
 int N;
@@ -126,7 +131,9 @@ int diagonalDownCnt[MAX_SIZE];
 int bestRows[MAX_QUEEN];
 int bestCols[MAX_QUEEN];
 
-map<ll, bool> queenCheck;
+vector<int> selectedNodeId(MAX_QUEEN, 0);
+
+map<ll, int> queenCheck;
 
 Coord center;
 
@@ -167,10 +174,10 @@ class MovingNQueens {
       queenList[id].originalY = row;
       queenList[id].originalX = col;
       setQueen(id, row, col);
-      //fprintf(stderr,"id = %d, row = %d, col = %d\n", id, row, col);
+      fprintf(stderr,"id = %d, row = %d, col = %d\n", id, row, col);
 
       ll hash = calcHash(row, col);
-      queenCheck[hash] = true;
+      queenCheck[hash] += 1;
 
       board[row][col] = 1;
     }
@@ -205,6 +212,9 @@ class MovingNQueens {
     queen->y = y;
     queen->x = x;
 
+    ll hash = calcHash(y, x);
+    queenCheck[hash] += 1;
+
     horizontalCnt[OFFSET + y] += 1;
     verticalCnt[OFFSET + x] += 1;
     diagonalUpCnt[OFFSET + y - x] += 1;
@@ -213,6 +223,9 @@ class MovingNQueens {
 
   // クイーンの削除
   inline void removeQueen(int y, int x){ 
+    ll hash = calcHash(y, x);
+    queenCheck[hash] -= 1;
+
     --horizontalCnt[OFFSET + y];
     --verticalCnt[OFFSET + x];
     --diagonalUpCnt[OFFSET + y - x];
@@ -386,7 +399,6 @@ class MovingNQueens {
 
       if(bestScore < score){
         bestScore = score;
-        //fprintf(stderr,"update best score = %d\n", bestScore);
         updateBestPositions();
       }
 
@@ -405,8 +417,8 @@ class MovingNQueens {
 
         if(notChangeCnt > 100){
     			resetAllPosition();
-    			firstMove();
-					//randomMove();
+    			//firstMove();
+					randomMove();
          	T = 10000.0;
 					notChangeCnt = 0;
 					
@@ -418,16 +430,28 @@ class MovingNQueens {
         }
       }
 
-			if(turn % 1000 == 0){
+			if(turn % 10000 == 0){
       	currentTime = getTime();
 			}
+
       T *= alpha;
     }
 
     fprintf(stderr,"turn = %d, T = %4.2f\n", turn, T);
 
+    for(int id = 0; id < N; ++id){
+      fprintf(stderr,"nodeId = %d, y = %d, x = %d\n", id, bestRows[id], bestCols[id]);
+    }
+
     resetAllPosition();
+    solve();
     vector<int> positionList = checkPosition();
+
+    for(int id = 0; id < N; ++id){
+      //fprintf(stderr,"Queen %d -> Node %d\n", id, positionList[id]);
+      //fprintf(stderr,"Queen %d -> Node %d\n", id, selectedNodeId[id]);
+    }
+    positionList = selectedNodeId;
 
     priority_queue< Queen, vector<Queen>, greater<Queen>  > que;
 
@@ -443,7 +467,7 @@ class MovingNQueens {
 
         ll hash = calcHash(ny, nx);
 
-        if(queenCheck[hash]){
+        if(queenCheck[hash] > 0){
           q.value += 1;
         }
       }
@@ -466,9 +490,9 @@ class MovingNQueens {
 
       if(searchPath(queen->id, bestRows[nodeId], bestCols[nodeId], ret)){
         ll hash = calcHash(queen->y, queen->x);
-        queenCheck[hash] = false;
+        queenCheck[hash] -= 1;
         hash = calcHash(bestRows[nodeId], bestCols[nodeId]);
-        queenCheck[hash] = true;
+        queenCheck[hash] += 1;
         moveQueen(queen->id, bestRows[nodeId], bestCols[nodeId]);
       }else{
         int size = que.size();
@@ -507,7 +531,7 @@ class MovingNQueens {
 
         ll hash = calcHash(ny, nx);
 
-        if(queenCheck[hash]){
+        if(queenCheck[hash] > 0){
           q.value -= 1;
         }
       }
@@ -589,7 +613,7 @@ class MovingNQueens {
         int nx = c.x + MX[i];
         hash = calcHash(ny, nx);
 
-        if(!queenCheck[hash] && !checkList[hash]){
+        if(queenCheck[hash] == 0 && !checkList[hash]){
           int cost = abs(ny - destY) + abs(nx - destX);
           Cell cell(ny, nx, c.dist+1, cost, i);
           history[hash] = i;
@@ -677,6 +701,114 @@ class MovingNQueens {
     return x;
   }
 
+  void addEdge(int from, int to, int cap, int cost){
+    Edge edgeA(to, cap, cost, G[to].size());
+    Edge edgeB(from, 0, -cost, G[from].size());
+    G[from].push_back(edgeA);
+    G[to].push_back(edgeB);
+  }
+
+  void solve(){
+    // マッチンググラフを作成
+    int s = N + N + 1;
+    int t = s + 1;
+
+    int cost = 0;
+    int F = 0;
+
+    for(int i = 0; i < N; i++){
+      Queen *queen = getQueen(i);
+
+      for(int j = 0; j < N; ++j){
+        int c = max(abs(queen->y - bestRows[j]), abs(queen->x - bestCols[j]));
+        addEdge(i, N + j, INF, c);
+        cost += c;
+      }
+    }
+
+    // 始点sに対してQueenに辺を張る
+    for(int i = 0; i < N; i++){
+      addEdge(s, i, 1, 0);
+      F += 1;
+    }
+
+    // 終点tに対してNodeに辺を張る
+    for(int i = 0; i < N; i++){
+      addEdge(N + i, t, 1, 0);
+    }
+
+    int minCost = minCostFlow(s, t, F);
+
+    fprintf(stderr,"minCost = %d\n", minCost);
+  }
+
+  int minCostFlow(int s, int t, int f){
+    int res = 0;
+    int V = 2 * N + 3;
+    int dist[V];  // 最短距離
+    int prevv[V]; // 直前の頂点
+    int preve[V]; // 直前の辺
+
+    fprintf(stderr,"minCostFlow =>\n");
+
+    while(f > 0){
+      for(int i = 0; i < V; i++){
+        dist[i] = INF;
+      }
+      dist[s] = 0;
+      bool update = true;
+
+      while(update){
+        update = false;
+
+        for(int v = 0; v < V; v++){
+          //fprintf(stderr,"dist[%d] = %d\n", v, dist[v]);
+          if(dist[v] == INF) continue;
+
+          for(int i = 0; i < G[v].size(); i++){
+            Edge &e = G[v][i];
+
+            //fprintf(stderr,"cap = %d\n", e.cap);
+
+            if(e.cap > 0 && dist[e.to] > dist[v] + e.cost){
+              dist[e.to] = dist[v] + e.cost;
+              prevv[e.to] = v;
+              preve[e.to] = i;
+              update = true;
+            }
+          }
+        }
+      }
+
+      if(dist[t] == INF){
+        // これ以上流せない
+        return -1;
+      }
+
+      // s-t間最短路に沿って目一杯流す
+      int d = f;
+
+      for(int v = t; v != s; v = prevv[v]){
+        d = min(d, G[prevv[v]][preve[v]].cap);
+
+        if(0 <= prevv[v] && prevv[v] < N && 0 <= (v - N) && (v - N) < N){
+          //fprintf(stderr,"%d -> %d\n", prevv[v], v - N);
+          selectedNodeId[prevv[v]] = v - N;
+        }
+      }
+      f -= d;
+      res += d * dist[t];
+      //fprintf(stderr,"res = %d + %d * %d\n", res, d, dist[t]);
+      for(int v = t; v != s; v = prevv[v]){
+        Edge &e = G[prevv[v]][preve[v]];
+        e.cap -= d;
+        G[v][e.rev].cap += d;
+      }
+    }
+
+    return res;
+  }
+
 	void resetPosition(int id){
    	Queen *queen = getQueen(id);
    	moveQueen(id, queen->originalY, queen->originalX);
@@ -700,7 +832,7 @@ class MovingNQueens {
 
     for(int i = 0; i < 8; ++i){
       //int diff = 2;
-      int diff = (xor128() % 2) + 1;
+      int diff = (xor128() % 4) + 1;
       int ny = queen->y + diff * MY[i];
       int nx = queen->x + diff * MX[i];
       moveQueen(id, ny, nx);
@@ -770,22 +902,37 @@ class MovingNQueens {
 
   void showBoard(){
     fprintf(stderr,"\n");
+    int fromY = INT_MAX;
+    int fromX = INT_MAX;
+    int destY = INT_MIN;
+    int destX = INT_MIN;
 
-    for(int y = 0; y < N; ++y){
-      for(int x = 0; x < N; x++){
+    for(int id = 0; id < N; ++id){
+      Queen *queen = getQueen(id);
+
+      fromY = min(fromY, queen->y);
+      fromX = min(fromX, queen->x);
+      destY = max(destY, queen->y);
+      destX = max(destX, queen->x);
+    }
+
+    for(int y = fromY; y <= destY; ++y){
+      for(int x = fromX; x <= destX; x++){
         fprintf(stderr,"+-"); 
       }
       fprintf(stderr,"+\n");
 
-      for(int x = 0; x < N; ++x){
+
+      for(int x = fromX; x <= destX; ++x){
+        ll hash = calcHash(y, x);
         fprintf(stderr,"|");
 
-        fprintf(stderr,"%c", (board[y][x] == 0)? ' ' : 'o');
+        fprintf(stderr,"%c", (queenCheck[hash] > 0)? 'o' : ' ');
       }
       fprintf(stderr,"|\n");
     }
 
-    for(int x = 0; x < N; x++){
+    for(int x = fromX; x <= destX; x++){
       fprintf(stderr,"+-"); 
     }
     fprintf(stderr,"+\n");

@@ -192,15 +192,17 @@ class MovingNQueens {
     }else if(N <= 20){
       tryLimit = 100;
     }else if(N <= 30){
-      tryLimit = 300;
+      tryLimit = 700;
     }else if(N <= 40){
-      tryLimit = 500;
-    }else if(N <= 60){
-      tryLimit = 800;
-    }else if(N <= 80){
       tryLimit = 1000;
+    }else if(N <= 60){
+      tryLimit = 2000;
+    }else if(N <= 80){
+      tryLimit = 3000;
+    }else if(N <= 90){
+      tryLimit = 3000;
     }else{
-      tryLimit = 1500;
+      tryLimit = 3500;
     }
   }
 
@@ -285,14 +287,16 @@ class MovingNQueens {
     bool success = true;
     Queen *queen = getQueen(id);  
 
-    cnt = horizontalCnt[OFFSET + queen->y] + verticalCnt[OFFSET + queen->x];
-    cnt += diagonalUpCnt[OFFSET + queen->y - queen->x] + diagonalDownCnt[OFFSET + queen->y + queen->x];
+    int l = horizontalCnt[OFFSET + queen->y] + verticalCnt[OFFSET + queen->x];
+    int d = diagonalUpCnt[OFFSET + queen->y - queen->x] + diagonalDownCnt[OFFSET + queen->y + queen->x];
+    cnt = l + d;
 
     if(cnt > 4) success = false;
 
-    score -= 2 * cnt;
+    score -= cnt;
 
-    if(goodScore > 0){
+    if(success && goodScore > 0){
+      //score -= max(abs(queen->y - center.y), abs(queen->x - center.x));
       //score -= max(abs(queen->y - queen->originalY), abs(queen->x - queen->originalX));
       //score -= abs(queen->y - queen->originalY) + abs(queen->x - queen->originalX);
     }
@@ -329,6 +333,21 @@ class MovingNQueens {
       int ny = queen->y + (N/8) * dist * DY[direct];
       int nx = queen->x + (N/8) * dist * DX[direct];
       moveQueen(id, ny, nx);
+    }
+  }
+
+  void newSetQueen(){
+    map<int, bool> checkListVertical;
+
+    for(int id = 0; id < N; ++id){
+      int x = xor128() % N;
+
+      while(checkListVertical[x]){
+        x = xor128() % N;
+      }
+
+      moveQueen(id, center.y - N + id, x);
+      checkListVertical[x] = true;
     }
   }
 
@@ -410,13 +429,15 @@ class MovingNQueens {
     double k = 10.0;
     double alpha = 0.998;
     int notChangeCnt = 0;
-    int idA, idB;
+    int idA, idB, idC;
+    int swapRate = 3;
 
     //for(int i = 0; i < 400000; ++i){
     while(currentTime < endTime){
       ++turn;
       //fprintf(stderr,"turn = %d start =>\n", turn);
       idB = UNDEFINED;
+      idC = UNDEFINED;
 
       // ランダムにIDを選択
       int id = xor128() % N;
@@ -427,7 +448,7 @@ class MovingNQueens {
       int r = xor128() % 100;
       //assert(r >= 0);
 
-      if(r > 3){
+      if(r > swapRate){
         EvalResult result = updateQueen(id);
         moveQueen(id, result.y, result.x);
       }else if(goodScore > 0){
@@ -436,6 +457,11 @@ class MovingNQueens {
         idA = id;
         idB = (xor128() % N);
       	eachTurnProc(idB);
+        /*
+        idC = (xor128() % N);
+      	eachTurnProc(idC);
+        swapQueen3(idA, idB, idC);
+        */
         swapQueen(idA, idB);
         /*
 				resetPosition(id);
@@ -443,6 +469,7 @@ class MovingNQueens {
         moveQueen(id, result.y, result.x);
         */
       }else{
+        //warpQueen(id);
         //continue;
         /*
 				resetPosition(id);
@@ -463,7 +490,7 @@ class MovingNQueens {
       if(goodScore < score){
         goodScore = score;
         notChangeCnt = 0;
-      }else if(T > 0.001 && xor128() % 100 < 100.0 * rate){
+      }else if(T > 0 && xor128() % 100 < 100.0 * rate){
         //fprintf(stderr,"turn = %d, rate = %f\n", turn, rate);
         goodScore = score;
         notChangeCnt = 0;
@@ -474,11 +501,15 @@ class MovingNQueens {
         if(idB != UNDEFINED){
           rollback(idB);
         }
+        if(idC != UNDEFINED){
+          rollback(idC);
+        }
 
         if(notChangeCnt > tryLimit){
           //fprintf(stderr,"ReBrun =>\n");
     			resetAllPosition();
     			firstMove();
+          //newSetQueen();
           //moveAllPosition(xor128()%8);
           //littleMoveAll();
 					//randomMove();
@@ -493,7 +524,7 @@ class MovingNQueens {
         }
       }
 
-			if(turn % 10000 == 0){
+			if(turn % 20000 == 0){
       	currentTime = getTime();
 			}
 
@@ -501,7 +532,7 @@ class MovingNQueens {
       //fprintf(stderr,"turn = %d end =>\n", turn);
     }
 
-    fprintf(stderr,"turn = %d, T = %4.2f\n", turn, T);
+    fprintf(stderr,"turn = %d, alpha = %4.2f, T = %4.2f\n", turn, alpha, T);
 
     for(int id = 0; id < N; ++id){
       //fprintf(stderr,"nodeId = %d, y = %d, x = %d\n", id, bestRows[id], bestCols[id]);
@@ -517,7 +548,7 @@ class MovingNQueens {
     }
     positionList = selectedNodeId;
 
-    //moveAllPosition(6);
+    //moveAllPosition(1);
 
     priority_queue< Queen, vector<Queen>, greater<Queen>  > que;
 
@@ -541,6 +572,8 @@ class MovingNQueens {
       que.push(q);
     }
 
+    int tryCnt = 0;
+
     while(!que.empty()){
       Queen q = que.top(); que.pop();
 
@@ -554,18 +587,19 @@ class MovingNQueens {
       queen->x = bestCols[nodeId];
       */
 
-      if(searchPath(queen->id, bestRows[nodeId], bestCols[nodeId], ret)){
+      if(searchPath(queen->id, bestRows[nodeId], bestCols[nodeId], ret, tryCnt)){
         ll hash = calcHash(queen->y, queen->x);
         queenCheck[hash] -= 1;
         hash = calcHash(bestRows[nodeId], bestCols[nodeId]);
         queenCheck[hash] += 1;
         moveQueen(queen->id, bestRows[nodeId], bestCols[nodeId]);
+        tryCnt = 0;
       }else{
-        int size = que.size();
-        fprintf(stderr,"queue size = %d\n", size);
+        //fprintf(stderr,"id = %d, queue size = %d\n", queen->id, size);
         Queen q(queen->id, queen->y, queen->x);
         q.value = OFFSET + 2 * (abs(queen->y - center.y) + abs(queen->x - center.x));
-        //que.push(q);
+        tryCnt++;
+        que.push(q);
       }
 
       //fprintf(stderr,"id = %d, position = %d\n", queen->id, positionList[queen->id]);
@@ -576,7 +610,7 @@ class MovingNQueens {
     return ret;
   }
 
-  bool searchPath(int id, int destY, int destX, vector<string> &ret){
+  bool searchPath(int id, int destY, int destX, vector<string> &ret, int tryCnt){
     Queen *queen = getQueen(id);
 
     if(queen->y == destY && queen->x == destX) return true;
@@ -596,6 +630,7 @@ class MovingNQueens {
       checkList[hash] = true;
 
       if(c.y == destY && c.x == destX){
+        if(tryCnt < N && c.dist > max(abs(queen->y - destY), abs(queen->x - destX))) return false;
         stack<string> list;
         int direct = UNDEFINED;
 
@@ -781,13 +816,13 @@ class MovingNQueens {
 
     for(int i = 0; i < 5; ++i){
     //for(int i = 0; i < 8; ++i){
-      //int direct = i;
+      //direct = i;
       direct = xor128() % 8;
       while(checkList[direct]){
         direct = xor128() % 8;
       }
       checkList[direct] = true;
-      //int diff = (xor128() % 1) + 1;
+      //int diff = (xor128() % 2) + 1;
       int diff = (xor128() % (N/4)) + 1;
       int ny = queen->y + diff * MY[direct];
       int nx = queen->x + diff * MX[direct];
@@ -828,6 +863,35 @@ class MovingNQueens {
     }else{
       moveQueen(idA, ay, queenA->x);
       moveQueen(idB, by, queenB->x);
+    }
+  }
+
+  // クイーンの一部座標の交換を行う
+  void swapQueen3(int idA, int idB, int idC){
+    if(idA == idB) return;
+    if(idA == idC) return;
+    if(idB == idC) return;
+
+    Queen *queenA = getQueen(idA);
+    Queen *queenB = getQueen(idB);
+    Queen *queenC = getQueen(idC);
+
+    int r = xor128() % 100;
+    int ay = queenB->y;
+    int ax = queenB->x;
+    int by = queenC->y;
+    int bx = queenC->x;
+    int cy = queenA->y;
+    int cx = queenA->x;
+
+    if(r > 50){
+      moveQueen(idA, queenA->y, ax);
+      moveQueen(idB, queenB->y, bx);
+      moveQueen(idC, queenC->y, cx);
+    }else{
+      moveQueen(idA, ay, queenA->x);
+      moveQueen(idB, by, queenB->x);
+      moveQueen(idC, cy, queenC->x);
     }
   }
 

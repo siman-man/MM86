@@ -1,50 +1,40 @@
 N = 8
-turn = 680000, T = -10000.00
-minCost = 11
-Current score = 99946
-Score = 11.0
+turn = 940000, T = 0.01
+minCost = 12
+Score = 12.0
 N = 41
-turn = 440000, T = 0.00
-minCost = 480
-Current score = 99206
-Score = 481.0
+turn = 720000, T = 0.02
+minCost = 418
+Score = 421.0
 N = 18
-turn = 590000, T = 677.92
-minCost = 88
-Current score = 99810
-Score = 89.0
+turn = 830000, T = 175.26
+minCost = 86
+Score = 86.0
 N = 89
-turn = 320000, T = 0.00
-minCost = 2526
-Current score = 96618
-Score = 2534.0
+turn = 600000, T = 0.00
+minCost = 2162
+Score = 2170.0
 N = 10
-turn = 690000, T = 10000.00
-minCost = 21
-Current score = 99922
-Score = 21.0
+turn = 930000, T = 9.75
+minCost = 18
+Score = 18.0
 N = 56
-turn = 410000, T = 0.00
-minCost = 1048
-Current score = 98552
-Score = 1054.0
+turn = 660000, T = 0.00
+minCost = 873
+Score = 883.0
 N = 11
-turn = 740000, T = 0.01
-minCost = 21
-Current score = 99913
-Score = 21.0
+turn = 960000, T = 161.78
+minCost = 24
+Score = 25.0
 N = 60
-turn = 390000, T = 0.00
-minCost = 1134
-Current score = 98367
-Score = 1143.0
+turn = 660000, T = 0.03
+minCost = 964
+Score = 969.0
 N = 87
-turn = 330000, T = 0.00
-minCost = 3047
-Current score = 96275
-Score = 3060.0
+turn = 610000, T = 0.00
+minCost = 2161
+Score = 2179.0
 N = 33
-turn = 500000, T = 0.00
-minCost = 318
-Current score = 99457
-Score = 319.0
+turn = 730000, T = 0.00
+minCost = 279
+Score = 279.0

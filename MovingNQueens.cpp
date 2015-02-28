@@ -215,6 +215,9 @@ class MovingNQueens {
     }
   }
 
+  void rotateBestPosition(){
+  }
+
   /*
    * Queenの移動を行う
    */
@@ -807,11 +810,13 @@ class MovingNQueens {
 
   EvalResult updateQueen(int id){
     Queen *queen = getQueen(id);
+    //int maxScore = calcScoreSingle(id);
     int maxScore = INT_MIN;
-    int bestY;
-    int bestX;
+    int bestY = queen->y;
+    int bestX = queen->x;
     int score;
     int direct;
+    int diff;
     map<int, bool> checkList;
 
     for(int i = 0; i < 5; ++i){
@@ -823,7 +828,11 @@ class MovingNQueens {
       }
       checkList[direct] = true;
       //int diff = (xor128() % 2) + 1;
-      int diff = (xor128() % (N/4)) + 1;
+      if(N <= 20){
+        diff = (xor128() % (N/4)) + 1;
+      }else{
+        diff = (xor128() % (N/2)) + 1;
+      }
       int ny = queen->y + diff * MY[direct];
       int nx = queen->x + diff * MX[direct];
 

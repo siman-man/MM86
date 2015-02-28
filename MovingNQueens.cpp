@@ -215,7 +215,22 @@ class MovingNQueens {
     }
   }
 
-  void rotateBestPosition(){
+  Coord rotateCoord(int y, int x, int angle){
+    double theta = (angle / 180.0) * PI; 
+        
+    int ny = (x - center.x) * (int)sin(theta) + (y - center.y) * (int)cos(theta) + center.y;
+    int nx = (x - center.x) * (int)cos(theta) - (y - center.y) * (int)sin(theta) + center.x;
+
+    return Coord(ny, nx);
+  }
+
+  void rotateBestPosition(int angle){
+    for(int nodeId = 0; nodeId < N; ++nodeId){
+      Coord coord = rotateCoord(bestRows[nodeId], bestCols[nodeId], angle);
+
+      bestRows[nodeId] = coord.y;
+      bestCols[nodeId] = coord.x;
+    }
   }
 
   /*
@@ -552,6 +567,7 @@ class MovingNQueens {
     positionList = selectedNodeId;
 
     //moveAllPosition(1);
+    rotateBestPosition(90);
 
     priority_queue< Queen, vector<Queen>, greater<Queen>  > que;
 
@@ -583,7 +599,7 @@ class MovingNQueens {
       Queen *queen = getQueen(q.id);
       int nodeId = positionList[queen->id];
 
-      //fprintf(stderr,"id = %d, queen->y = %d, queen->x = %d, bestRow = %d, bestCol = %d\n", queen->id, queen->y, queen->x, bestRows[nodeId], bestCols[nodeId]);
+      fprintf(stderr,"id = %d, queen->y = %d, queen->x = %d, bestRow = %d, bestCol = %d\n", queen->id, queen->y, queen->x, bestRows[nodeId], bestCols[nodeId]);
 
       /*
       queen->y = bestRows[nodeId];
@@ -598,7 +614,7 @@ class MovingNQueens {
         moveQueen(queen->id, bestRows[nodeId], bestCols[nodeId]);
         tryCnt = 0;
       }else{
-        //fprintf(stderr,"id = %d, queue size = %d\n", queen->id, size);
+        fprintf(stderr,"id = %d, queue size = %lu\n", queen->id, que.size());
         Queen q(queen->id, queen->y, queen->x);
         q.value = OFFSET + 2 * (abs(queen->y - center.y) + abs(queen->x - center.x));
         tryCnt++;

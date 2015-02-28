@@ -3,7 +3,7 @@ turn = 1040000, alpha = -1.00, T = 10000.00
 minCost = 10
 Score = 10.0
 N = 41
-turn = 740000, alpha = 0.97, T = 0.00
+turn = 720000, alpha = 0.97, T = 0.00
 minCost = 398
 Score = 401.0
 N = 18
@@ -11,7 +11,7 @@ turn = 940000, alpha = 0.80, T = 0.00
 minCost = 80
 Score = 80.0
 N = 89
-turn = 620000, alpha = 0.99, T = 0.00
+turn = 580000, alpha = 0.99, T = 0.00
 minCost = 2103
 Score = 2112.0
 N = 10
@@ -19,31 +19,31 @@ turn = 1020000, alpha = -1.00, T = 10000.00
 minCost = 16
 Score = 16.0
 N = 56
-turn = 680000, alpha = 0.98, T = 0.00
+turn = 660000, alpha = 0.98, T = 0.00
 minCost = 831
 Score = 837.0
 N = 11
-turn = 1000000, alpha = -1.00, T = 10000.00
+turn = 1020000, alpha = -1.00, T = 10000.00
 minCost = 18
 Score = 18.0
 N = 60
-turn = 680000, alpha = 0.97, T = 0.00
+turn = 640000, alpha = 0.97, T = 0.00
 minCost = 940
 Score = 942.0
 N = 87
-turn = 620000, alpha = 0.99, T = 0.00
+turn = 560000, alpha = 0.99, T = 0.00
 minCost = 2102
 Score = 2109.0
 N = 33
-turn = 760000, alpha = 0.94, T = 0.00
+turn = 740000, alpha = 0.94, T = 0.00
 minCost = 264
 Score = 266.0
 N = 64
-turn = 700000, alpha = 0.99, T = 0.00
+turn = 640000, alpha = 0.99, T = 0.00
 minCost = 1145
 Score = 1150.0
 N = 67
-turn = 680000, alpha = 0.99, T = 0.00
+turn = 620000, alpha = 0.99, T = 0.00
 minCost = 1170
 Score = 1174.0
 N = 14
@@ -51,51 +51,51 @@ turn = 960000, alpha = 0.61, T = 0.00
 minCost = 43
 Score = 43.0
 N = 41
-turn = 740000, alpha = 0.97, T = 29.12
+turn = 720000, alpha = 0.97, T = 0.00
 minCost = 375
 Score = 377.0
 N = 80
-turn = 640000, alpha = 0.99, T = 0.00
+turn = 600000, alpha = 0.99, T = 0.00
 minCost = 1782
 Score = 1786.0
 N = 83
-turn = 620000, alpha = 0.99, T = 0.00
+turn = 580000, alpha = 0.99, T = 0.00
 minCost = 1981
 Score = 1985.0
 N = 96
-turn = 600000, alpha = 0.99, T = 0.00
+turn = 560000, alpha = 0.99, T = 0.00
 minCost = 2652
 Score = 2662.0
 N = 95
-turn = 620000, alpha = 0.99, T = 0.00
+turn = 580000, alpha = 0.99, T = 0.00
 minCost = 2676
 Score = 2686.0
 N = 83
-turn = 640000, alpha = 0.98, T = 0.00
+turn = 580000, alpha = 0.98, T = 0.00
 minCost = 1825
 Score = 1834.0
 N = 39
-turn = 740000, alpha = 0.96, T = 0.00
+turn = 720000, alpha = 0.96, T = 0.00
 minCost = 394
 Score = 395.0
 N = 33
-turn = 780000, alpha = 0.93, T = 0.00
+turn = 760000, alpha = 0.93, T = 0.00
 minCost = 249
 Score = 251.0
 N = 24
-turn = 840000, alpha = 0.91, T = 0.00
+turn = 800000, alpha = 0.91, T = 0.00
 minCost = 154
 Score = 155.0
 N = 51
-turn = 700000, alpha = 0.97, T = 0.00
+turn = 680000, alpha = 0.97, T = 0.00
 minCost = 712
 Score = 716.0
 N = 40
-turn = 760000, alpha = 0.96, T = 0.00
+turn = 720000, alpha = 0.96, T = 0.00
 minCost = 441
 Score = 443.0
 N = 91
-turn = 620000, alpha = 0.99, T = 0.00
+turn = 580000, alpha = 0.99, T = 0.00
 minCost = 2233
 Score = 2238.0
 N = 13
@@ -103,19 +103,19 @@ turn = 980000, alpha = -0.21, T = -0.00
 minCost = 37
 Score = 37.0
 N = 80
-turn = 620000, alpha = 0.99, T = 0.00
+turn = 600000, alpha = 0.99, T = 0.00
 minCost = 1872
 Score = 1879.0
 N = 88
-turn = 620000, alpha = 0.99, T = 0.00
+turn = 580000, alpha = 0.99, T = 0.00
 minCost = 2054
 Score = 2061.0
 N = 99
-turn = 580000, alpha = 0.99, T = 0.00
+turn = 540000, alpha = 0.99, T = 0.00
 minCost = 2545
 Score = 2556.0
 N = 36
-turn = 760000, alpha = 0.93, T = 0.00
+turn = 720000, alpha = 0.93, T = 0.00
 minCost = 271
 Score = 273.0
 N = 39
@@ -123,7 +123,7 @@ turn = 740000, alpha = 0.96, T = 0.00
 minCost = 419
 Score = 421.0
 N = 20
-turn = 920000, alpha = 0.79, T = 0.00
+turn = 880000, alpha = 0.80, T = 0.00
 minCost = 94
 Score = 94.0
 N = 18
@@ -131,63 +131,63 @@ turn = 920000, alpha = 0.80, T = 0.00
 minCost = 79
 Score = 79.0
 N = 70
-turn = 660000, alpha = 0.98, T = 0.00
+turn = 640000, alpha = 0.98, T = 0.00
 minCost = 1368
 Score = 1370.0
 N = 79
-turn = 640000, alpha = 0.99, T = 0.00
+turn = 600000, alpha = 0.99, T = 0.00
 minCost = 1800
 Score = 1808.0
 N = 68
-turn = 680000, alpha = 0.99, T = 0.00
+turn = 620000, alpha = 0.99, T = 0.00
 minCost = 1316
 Score = 1319.0
 N = 43
-turn = 640000, alpha = 0.97, T = 0.00
+turn = 700000, alpha = 0.97, T = 0.00
 minCost = 475
 Score = 478.0
 N = 56
-turn = 700000, alpha = 0.97, T = 0.00
+turn = 660000, alpha = 0.97, T = 0.00
 minCost = 813
 Score = 814.0
 N = 42
-turn = 740000, alpha = 0.97, T = 0.00
+turn = 720000, alpha = 0.97, T = 0.00
 minCost = 443
 Score = 446.0
 N = 36
-turn = 760000, alpha = 0.95, T = 0.00
+turn = 680000, alpha = 0.95, T = 0.00
 minCost = 279
 Score = 281.0
 N = 81
-turn = 620000, alpha = 0.98, T = 0.00
+turn = 560000, alpha = 0.98, T = 0.00
 minCost = 1781
 Score = 1788.0
 N = 55
-turn = 700000, alpha = 0.98, T = 0.00
+turn = 660000, alpha = 0.98, T = 0.00
 minCost = 829
 Score = 832.0
 N = 76
-turn = 640000, alpha = 0.98, T = 0.00
+turn = 580000, alpha = 0.98, T = 0.00
 minCost = 1562
 Score = 1571.0
 N = 58
-turn = 680000, alpha = 0.98, T = 0.00
+turn = 640000, alpha = 0.98, T = 0.00
 minCost = 868
 Score = 871.0
 N = 82
-turn = 640000, alpha = 0.99, T = 0.00
+turn = 580000, alpha = 0.99, T = 0.00
 minCost = 1936
 Score = 1944.0
 N = 34
-turn = 760000, alpha = 0.95, T = 0.00
+turn = 740000, alpha = 0.95, T = 0.00
 minCost = 284
 Score = 284.0
 N = 77
-turn = 660000, alpha = 0.99, T = 0.00
+turn = 600000, alpha = 0.99, T = 0.00
 minCost = 1692
 Score = 1697.0
 N = 62
-turn = 680000, alpha = 0.98, T = 0.00
+turn = 640000, alpha = 0.98, T = 0.00
 minCost = 951
 Score = 953.0
 N = 17
@@ -195,59 +195,59 @@ turn = 940000, alpha = 0.74, T = 0.00
 minCost = 71
 Score = 73.0
 N = 50
-turn = 700000, alpha = 0.97, T = 0.00
+turn = 680000, alpha = 0.97, T = 0.00
 minCost = 705
 Score = 705.0
 N = 26
-turn = 820000, alpha = 0.92, T = 0.00
+turn = 800000, alpha = 0.92, T = 0.00
 minCost = 160
 Score = 160.0
 N = 24
-turn = 840000, alpha = 0.90, T = 0.00
+turn = 800000, alpha = 0.90, T = 0.00
 minCost = 129
 Score = 130.0
 N = 63
-turn = 700000, alpha = 0.98, T = 0.00
+turn = 640000, alpha = 0.98, T = 0.00
 minCost = 972
 Score = 975.0
 N = 82
-turn = 640000, alpha = 0.99, T = 0.00
+turn = 600000, alpha = 0.99, T = 0.00
 minCost = 1768
 Score = 1774.0
 N = 81
-turn = 640000, alpha = 0.99, T = 0.00
+turn = 580000, alpha = 0.99, T = 0.00
 minCost = 1724
 Score = 1733.0
 N = 86
-turn = 540000, alpha = 0.99, T = 0.00
+turn = 560000, alpha = 0.99, T = 0.00
 minCost = 1912
 Score = 1916.0
 N = 59
-turn = 680000, alpha = 0.98, T = 0.00
+turn = 640000, alpha = 0.98, T = 0.00
 minCost = 850
 Score = 851.0
 N = 72
-turn = 660000, alpha = 0.98, T = 0.00
+turn = 620000, alpha = 0.98, T = 0.00
 minCost = 1413
 Score = 1418.0
 N = 44
-turn = 740000, alpha = 0.97, T = 0.00
+turn = 700000, alpha = 0.97, T = 0.00
 minCost = 452
 Score = 453.0
 N = 92
-turn = 620000, alpha = 0.99, T = 0.00
+turn = 560000, alpha = 0.99, T = 0.00
 minCost = 2516
 Score = 2522.0
 N = 28
-turn = 800000, alpha = 0.95, T = 0.00
+turn = 780000, alpha = 0.95, T = 0.00
 minCost = 197
 Score = 198.0
 N = 22
-turn = 840000, alpha = 0.91, T = 0.00
+turn = 800000, alpha = 0.91, T = 0.00
 minCost = 119
 Score = 123.0
 N = 100
-turn = 620000, alpha = 0.99, T = 0.00
+turn = 540000, alpha = 0.99, T = 0.00
 minCost = 2869
 Score = 2880.0
 N = 36
@@ -255,27 +255,27 @@ turn = 740000, alpha = 0.94, T = 0.00
 minCost = 287
 Score = 289.0
 N = 34
-turn = 780000, alpha = 0.95, T = 0.00
+turn = 740000, alpha = 0.95, T = 0.00
 minCost = 318
 Score = 319.0
 N = 26
-turn = 800000, alpha = 0.93, T = 0.00
+turn = 780000, alpha = 0.93, T = 0.00
 minCost = 136
 Score = 136.0
 N = 99
-turn = 600000, alpha = 0.99, T = 0.00
+turn = 560000, alpha = 0.99, T = 0.00
 minCost = 2849
 Score = 2859.0
 N = 17
-turn = 900000, alpha = 0.66, T = 0.00
+turn = 920000, alpha = 0.65, T = 0.00
 minCost = 70
 Score = 70.0
 N = 40
-turn = 740000, alpha = 0.96, T = 0.00
+turn = 720000, alpha = 0.96, T = 0.00
 minCost = 426
 Score = 428.0
 N = 35
-turn = 760000, alpha = 0.96, T = 0.00
+turn = 740000, alpha = 0.96, T = 0.00
 minCost = 294
 Score = 297.0
 N = 17
@@ -283,79 +283,79 @@ turn = 920000, alpha = 0.77, T = 0.00
 minCost = 71
 Score = 72.0
 N = 29
-turn = 800000, alpha = 0.92, T = 0.00
+turn = 780000, alpha = 0.92, T = 0.00
 minCost = 179
 Score = 180.0
 N = 64
-turn = 680000, alpha = 0.98, T = 0.00
+turn = 660000, alpha = 0.98, T = 0.00
 minCost = 1122
 Score = 1127.0
 N = 67
-turn = 680000, alpha = 0.98, T = 0.00
+turn = 640000, alpha = 0.98, T = 0.00
 minCost = 1207
 Score = 1209.0
 N = 88
-turn = 640000, alpha = 0.99, T = 0.00
+turn = 580000, alpha = 0.99, T = 0.00
 minCost = 2211
 Score = 2218.0
 N = 38
-turn = 760000, alpha = 0.93, T = 0.00
+turn = 720000, alpha = 0.93, T = 0.00
 minCost = 320
 Score = 320.0
 N = 69
-turn = 660000, alpha = 0.99, T = 0.00
+turn = 620000, alpha = 0.99, T = 0.00
 minCost = 1357
 Score = 1361.0
 N = 43
-turn = 740000, alpha = 0.97, T = 0.00
+turn = 700000, alpha = 0.97, T = 0.00
 minCost = 452
 Score = 453.0
 N = 28
-turn = 800000, alpha = 0.92, T = 0.00
+turn = 780000, alpha = 0.92, T = 0.00
 minCost = 187
 Score = 187.0
 N = 44
-turn = 740000, alpha = 0.96, T = 0.00
+turn = 700000, alpha = 0.96, T = 0.00
 minCost = 455
 Score = 456.0
 N = 22
-turn = 840000, alpha = 0.91, T = 0.00
+turn = 820000, alpha = 0.91, T = 0.00
 minCost = 122
 Score = 122.0
 N = 61
-turn = 700000, alpha = 0.98, T = 0.00
+turn = 640000, alpha = 0.98, T = 0.00
 minCost = 988
 Score = 993.0
 N = 80
-turn = 560000, alpha = 0.99, T = 0.00
+turn = 580000, alpha = 0.99, T = 0.00
 minCost = 1696
 Score = 1708.0
 N = 33
-turn = 780000, alpha = 0.94, T = 0.00
+turn = 740000, alpha = 0.94, T = 0.00
 minCost = 233
 Score = 234.0
 N = 50
-turn = 720000, alpha = 0.97, T = 0.00
+turn = 660000, alpha = 0.97, T = 0.00
 minCost = 629
 Score = 634.0
 N = 73
-turn = 660000, alpha = 0.98, T = 0.00
+turn = 620000, alpha = 0.98, T = 0.00
 minCost = 1377
 Score = 1383.0
 N = 85
-turn = 620000, alpha = 0.99, T = 0.00
+turn = 580000, alpha = 0.99, T = 0.00
 minCost = 1988
 Score = 1996.0
 N = 83
-turn = 620000, alpha = 0.98, T = 0.00
+turn = 560000, alpha = 0.99, T = 0.00
 minCost = 1788
 Score = 1792.0
 N = 65
-turn = 680000, alpha = 0.98, T = 0.00
+turn = 620000, alpha = 0.98, T = 0.00
 minCost = 1186
 Score = 1189.0
 N = 72
-turn = 640000, alpha = 0.98, T = 0.00
+turn = 600000, alpha = 0.98, T = 0.00
 minCost = 1454
 Score = 1458.0
 N = 18
@@ -363,38 +363,3638 @@ turn = 920000, alpha = -0.62, T = -0.00
 minCost = 60
 Score = 60.0
 N = 99
-turn = 600000, alpha = 0.99, T = 0.00
+turn = 560000, alpha = 0.99, T = 0.00
 minCost = 2753
 Score = 2762.0
 N = 31
-turn = 780000, alpha = 0.94, T = 0.00
+turn = 760000, alpha = 0.94, T = 0.00
 minCost = 211
 Score = 213.0
 N = 96
-turn = 600000, alpha = 0.99, T = 0.00
+turn = 560000, alpha = 0.99, T = 0.00
 minCost = 2689
 Score = 2696.0
 N = 29
-turn = 780000, alpha = 0.93, T = 0.00
+turn = 740000, alpha = 0.93, T = 0.00
 minCost = 202
 Score = 203.0
 N = 24
-turn = 820000, alpha = 0.93, T = 0.00
+turn = 800000, alpha = 0.93, T = 0.00
 minCost = 137
 Score = 141.0
 N = 76
-turn = 640000, alpha = 0.99, T = 0.00
+turn = 620000, alpha = 0.99, T = 0.00
 minCost = 1656
 Score = 1666.0
 N = 28
-turn = 800000, alpha = 0.93, T = 0.00
+turn = 780000, alpha = 0.93, T = 0.00
 minCost = 167
 Score = 167.0
 N = 40
-turn = 740000, alpha = 0.96, T = 0.00
+turn = 720000, alpha = 0.96, T = 0.00
 minCost = 387
 Score = 387.0
 N = 63
-turn = 680000, alpha = 0.98, T = 0.00
+turn = 640000, alpha = 0.98, T = 0.00
 minCost = 1143
 Score = 1147.0
+N = 48
+turn = 680000, alpha = 0.97, T = 0.00
+minCost = 601
+Score = 603.0
+N = 41
+turn = 700000, alpha = 0.97, T = 0.00
+minCost = 449
+Score = 452.0
+N = 74
+turn = 600000, alpha = 0.98, T = 1.32
+minCost = 1490
+Score = 1495.0
+N = 19
+turn = 900000, alpha = 0.58, T = 0.00
+minCost = 68
+Score = 68.0
+N = 40
+turn = 740000, alpha = 0.96, T = 0.00
+minCost = 430
+Score = 431.0
+N = 98
+turn = 540000, alpha = 0.99, T = 0.00
+minCost = 2568
+Score = 2580.0
+N = 55
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 830
+Score = 834.0
+N = 81
+turn = 580000, alpha = 0.98, T = 0.00
+minCost = 1659
+Score = 1663.0
+N = 29
+turn = 740000, alpha = 0.94, T = 0.00
+minCost = 225
+Score = 227.0
+N = 73
+turn = 600000, alpha = 0.98, T = 0.00
+minCost = 1450
+Score = 1455.0
+N = 10
+turn = 1000000, alpha = -1.00, T = 10000.00
+minCost = 16
+Score = 16.0
+N = 100
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2744
+Score = 2752.0
+N = 93
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2281
+Score = 2291.0
+N = 61
+turn = 660000, alpha = 0.99, T = 0.00
+minCost = 1072
+Score = 1075.0
+N = 73
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 1360
+Score = 1368.0
+N = 18
+turn = 900000, alpha = -0.81, T = 0.00
+minCost = 55
+Score = 56.0
+N = 75
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 1628
+Score = 1633.0
+N = 77
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 1706
+Score = 1709.0
+N = 60
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 931
+Score = 935.0
+N = 25
+turn = 800000, alpha = 0.88, T = 0.00
+minCost = 114
+Score = 114.0
+N = 32
+turn = 760000, alpha = 0.95, T = 0.00
+minCost = 245
+Score = 247.0
+N = 80
+turn = 600000, alpha = 0.98, T = 0.00
+minCost = 1648
+Score = 1651.0
+N = 85
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 2046
+Score = 2056.0
+N = 82
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 1819
+Score = 1822.0
+N = 44
+turn = 700000, alpha = 0.97, T = 0.00
+minCost = 527
+Score = 532.0
+N = 25
+turn = 800000, alpha = 0.90, T = 0.00
+minCost = 133
+Score = 134.0
+N = 18
+turn = 920000, alpha = 0.81, T = 0.00
+minCost = 80
+Score = 80.0
+N = 43
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 516
+Score = 519.0
+N = 86
+turn = 580000, alpha = 0.98, T = 0.00
+minCost = 1892
+Score = 1894.0
+N = 61
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1056
+Score = 1062.0
+N = 19
+turn = 920000, alpha = 0.63, T = 0.00
+minCost = 67
+Score = 67.0
+N = 72
+turn = 600000, alpha = 0.98, T = 0.00
+minCost = 1356
+Score = 1359.0
+N = 59
+turn = 640000, alpha = 0.97, T = 0.00
+minCost = 860
+Score = 861.0
+N = 45
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 549
+Score = 551.0
+N = 92
+turn = 540000, alpha = 0.99, T = 0.00
+minCost = 2251
+Score = 2254.0
+N = 45
+turn = 680000, alpha = 0.97, T = 0.00
+minCost = 512
+Score = 515.0
+N = 56
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 851
+Score = 853.0
+N = 69
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1319
+Score = 1325.0
+N = 68
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1133
+Score = 1136.0
+N = 80
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 1845
+Score = 1855.0
+N = 17
+turn = 880000, alpha = -1.00, T = 10000.00
+minCost = 39
+Score = 40.0
+N = 19
+turn = 920000, alpha = 0.85, T = 0.00
+minCost = 95
+Score = 96.0
+N = 44
+turn = 700000, alpha = 0.97, T = 0.00
+minCost = 465
+Score = 467.0
+N = 79
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 1688
+Score = 1691.0
+N = 11
+turn = 1020000, alpha = -1.00, T = 10000.00
+minCost = 26
+Score = 26.0
+N = 91
+turn = 540000, alpha = 0.99, T = 0.00
+minCost = 2446
+Score = 2454.0
+N = 86
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2155
+Score = 2164.0
+N = 87
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 2105
+Score = 2116.0
+N = 33
+turn = 760000, alpha = 0.94, T = 0.00
+minCost = 245
+Score = 247.0
+N = 97
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2514
+Score = 2520.0
+N = 88
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2096
+Score = 2099.0
+N = 98
+turn = 520000, alpha = 0.99, T = 0.00
+minCost = 2603
+Score = 2610.0
+N = 68
+turn = 600000, alpha = 0.98, T = 0.00
+minCost = 1306
+Score = 1309.0
+N = 32
+turn = 740000, alpha = 0.94, T = 0.00
+minCost = 244
+Score = 246.0
+N = 65
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1100
+Score = 1102.0
+N = 54
+turn = 660000, alpha = 0.97, T = 0.00
+minCost = 705
+Score = 712.0
+N = 91
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2190
+Score = 2195.0
+N = 71
+turn = 600000, alpha = 0.98, T = 0.00
+minCost = 1418
+Score = 1428.0
+N = 14
+turn = 960000, alpha = 0.55, T = 0.00
+minCost = 43
+Score = 43.0
+N = 48
+turn = 700000, alpha = 0.97, T = 0.00
+minCost = 637
+Score = 643.0
+N = 49
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 668
+Score = 671.0
+N = 38
+turn = 720000, alpha = 0.96, T = 0.00
+minCost = 357
+Score = 358.0
+N = 31
+turn = 780000, alpha = 0.94, T = 0.00
+minCost = 260
+Score = 266.0
+N = 61
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 939
+Score = 941.0
+N = 71
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 1450
+Score = 1461.0
+N = 38
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 373
+Score = 375.0
+N = 62
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1055
+Score = 1058.0
+N = 88
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2272
+Score = 2282.0
+N = 23
+turn = 800000, alpha = 0.92, T = 0.00
+minCost = 144
+Score = 145.0
+N = 66
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1180
+Score = 1185.0
+N = 59
+turn = 680000, alpha = 0.97, T = 0.00
+minCost = 954
+Score = 958.0
+N = 49
+turn = 700000, alpha = 0.97, T = 0.00
+minCost = 545
+Score = 545.0
+N = 95
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 2553
+Score = 2567.0
+N = 42
+turn = 720000, alpha = 0.96, T = 0.00
+minCost = 403
+Score = 403.0
+N = 83
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1760
+Score = 1772.0
+N = 72
+turn = 660000, alpha = 0.99, T = 0.00
+minCost = 1399
+Score = 1404.0
+N = 83
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1785
+Score = 1793.0
+N = 76
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1455
+Score = 1460.0
+N = 89
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2045
+Score = 2048.0
+N = 38
+turn = 740000, alpha = 0.96, T = 0.00
+minCost = 380
+Score = 385.0
+N = 66
+turn = 560000, alpha = 0.98, T = 0.00
+minCost = 1056
+Score = 1058.0
+N = 73
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1430
+Score = 1437.0
+N = 57
+turn = 680000, alpha = 0.97, T = 0.00
+minCost = 835
+Score = 837.0
+N = 49
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 591
+Score = 594.0
+N = 63
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1103
+Score = 1106.0
+N = 94
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2361
+Score = 2371.0
+N = 100
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2723
+Score = 2735.0
+N = 80
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1801
+Score = 1809.0
+N = 43
+turn = 720000, alpha = 0.96, T = 0.00
+minCost = 433
+Score = 433.0
+N = 27
+turn = 780000, alpha = 0.93, T = 0.00
+minCost = 165
+Score = 165.0
+N = 15
+turn = 980000, alpha = 0.73, T = 0.00
+minCost = 57
+Score = 57.0
+N = 28
+turn = 780000, alpha = 0.94, T = 0.00
+minCost = 178
+Score = 179.0
+N = 13
+turn = 920000, alpha = -0.80, T = 1.47
+minCost = 33
+Score = 33.0
+N = 48
+turn = 680000, alpha = 0.97, T = 0.00
+minCost = 565
+Score = 566.0
+N = 35
+turn = 760000, alpha = 0.95, T = 0.00
+minCost = 344
+Score = 345.0
+N = 52
+turn = 680000, alpha = 0.97, T = 0.00
+minCost = 709
+Score = 711.0
+N = 73
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 1382
+Score = 1391.0
+N = 20
+turn = 920000, alpha = 0.84, T = 0.00
+minCost = 105
+Score = 105.0
+N = 72
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1484
+Score = 1493.0
+N = 71
+turn = 600000, alpha = 0.98, T = 0.00
+minCost = 1268
+Score = 1273.0
+N = 73
+turn = 600000, alpha = 0.98, T = 0.15
+minCost = 1359
+Score = 1367.0
+N = 93
+turn = 540000, alpha = 0.99, T = 0.00
+minCost = 2249
+Score = 2259.0
+N = 100
+turn = 540000, alpha = 0.99, T = 91.88
+minCost = 2635
+Score = 2639.0
+N = 31
+turn = 760000, alpha = 0.95, T = 0.00
+minCost = 257
+Score = 258.0
+N = 22
+turn = 800000, alpha = 0.88, T = 0.00
+minCost = 109
+Score = 110.0
+N = 64
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1047
+Score = 1054.0
+N = 61
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 994
+Score = 998.0
+N = 22
+turn = 820000, alpha = 0.84, T = 3000.44
+minCost = 94
+Score = 94.0
+N = 18
+turn = 920000, alpha = 0.73, T = 0.00
+minCost = 77
+Score = 77.0
+N = 26
+turn = 780000, alpha = 0.90, T = 0.00
+minCost = 151
+Score = 152.0
+N = 71
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 1464
+Score = 1467.0
+N = 68
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1311
+Score = 1316.0
+N = 68
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1208
+Score = 1214.0
+N = 66
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1127
+Score = 1134.0
+N = 98
+turn = 540000, alpha = 0.99, T = 0.00
+minCost = 2616
+Score = 2624.0
+N = 97
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 2734
+Score = 2739.0
+N = 79
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 1694
+Score = 1707.0
+N = 49
+turn = 680000, alpha = 0.97, T = 0.00
+minCost = 585
+Score = 586.0
+N = 16
+turn = 900000, alpha = -1.00, T = -10000.00
+minCost = 39
+Score = 39.0
+N = 60
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 897
+Score = 901.0
+N = 63
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1086
+Score = 1090.0
+N = 93
+turn = 540000, alpha = 0.99, T = 0.00
+minCost = 2300
+Score = 2307.0
+N = 69
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1360
+Score = 1367.0
+N = 20
+turn = 840000, alpha = 0.63, T = 0.00
+minCost = 71
+Score = 71.0
+N = 99
+turn = 540000, alpha = 0.99, T = 0.00
+minCost = 2593
+Score = 2606.0
+N = 52
+turn = 660000, alpha = 0.97, T = 0.00
+minCost = 667
+Score = 671.0
+N = 69
+turn = 600000, alpha = 0.98, T = 0.00
+minCost = 1168
+Score = 1176.0
+N = 14
+turn = 960000, alpha = -0.80, T = 0.00
+minCost = 37
+Score = 37.0
+N = 71
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1399
+Score = 1410.0
+N = 79
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 1821
+Score = 1826.0
+N = 18
+turn = 900000, alpha = 0.56, T = 0.00
+minCost = 64
+Score = 64.0
+N = 54
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 747
+Score = 753.0
+N = 8
+turn = 1020000, alpha = -1.00, T = 10000.00
+minCost = 13
+Score = 14.0
+N = 85
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 1938
+Score = 1950.0
+N = 12
+turn = 960000, alpha = -1.00, T = 10000.00
+minCost = 26
+Score = 26.0
+N = 9
+turn = 1000000, alpha = -1.00, T = -10000.00
+minCost = 16
+Score = 16.0
+N = 82
+turn = 580000, alpha = 0.98, T = 0.00
+minCost = 1920
+Score = 1924.0
+N = 79
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 1729
+Score = 1735.0
+N = 16
+turn = 940000, alpha = -0.86, T = -0.21
+minCost = 51
+Score = 51.0
+N = 51
+turn = 660000, alpha = 0.97, T = 0.00
+minCost = 679
+Score = 680.0
+N = 35
+turn = 720000, alpha = 0.95, T = 0.00
+minCost = 336
+Score = 338.0
+N = 28
+turn = 760000, alpha = 0.94, T = 0.00
+minCost = 188
+Score = 188.0
+N = 84
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 1972
+Score = 1977.0
+N = 73
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 1442
+Score = 1445.0
+N = 94
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2449
+Score = 2459.0
+N = 32
+turn = 760000, alpha = 0.96, T = 0.00
+minCost = 226
+Score = 227.0
+N = 67
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 1088
+Score = 1090.0
+N = 48
+turn = 700000, alpha = 0.97, T = 0.00
+minCost = 558
+Score = 560.0
+N = 60
+turn = 640000, alpha = 0.97, T = 0.00
+minCost = 1043
+Score = 1047.0
+N = 99
+turn = 540000, alpha = 0.99, T = 0.00
+minCost = 2810
+Score = 2823.0
+N = 37
+turn = 720000, alpha = 0.95, T = 0.00
+minCost = 360
+Score = 360.0
+N = 15
+turn = 960000, alpha = 0.68, T = 0.00
+minCost = 50
+Score = 51.0
+N = 90
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 2328
+Score = 2337.0
+N = 31
+turn = 720000, alpha = 0.93, T = 0.00
+minCost = 210
+Score = 211.0
+N = 80
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 1651
+Score = 1657.0
+N = 45
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 533
+Score = 536.0
+N = 94
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2427
+Score = 2438.0
+N = 50
+turn = 620000, alpha = 0.97, T = 0.00
+minCost = 652
+Score = 656.0
+N = 57
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 912
+Score = 918.0
+N = 85
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 1899
+Score = 1905.0
+N = 24
+turn = 800000, alpha = 0.89, T = 0.00
+minCost = 130
+Score = 131.0
+N = 65
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1181
+Score = 1186.0
+N = 97
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2764
+Score = 2772.0
+N = 11
+turn = 1020000, alpha = -1.00, T = -10000.00
+minCost = 28
+Score = 29.0
+N = 55
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 826
+Score = 826.0
+N = 24
+turn = 780000, alpha = 0.93, T = 0.00
+minCost = 135
+Score = 136.0
+N = 81
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 1708
+Score = 1716.0
+N = 10
+turn = 1000000, alpha = -1.00, T = 10000.00
+minCost = 23
+Score = 23.0
+N = 9
+turn = 1000000, alpha = -1.00, T = -10000.00
+minCost = 13
+Score = 13.0
+N = 59
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 876
+Score = 879.0
+N = 91
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2169
+Score = 2178.0
+N = 81
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 1844
+Score = 1845.0
+N = 53
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 692
+Score = 694.0
+N = 85
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 2113
+Score = 2118.0
+N = 46
+turn = 700000, alpha = 0.97, T = 0.00
+minCost = 597
+Score = 598.0
+N = 40
+turn = 720000, alpha = 0.96, T = 0.00
+minCost = 418
+Score = 419.0
+N = 55
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 851
+Score = 855.0
+N = 52
+turn = 680000, alpha = 0.97, T = 0.00
+minCost = 628
+Score = 632.0
+N = 93
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2497
+Score = 2509.0
+N = 10
+turn = 1000000, alpha = -1.00, T = 10000.00
+minCost = 18
+Score = 18.0
+N = 57
+turn = 640000, alpha = 0.97, T = 0.00
+minCost = 827
+Score = 831.0
+N = 96
+turn = 540000, alpha = 0.99, T = 0.00
+minCost = 2701
+Score = 2709.0
+N = 48
+turn = 680000, alpha = 0.97, T = 0.00
+minCost = 648
+Score = 650.0
+N = 82
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 1862
+Score = 1865.0
+N = 44
+turn = 700000, alpha = 0.97, T = 0.00
+minCost = 450
+Score = 452.0
+N = 21
+turn = 840000, alpha = 0.90, T = 0.00
+minCost = 105
+Score = 106.0
+N = 27
+turn = 780000, alpha = 0.90, T = 0.00
+minCost = 145
+Score = 146.0
+N = 26
+turn = 780000, alpha = 0.95, T = 0.00
+minCost = 166
+Score = 167.0
+N = 39
+turn = 720000, alpha = 0.96, T = 0.00
+minCost = 360
+Score = 360.0
+N = 80
+turn = 580000, alpha = 0.98, T = 0.00
+minCost = 1619
+Score = 1627.0
+N = 12
+turn = 960000, alpha = -1.00, T = -10000.00
+minCost = 27
+Score = 27.0
+N = 15
+turn = 940000, alpha = -0.16, T = 0.00
+minCost = 35
+Score = 36.0
+N = 14
+turn = 960000, alpha = -0.69, T = 0.00
+minCost = 36
+Score = 37.0
+N = 82
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 1808
+Score = 1813.0
+N = 73
+turn = 600000, alpha = 0.98, T = 0.00
+minCost = 1342
+Score = 1347.0
+N = 43
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 479
+Score = 483.0
+N = 65
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1071
+Score = 1072.0
+N = 95
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2624
+Score = 2632.0
+N = 85
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2060
+Score = 2070.0
+N = 72
+turn = 580000, alpha = 0.98, T = 0.00
+minCost = 1444
+Score = 1448.0
+N = 17
+turn = 920000, alpha = 0.61, T = 0.00
+minCost = 67
+Score = 68.0
+N = 51
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 736
+Score = 741.0
+N = 59
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 903
+Score = 907.0
+N = 39
+turn = 720000, alpha = 0.96, T = 0.00
+minCost = 371
+Score = 373.0
+N = 10
+turn = 1000000, alpha = -1.00, T = -10000.00
+minCost = 15
+Score = 15.0
+N = 63
+turn = 640000, alpha = 0.98, T = 1512.15
+minCost = 987
+Score = 991.0
+N = 44
+turn = 700000, alpha = 0.97, T = 0.00
+minCost = 466
+Score = 468.0
+N = 40
+turn = 700000, alpha = 0.95, T = 0.00
+minCost = 353
+Score = 355.0
+N = 30
+turn = 760000, alpha = 0.93, T = 0.00
+minCost = 197
+Score = 197.0
+N = 16
+turn = 920000, alpha = 0.59, T = 0.00
+minCost = 57
+Score = 57.0
+N = 37
+turn = 720000, alpha = 0.96, T = 0.00
+minCost = 339
+Score = 340.0
+N = 34
+turn = 740000, alpha = 0.95, T = 0.00
+minCost = 320
+Score = 321.0
+N = 11
+turn = 1040000, alpha = -0.95, T = 0.00
+minCost = 26
+Score = 27.0
+N = 71
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1456
+Score = 1464.0
+N = 90
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 2155
+Score = 2161.0
+N = 17
+turn = 900000, alpha = -1.00, T = -10000.00
+minCost = 48
+Score = 48.0
+N = 92
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2429
+Score = 2438.0
+N = 19
+turn = 940000, alpha = 0.82, T = 0.00
+minCost = 93
+Score = 93.0
+N = 35
+turn = 720000, alpha = 0.93, T = 0.00
+minCost = 301
+Score = 303.0
+N = 92
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2351
+Score = 2359.0
+N = 18
+turn = 940000, alpha = 0.81, T = 0.00
+minCost = 81
+Score = 81.0
+N = 99
+turn = 540000, alpha = 0.99, T = 0.00
+minCost = 2757
+Score = 2766.0
+N = 33
+turn = 760000, alpha = 0.95, T = 0.00
+minCost = 273
+Score = 275.0
+N = 32
+turn = 740000, alpha = 0.94, T = 0.00
+minCost = 258
+Score = 259.0
+N = 22
+turn = 800000, alpha = 0.87, T = 0.00
+minCost = 125
+Score = 125.0
+N = 56
+turn = 640000, alpha = 0.97, T = 0.00
+minCost = 773
+Score = 778.0
+N = 56
+turn = 640000, alpha = 0.97, T = 0.00
+minCost = 786
+Score = 791.0
+N = 48
+turn = 660000, alpha = 0.97, T = 266.59
+minCost = 564
+Score = 565.0
+N = 97
+turn = 540000, alpha = 0.99, T = 0.00
+minCost = 2507
+Score = 2514.0
+N = 68
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1152
+Score = 1156.0
+N = 32
+turn = 740000, alpha = 0.96, T = 0.00
+minCost = 256
+Score = 256.0
+N = 71
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1259
+Score = 1262.0
+N = 68
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1271
+Score = 1281.0
+N = 86
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 2149
+Score = 2155.0
+N = 65
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1051
+Score = 1052.0
+N = 61
+turn = 720000, alpha = 0.98, T = 0.00
+minCost = 982
+Score = 985.0
+N = 14
+turn = 940000, alpha = 0.55, T = 0.00
+minCost = 42
+Score = 42.0
+N = 69
+turn = 680000, alpha = 0.99, T = 0.00
+minCost = 1324
+Score = 1332.0
+N = 51
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 684
+Score = 687.0
+N = 68
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1272
+Score = 1281.0
+N = 67
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1237
+Score = 1242.0
+N = 48
+turn = 700000, alpha = 0.97, T = 0.00
+minCost = 620
+Score = 622.0
+N = 43
+turn = 740000, alpha = 0.96, T = 0.00
+minCost = 412
+Score = 415.0
+N = 62
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1069
+Score = 1073.0
+N = 58
+turn = 680000, alpha = 0.97, T = 0.00
+minCost = 865
+Score = 870.0
+N = 16
+turn = 920000, alpha = -1.00, T = -10000.00
+minCost = 40
+Score = 40.0
+N = 98
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2720
+Score = 2727.0
+N = 72
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1299
+Score = 1301.0
+N = 87
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2148
+Score = 2156.0
+N = 58
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 934
+Score = 936.0
+N = 85
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 1975
+Score = 1980.0
+N = 72
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1363
+Score = 1368.0
+N = 49
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 605
+Score = 607.0
+N = 91
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2206
+Score = 2214.0
+N = 97
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2613
+Score = 2617.0
+N = 24
+turn = 820000, alpha = 0.89, T = 0.00
+minCost = 131
+Score = 133.0
+N = 88
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2101
+Score = 2105.0
+N = 12
+turn = 980000, alpha = -1.00, T = -10000.00
+minCost = 24
+Score = 24.0
+N = 43
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 431
+Score = 432.0
+N = 38
+turn = 760000, alpha = 0.95, T = 0.00
+minCost = 343
+Score = 343.0
+N = 10
+turn = 1000000, alpha = -1.00, T = -10000.00
+minCost = 17
+Score = 17.0
+N = 90
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2167
+Score = 2171.0
+N = 32
+turn = 780000, alpha = 0.94, T = 0.00
+minCost = 240
+Score = 242.0
+N = 11
+turn = 960000, alpha = -1.00, T = -10000.00
+minCost = 27
+Score = 27.0
+N = 73
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1323
+Score = 1323.0
+N = 68
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1203
+Score = 1208.0
+N = 11
+turn = 1020000, alpha = -1.00, T = -10000.00
+minCost = 16
+Score = 16.0
+N = 17
+turn = 920000, alpha = 0.72, T = 0.00
+minCost = 70
+Score = 70.0
+N = 83
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1891
+Score = 1901.0
+N = 38
+turn = 760000, alpha = 0.96, T = 0.00
+minCost = 357
+Score = 359.0
+N = 64
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1094
+Score = 1096.0
+N = 12
+turn = 960000, alpha = -1.00, T = -10000.00
+minCost = 27
+Score = 27.0
+N = 34
+turn = 780000, alpha = 0.94, T = 0.00
+minCost = 289
+Score = 291.0
+N = 95
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2645
+Score = 2651.0
+N = 79
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 1807
+Score = 1811.0
+N = 45
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 536
+Score = 537.0
+N = 11
+turn = 1000000, alpha = -1.00, T = -10000.00
+minCost = 20
+Score = 20.0
+N = 31
+turn = 780000, alpha = 0.95, T = 0.00
+minCost = 224
+Score = 225.0
+N = 73
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1487
+Score = 1495.0
+N = 48
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 654
+Score = 655.0
+N = 13
+turn = 980000, alpha = -1.00, T = 10000.00
+minCost = 33
+Score = 33.0
+N = 95
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 2662
+Score = 2671.0
+N = 69
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1227
+Score = 1230.0
+N = 45
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 495
+Score = 496.0
+N = 77
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1517
+Score = 1521.0
+N = 68
+turn = 700000, alpha = 0.99, T = 0.00
+minCost = 1272
+Score = 1282.0
+N = 94
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2473
+Score = 2484.0
+N = 64
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1035
+Score = 1040.0
+N = 65
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1107
+Score = 1111.0
+N = 61
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 911
+Score = 913.0
+N = 9
+turn = 1020000, alpha = -1.00, T = 10000.00
+minCost = 18
+Score = 18.0
+N = 98
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2699
+Score = 2708.0
+N = 94
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2524
+Score = 2533.0
+N = 21
+turn = 860000, alpha = 0.88, T = 0.00
+minCost = 93
+Score = 93.0
+N = 92
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2348
+Score = 2353.0
+N = 95
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2389
+Score = 2395.0
+N = 49
+turn = 720000, alpha = 0.96, T = 0.00
+minCost = 566
+Score = 569.0
+N = 76
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1471
+Score = 1476.0
+N = 49
+turn = 720000, alpha = 0.96, T = 0.00
+minCost = 567
+Score = 568.0
+N = 23
+turn = 840000, alpha = 0.91, T = 0.00
+minCost = 119
+Score = 119.0
+N = 16
+turn = 940000, alpha = 0.56, T = 0.00
+minCost = 59
+Score = 59.0
+N = 34
+turn = 780000, alpha = 0.95, T = 0.00
+minCost = 320
+Score = 322.0
+N = 47
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 556
+Score = 558.0
+N = 28
+turn = 800000, alpha = 0.91, T = 0.00
+minCost = 170
+Score = 170.0
+N = 54
+turn = 720000, alpha = 0.98, T = 0.00
+minCost = 776
+Score = 778.0
+N = 10
+turn = 1040000, alpha = -1.00, T = 10000.00
+minCost = 20
+Score = 20.0
+N = 70
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1216
+Score = 1218.0
+N = 60
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 980
+Score = 986.0
+N = 48
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 635
+Score = 640.0
+N = 63
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1053
+Score = 1058.0
+N = 25
+turn = 820000, alpha = 0.91, T = 0.00
+minCost = 148
+Score = 150.0
+N = 65
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1093
+Score = 1097.0
+N = 16
+turn = 940000, alpha = 0.52, T = 0.00
+minCost = 59
+Score = 60.0
+N = 37
+turn = 740000, alpha = 0.95, T = 0.00
+minCost = 323
+Score = 328.0
+N = 99
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2759
+Score = 2766.0
+N = 60
+turn = 720000, alpha = 0.98, T = 0.00
+minCost = 1025
+Score = 1029.0
+N = 37
+turn = 760000, alpha = 0.95, T = 0.00
+minCost = 311
+Score = 312.0
+N = 93
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2447
+Score = 2456.0
+N = 98
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2736
+Score = 2740.0
+N = 45
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 552
+Score = 556.0
+N = 21
+turn = 860000, alpha = 0.92, T = 0.00
+minCost = 106
+Score = 106.0
+N = 60
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 904
+Score = 906.0
+N = 49
+turn = 700000, alpha = 0.97, T = 0.00
+minCost = 603
+Score = 603.0
+N = 52
+turn = 720000, alpha = 0.98, T = 0.00
+minCost = 742
+Score = 743.0
+N = 66
+turn = 660000, alpha = 0.99, T = 0.00
+minCost = 1216
+Score = 1221.0
+N = 16
+turn = 920000, alpha = -1.00, T = 10000.00
+minCost = 45
+Score = 45.0
+N = 38
+turn = 780000, alpha = 0.97, T = 0.00
+minCost = 397
+Score = 397.0
+N = 93
+turn = 580000, alpha = 0.99, T = 2.58
+minCost = 2231
+Score = 2235.0
+N = 97
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 2584
+Score = 2595.0
+N = 21
+turn = 840000, alpha = 0.93, T = 0.00
+minCost = 90
+Score = 92.0
+N = 17
+turn = 960000, alpha = 0.70, T = 0.00
+minCost = 70
+Score = 71.0
+N = 25
+turn = 820000, alpha = 0.91, T = 0.00
+minCost = 146
+Score = 146.0
+N = 40
+turn = 780000, alpha = 0.97, T = 0.00
+minCost = 434
+Score = 437.0
+N = 66
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1139
+Score = 1146.0
+N = 15
+turn = 960000, alpha = 0.50, T = 0.00
+minCost = 44
+Score = 44.0
+N = 94
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2443
+Score = 2449.0
+N = 67
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1231
+Score = 1238.0
+N = 23
+turn = 860000, alpha = 0.90, T = 0.00
+minCost = 121
+Score = 121.0
+N = 35
+turn = 780000, alpha = 0.95, T = 0.00
+minCost = 327
+Score = 330.0
+N = 91
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 2386
+Score = 2392.0
+N = 69
+turn = 660000, alpha = 0.99, T = 0.00
+minCost = 1303
+Score = 1309.0
+N = 73
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1312
+Score = 1317.0
+N = 68
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1228
+Score = 1234.0
+N = 85
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 1864
+Score = 1872.0
+N = 94
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2486
+Score = 2494.0
+N = 41
+turn = 760000, alpha = 0.96, T = 0.00
+minCost = 420
+Score = 424.0
+N = 11
+turn = 1080000, alpha = -0.91, T = 0.00
+minCost = 28
+Score = 28.0
+N = 95
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2562
+Score = 2580.0
+N = 15
+turn = 940000, alpha = 0.75, T = 0.00
+minCost = 51
+Score = 51.0
+N = 67
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1117
+Score = 1121.0
+N = 42
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 478
+Score = 481.0
+N = 98
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2688
+Score = 2695.0
+N = 75
+turn = 660000, alpha = 0.99, T = 0.00
+minCost = 1544
+Score = 1547.0
+N = 33
+turn = 780000, alpha = 0.93, T = 0.00
+minCost = 250
+Score = 250.0
+N = 62
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1044
+Score = 1048.0
+N = 72
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1384
+Score = 1387.0
+N = 37
+turn = 740000, alpha = 0.94, T = 0.00
+minCost = 315
+Score = 315.0
+N = 83
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 1977
+Score = 1986.0
+N = 18
+turn = 920000, alpha = 0.80, T = 0.00
+minCost = 79
+Score = 80.0
+N = 62
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 976
+Score = 978.0
+N = 34
+turn = 780000, alpha = 0.95, T = 0.00
+minCost = 290
+Score = 290.0
+N = 63
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1053
+Score = 1055.0
+N = 30
+turn = 780000, alpha = 0.95, T = 0.00
+minCost = 229
+Score = 229.0
+N = 11
+turn = 1020000, alpha = -1.00, T = 10000.00
+minCost = 25
+Score = 25.0
+N = 73
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1428
+Score = 1432.0
+N = 48
+turn = 740000, alpha = 0.98, T = 0.00
+minCost = 637
+Score = 640.0
+N = 100
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2549
+Score = 2552.0
+N = 52
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 673
+Score = 676.0
+N = 64
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 995
+Score = 997.0
+N = 84
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 1828
+Score = 1836.0
+N = 33
+turn = 800000, alpha = 0.95, T = 0.00
+minCost = 267
+Score = 268.0
+N = 15
+turn = 980000, alpha = 0.68, T = 0.00
+minCost = 47
+Score = 48.0
+N = 35
+turn = 780000, alpha = 0.95, T = 0.00
+minCost = 301
+Score = 303.0
+N = 68
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1173
+Score = 1178.0
+N = 57
+turn = 700000, alpha = 0.97, T = 0.00
+minCost = 765
+Score = 768.0
+N = 94
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2563
+Score = 2572.0
+N = 58
+turn = 680000, alpha = 0.97, T = 0.00
+minCost = 898
+Score = 899.0
+N = 76
+turn = 660000, alpha = 0.99, T = 0.00
+minCost = 1455
+Score = 1463.0
+N = 44
+turn = 720000, alpha = 0.96, T = 0.00
+minCost = 465
+Score = 466.0
+N = 98
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2869
+Score = 2873.0
+N = 49
+turn = 720000, alpha = 0.98, T = 0.00
+minCost = 610
+Score = 613.0
+N = 85
+turn = 540000, alpha = 0.98, T = 0.00
+minCost = 2015
+Score = 2024.0
+N = 54
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 743
+Score = 746.0
+N = 18
+turn = 900000, alpha = 0.72, T = 0.00
+minCost = 72
+Score = 73.0
+N = 9
+turn = 1000000, alpha = -1.00, T = 10000.00
+minCost = 17
+Score = 17.0
+N = 55
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 789
+Score = 798.0
+N = 26
+turn = 800000, alpha = 0.92, T = 0.00
+minCost = 133
+Score = 133.0
+N = 21
+turn = 860000, alpha = 0.90, T = 0.00
+minCost = 115
+Score = 115.0
+N = 67
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1276
+Score = 1281.0
+N = 17
+turn = 920000, alpha = 0.68, T = 0.00
+minCost = 66
+Score = 66.0
+N = 95
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2402
+Score = 2408.0
+N = 94
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2509
+Score = 2514.0
+N = 14
+turn = 940000, alpha = -0.73, T = -0.00
+minCost = 38
+Score = 38.0
+N = 100
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2764
+Score = 2772.0
+N = 68
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1180
+Score = 1185.0
+N = 70
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1406
+Score = 1410.0
+N = 31
+turn = 780000, alpha = 0.95, T = 0.00
+minCost = 210
+Score = 212.0
+N = 85
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 2010
+Score = 2017.0
+N = 26
+turn = 820000, alpha = 0.92, T = 0.00
+minCost = 178
+Score = 179.0
+N = 31
+turn = 780000, alpha = 0.96, T = 0.00
+minCost = 261
+Score = 264.0
+N = 60
+turn = 680000, alpha = 0.97, T = 0.00
+minCost = 840
+Score = 841.0
+N = 45
+turn = 740000, alpha = 0.96, T = 0.00
+minCost = 480
+Score = 483.0
+N = 39
+turn = 760000, alpha = 0.96, T = 0.00
+minCost = 405
+Score = 406.0
+N = 33
+turn = 780000, alpha = 0.94, T = 0.00
+minCost = 299
+Score = 300.0
+N = 19
+turn = 920000, alpha = 0.85, T = 0.00
+minCost = 95
+Score = 95.0
+N = 57
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 904
+Score = 913.0
+N = 38
+turn = 740000, alpha = 0.93, T = 0.00
+minCost = 316
+Score = 317.0
+N = 32
+turn = 780000, alpha = 0.95, T = 0.00
+minCost = 260
+Score = 260.0
+N = 85
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1885
+Score = 1892.0
+N = 46
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 485
+Score = 486.0
+N = 43
+turn = 740000, alpha = 0.96, T = 0.00
+minCost = 458
+Score = 462.0
+N = 51
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 613
+Score = 615.0
+N = 100
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2918
+Score = 2924.0
+N = 10
+turn = 1020000, alpha = -1.00, T = 10000.00
+minCost = 16
+Score = 16.0
+N = 39
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 422
+Score = 424.0
+N = 9
+turn = 1020000, alpha = -1.00, T = -10000.00
+minCost = 17
+Score = 18.0
+N = 31
+turn = 760000, alpha = 0.94, T = 0.00
+minCost = 235
+Score = 237.0
+N = 21
+turn = 880000, alpha = 0.90, T = 0.00
+minCost = 110
+Score = 111.0
+N = 83
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1725
+Score = 1727.0
+N = 32
+turn = 780000, alpha = 0.93, T = 0.00
+minCost = 227
+Score = 227.0
+N = 85
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 1992
+Score = 2002.0
+N = 91
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 2375
+Score = 2388.0
+N = 85
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 1891
+Score = 1903.0
+N = 62
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1094
+Score = 1099.0
+N = 13
+turn = 980000, alpha = -1.00, T = -10000.00
+minCost = 33
+Score = 33.0
+N = 28
+turn = 800000, alpha = 0.94, T = 0.00
+minCost = 179
+Score = 180.0
+N = 37
+turn = 760000, alpha = 0.95, T = 0.00
+minCost = 332
+Score = 333.0
+N = 40
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 397
+Score = 400.0
+N = 82
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 1863
+Score = 1871.0
+N = 83
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 2028
+Score = 2039.0
+N = 27
+turn = 820000, alpha = 0.94, T = 0.00
+minCost = 188
+Score = 191.0
+N = 63
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1041
+Score = 1050.0
+N = 25
+turn = 820000, alpha = 0.92, T = 0.00
+minCost = 135
+Score = 136.0
+N = 93
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2195
+Score = 2199.0
+N = 67
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1271
+Score = 1275.0
+N = 31
+turn = 780000, alpha = 0.96, T = 0.00
+minCost = 258
+Score = 260.0
+N = 26
+turn = 820000, alpha = 0.94, T = 0.00
+minCost = 170
+Score = 171.0
+N = 74
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1447
+Score = 1452.0
+N = 11
+turn = 1040000, alpha = -1.00, T = 10000.00
+minCost = 27
+Score = 27.0
+N = 42
+turn = 740000, alpha = 0.96, T = 0.00
+minCost = 459
+Score = 460.0
+N = 30
+turn = 780000, alpha = 0.95, T = 0.00
+minCost = 234
+Score = 234.0
+N = 29
+turn = 760000, alpha = 0.94, T = 0.00
+minCost = 207
+Score = 207.0
+N = 96
+turn = 480000, alpha = 0.99, T = 0.00
+minCost = 2467
+Score = 2474.0
+N = 22
+turn = 820000, alpha = 0.93, T = 0.00
+minCost = 101
+Score = 101.0
+N = 15
+turn = 960000, alpha = 0.76, T = 0.00
+minCost = 60
+Score = 60.0
+N = 97
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 2673
+Score = 2680.0
+N = 12
+turn = 960000, alpha = -1.00, T = 10000.00
+minCost = 33
+Score = 34.0
+N = 36
+turn = 720000, alpha = 0.95, T = 0.00
+minCost = 290
+Score = 292.0
+N = 81
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 1838
+Score = 1843.0
+N = 18
+turn = 880000, alpha = -0.69, T = -0.00
+minCost = 61
+Score = 61.0
+N = 31
+turn = 740000, alpha = 0.95, T = 0.00
+minCost = 219
+Score = 222.0
+N = 81
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1746
+Score = 1748.0
+N = 86
+turn = 600000, alpha = 0.98, T = 0.00
+minCost = 1902
+Score = 1911.0
+N = 93
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2551
+Score = 2557.0
+N = 39
+turn = 760000, alpha = 0.96, T = 0.00
+minCost = 390
+Score = 390.0
+N = 9
+turn = 1060000, alpha = -1.00, T = 10000.00
+minCost = 18
+Score = 18.0
+N = 64
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 1130
+Score = 1135.0
+N = 41
+turn = 760000, alpha = 0.96, T = 0.00
+minCost = 397
+Score = 397.0
+N = 100
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 2850
+Score = 2860.0
+N = 95
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2361
+Score = 2364.0
+N = 31
+turn = 760000, alpha = 0.94, T = 0.00
+minCost = 216
+Score = 216.0
+N = 76
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 1560
+Score = 1566.0
+N = 26
+turn = 780000, alpha = 0.90, T = 0.00
+minCost = 160
+Score = 162.0
+N = 43
+turn = 700000, alpha = 0.96, T = 0.00
+minCost = 430
+Score = 432.0
+N = 96
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2484
+Score = 2490.0
+N = 30
+turn = 780000, alpha = 0.94, T = 0.00
+minCost = 224
+Score = 225.0
+N = 53
+turn = 680000, alpha = 0.97, T = 0.00
+minCost = 718
+Score = 720.0
+N = 85
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 1874
+Score = 1878.0
+N = 74
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1399
+Score = 1409.0
+N = 87
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2152
+Score = 2159.0
+N = 18
+turn = 920000, alpha = 0.78, T = 0.00
+minCost = 78
+Score = 79.0
+N = 60
+turn = 680000, alpha = 0.97, T = 0.00
+minCost = 948
+Score = 951.0
+N = 9
+turn = 1040000, alpha = -1.00, T = 10000.00
+minCost = 18
+Score = 18.0
+N = 57
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 921
+Score = 922.0
+N = 68
+turn = 680000, alpha = 0.99, T = 0.00
+minCost = 1248
+Score = 1251.0
+N = 55
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 861
+Score = 864.0
+N = 47
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 573
+Score = 574.0
+N = 17
+turn = 920000, alpha = 0.64, T = 0.00
+minCost = 63
+Score = 64.0
+N = 28
+turn = 800000, alpha = 0.91, T = 0.00
+minCost = 186
+Score = 187.0
+N = 14
+turn = 980000, alpha = -1.00, T = 9138.90
+minCost = 34
+Score = 34.0
+N = 100
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 2815
+Score = 2819.0
+N = 39
+turn = 720000, alpha = 0.96, T = 0.00
+minCost = 409
+Score = 410.0
+N = 62
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1028
+Score = 1032.0
+N = 93
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2513
+Score = 2518.0
+N = 83
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1772
+Score = 1778.0
+N = 18
+turn = 920000, alpha = 0.70, T = 0.00
+minCost = 72
+Score = 72.0
+N = 52
+turn = 680000, alpha = 0.97, T = 0.00
+minCost = 686
+Score = 686.0
+N = 99
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2834
+Score = 2846.0
+N = 49
+turn = 680000, alpha = 0.97, T = 0.00
+minCost = 607
+Score = 609.0
+N = 54
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 783
+Score = 786.0
+N = 36
+turn = 740000, alpha = 0.94, T = 0.00
+minCost = 288
+Score = 290.0
+N = 39
+turn = 740000, alpha = 0.96, T = 0.00
+minCost = 418
+Score = 418.0
+N = 84
+turn = 580000, alpha = 0.98, T = 0.00
+minCost = 1848
+Score = 1858.0
+N = 82
+turn = 600000, alpha = 0.98, T = 0.00
+minCost = 1722
+Score = 1727.0
+N = 27
+turn = 780000, alpha = 0.92, T = 0.00
+minCost = 181
+Score = 182.0
+N = 81
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 1859
+Score = 1866.0
+N = 16
+turn = 940000, alpha = -0.43, T = -0.00
+minCost = 56
+Score = 56.0
+N = 28
+turn = 800000, alpha = 0.94, T = 0.00
+minCost = 209
+Score = 209.0
+N = 61
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 987
+Score = 988.0
+N = 63
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1141
+Score = 1152.0
+N = 79
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1782
+Score = 1788.0
+N = 70
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1374
+Score = 1378.0
+N = 72
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1285
+Score = 1292.0
+N = 15
+turn = 980000, alpha = 0.76, T = 0.00
+minCost = 56
+Score = 56.0
+N = 26
+turn = 820000, alpha = 0.91, T = 0.00
+minCost = 162
+Score = 163.0
+N = 9
+turn = 1020000, alpha = -1.00, T = 10000.00
+minCost = 17
+Score = 17.0
+N = 59
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 996
+Score = 999.0
+N = 47
+turn = 740000, alpha = 0.98, T = 0.00
+minCost = 578
+Score = 578.0
+N = 79
+turn = 660000, alpha = 0.99, T = 0.00
+minCost = 1784
+Score = 1789.0
+N = 67
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1212
+Score = 1219.0
+N = 49
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 610
+Score = 612.0
+N = 57
+turn = 680000, alpha = 0.97, T = 0.00
+minCost = 762
+Score = 766.0
+N = 12
+turn = 1000000, alpha = -1.00, T = -10000.00
+minCost = 32
+Score = 32.0
+N = 50
+turn = 700000, alpha = 0.97, T = 0.00
+minCost = 629
+Score = 632.0
+N = 76
+turn = 660000, alpha = 0.99, T = 0.00
+minCost = 1626
+Score = 1630.0
+N = 54
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 735
+Score = 736.0
+N = 51
+turn = 700000, alpha = 0.97, T = 0.00
+minCost = 705
+Score = 709.0
+N = 52
+turn = 700000, alpha = 0.97, T = 0.00
+minCost = 669
+Score = 670.0
+N = 55
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 740
+Score = 745.0
+N = 91
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2341
+Score = 2353.0
+N = 90
+turn = 600000, alpha = 0.98, T = 0.00
+minCost = 2081
+Score = 2091.0
+N = 72
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1452
+Score = 1456.0
+N = 71
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1222
+Score = 1223.0
+N = 68
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1284
+Score = 1286.0
+N = 11
+turn = 1020000, alpha = -1.00, T = 10000.00
+minCost = 28
+Score = 28.0
+N = 19
+turn = 920000, alpha = 0.76, T = 0.00
+minCost = 78
+Score = 78.0
+N = 45
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 469
+Score = 469.0
+N = 87
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1912
+Score = 1913.0
+N = 11
+turn = 1020000, alpha = -1.00, T = -10000.00
+minCost = 24
+Score = 24.0
+N = 70
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1328
+Score = 1332.0
+N = 62
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1061
+Score = 1067.0
+N = 100
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 2620
+Score = 2626.0
+N = 91
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2385
+Score = 2391.0
+N = 80
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 1810
+Score = 1812.0
+N = 36
+turn = 760000, alpha = 0.97, T = 0.00
+minCost = 329
+Score = 329.0
+N = 59
+turn = 680000, alpha = 0.97, T = 0.00
+minCost = 860
+Score = 863.0
+N = 85
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1838
+Score = 1841.0
+N = 32
+turn = 780000, alpha = 0.96, T = 0.00
+minCost = 237
+Score = 239.0
+N = 31
+turn = 780000, alpha = 0.97, T = 0.00
+minCost = 196
+Score = 198.0
+N = 87
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2070
+Score = 2073.0
+N = 71
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1326
+Score = 1330.0
+N = 89
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2268
+Score = 2273.0
+N = 37
+turn = 780000, alpha = 0.95, T = 0.00
+minCost = 362
+Score = 363.0
+N = 79
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 1703
+Score = 1712.0
+N = 69
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1184
+Score = 1187.0
+N = 59
+turn = 720000, alpha = 0.98, T = 0.00
+minCost = 1000
+Score = 1003.0
+N = 82
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1730
+Score = 1737.0
+N = 70
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1259
+Score = 1261.0
+N = 77
+turn = 660000, alpha = 0.99, T = 0.00
+minCost = 1567
+Score = 1573.0
+N = 31
+turn = 820000, alpha = 0.93, T = 0.00
+minCost = 214
+Score = 216.0
+N = 32
+turn = 800000, alpha = 0.94, T = 0.00
+minCost = 279
+Score = 279.0
+N = 60
+turn = 700000, alpha = 0.97, T = 0.00
+minCost = 879
+Score = 883.0
+N = 97
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 2673
+Score = 2678.0
+N = 79
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1753
+Score = 1765.0
+N = 44
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 525
+Score = 527.0
+N = 79
+turn = 660000, alpha = 0.99, T = 0.00
+minCost = 1791
+Score = 1793.0
+N = 43
+turn = 760000, alpha = 0.97, T = 0.00
+minCost = 500
+Score = 502.0
+N = 48
+turn = 720000, alpha = 0.98, T = 0.00
+minCost = 661
+Score = 666.0
+N = 98
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2621
+Score = 2630.0
+N = 48
+turn = 720000, alpha = 0.96, T = 0.00
+minCost = 560
+Score = 561.0
+N = 38
+turn = 760000, alpha = 0.94, T = 0.00
+minCost = 300
+Score = 300.0
+N = 27
+turn = 820000, alpha = 0.92, T = 0.00
+minCost = 163
+Score = 163.0
+N = 85
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 2028
+Score = 2032.0
+N = 62
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 971
+Score = 974.0
+N = 94
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 2398
+Score = 2403.0
+N = 75
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 1455
+Score = 1460.0
+N = 14
+turn = 980000, alpha = -0.99, T = -0.01
+minCost = 39
+Score = 39.0
+N = 36
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 344
+Score = 345.0
+N = 26
+turn = 800000, alpha = 0.89, T = 0.00
+minCost = 130
+Score = 132.0
+N = 79
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1669
+Score = 1677.0
+N = 44
+turn = 740000, alpha = 0.96, T = 0.00
+minCost = 448
+Score = 451.0
+N = 40
+turn = 760000, alpha = 0.96, T = 0.00
+minCost = 423
+Score = 424.0
+N = 71
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1287
+Score = 1290.0
+N = 23
+turn = 820000, alpha = 0.93, T = 0.00
+minCost = 131
+Score = 131.0
+N = 43
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 487
+Score = 492.0
+N = 98
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2623
+Score = 2630.0
+N = 44
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 440
+Score = 442.0
+N = 41
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 463
+Score = 465.0
+N = 31
+turn = 740000, alpha = 0.96, T = 0.00
+minCost = 238
+Score = 238.0
+N = 60
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 1020
+Score = 1026.0
+N = 23
+turn = 800000, alpha = 0.89, T = 0.00
+minCost = 115
+Score = 115.0
+N = 83
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 1952
+Score = 1957.0
+N = 78
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 1582
+Score = 1587.0
+N = 17
+turn = 920000, alpha = -0.99, T = 2.38
+minCost = 52
+Score = 52.0
+N = 48
+turn = 700000, alpha = 0.97, T = 0.00
+minCost = 554
+Score = 554.0
+N = 50
+turn = 700000, alpha = 0.97, T = 0.00
+minCost = 618
+Score = 624.0
+N = 64
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 995
+Score = 997.0
+N = 67
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1120
+Score = 1124.0
+N = 33
+turn = 740000, alpha = 0.94, T = 0.00
+minCost = 263
+Score = 265.0
+N = 20
+turn = 860000, alpha = -0.66, T = 0.00
+minCost = 72
+Score = 72.0
+N = 99
+turn = 540000, alpha = 0.99, T = 0.00
+minCost = 2640
+Score = 2645.0
+N = 35
+turn = 740000, alpha = 0.96, T = 0.00
+minCost = 313
+Score = 314.0
+N = 30
+turn = 780000, alpha = 0.93, T = 0.00
+minCost = 240
+Score = 242.0
+N = 18
+turn = 940000, alpha = 0.79, T = 0.00
+minCost = 83
+Score = 83.0
+N = 38
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 359
+Score = 360.0
+N = 65
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1204
+Score = 1206.0
+N = 35
+turn = 740000, alpha = 0.96, T = 0.00
+minCost = 305
+Score = 306.0
+N = 35
+turn = 760000, alpha = 0.96, T = 0.00
+minCost = 337
+Score = 339.0
+N = 78
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1634
+Score = 1641.0
+N = 48
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 572
+Score = 579.0
+N = 42
+turn = 740000, alpha = 0.96, T = 0.00
+minCost = 410
+Score = 410.0
+N = 81
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 1830
+Score = 1835.0
+N = 47
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 525
+Score = 526.0
+N = 34
+turn = 780000, alpha = 0.95, T = 0.00
+minCost = 291
+Score = 293.0
+N = 81
+turn = 660000, alpha = 0.99, T = 0.00
+minCost = 1860
+Score = 1869.0
+N = 11
+turn = 1040000, alpha = -1.00, T = 10000.00
+minCost = 20
+Score = 20.0
+N = 25
+turn = 820000, alpha = 0.93, T = 0.00
+minCost = 161
+Score = 162.0
+N = 43
+turn = 740000, alpha = 0.96, T = 0.00
+minCost = 426
+Score = 428.0
+N = 49
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 627
+Score = 627.0
+N = 46
+turn = 740000, alpha = 0.96, T = 0.00
+minCost = 488
+Score = 491.0
+N = 76
+turn = 660000, alpha = 0.99, T = 0.00
+minCost = 1572
+Score = 1576.0
+N = 21
+turn = 840000, alpha = 0.87, T = 0.00
+minCost = 87
+Score = 88.0
+N = 21
+turn = 860000, alpha = 0.90, T = 0.00
+minCost = 103
+Score = 103.0
+N = 23
+turn = 820000, alpha = 0.91, T = 0.00
+minCost = 125
+Score = 126.0
+N = 23
+turn = 840000, alpha = 0.90, T = 0.00
+minCost = 145
+Score = 145.0
+N = 28
+turn = 800000, alpha = 0.94, T = 0.00
+minCost = 173
+Score = 174.0
+N = 53
+turn = 700000, alpha = 0.97, T = 0.00
+minCost = 687
+Score = 689.0
+N = 32
+turn = 780000, alpha = 0.92, T = 0.00
+minCost = 241
+Score = 241.0
+N = 85
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2125
+Score = 2131.0
+N = 55
+turn = 660000, alpha = 0.97, T = 0.00
+minCost = 741
+Score = 746.0
+N = 51
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 624
+Score = 627.0
+N = 16
+turn = 920000, alpha = 0.64, T = 0.00
+minCost = 58
+Score = 59.0
+N = 34
+turn = 760000, alpha = 0.94, T = 0.00
+minCost = 281
+Score = 282.0
+N = 18
+turn = 940000, alpha = 0.79, T = 0.00
+minCost = 75
+Score = 76.0
+N = 25
+turn = 820000, alpha = 0.91, T = 0.00
+minCost = 127
+Score = 128.0
+N = 25
+turn = 820000, alpha = 0.93, T = 0.00
+minCost = 153
+Score = 154.0
+N = 20
+turn = 900000, alpha = 0.78, T = 0.00
+minCost = 93
+Score = 94.0
+N = 51
+turn = 660000, alpha = 0.97, T = 0.00
+minCost = 632
+Score = 639.0
+N = 63
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1111
+Score = 1114.0
+N = 42
+turn = 720000, alpha = 0.96, T = 0.00
+minCost = 461
+Score = 463.0
+N = 87
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 1952
+Score = 1956.0
+N = 84
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1932
+Score = 1935.0
+N = 42
+turn = 740000, alpha = 0.96, T = 0.00
+minCost = 416
+Score = 418.0
+N = 65
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1064
+Score = 1065.0
+N = 30
+turn = 780000, alpha = 0.94, T = 0.00
+minCost = 242
+Score = 245.0
+N = 73
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 1549
+Score = 1554.0
+N = 70
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1319
+Score = 1323.0
+N = 8
+turn = 1020000, alpha = -1.00, T = -10000.00
+minCost = 15
+Score = 15.0
+N = 33
+turn = 800000, alpha = 0.95, T = 0.00
+minCost = 280
+Score = 283.0
+N = 51
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 574
+Score = 576.0
+N = 90
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 2335
+Score = 2347.0
+N = 35
+turn = 780000, alpha = 0.96, T = 0.00
+minCost = 339
+Score = 343.0
+N = 21
+turn = 860000, alpha = 0.86, T = 0.00
+minCost = 91
+Score = 93.0
+N = 18
+turn = 920000, alpha = 0.65, T = 0.00
+minCost = 68
+Score = 68.0
+N = 76
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1530
+Score = 1533.0
+N = 37
+turn = 760000, alpha = 0.95, T = 0.00
+minCost = 317
+Score = 318.0
+N = 52
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 613
+Score = 617.0
+N = 93
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2422
+Score = 2432.0
+N = 48
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 595
+Score = 599.0
+N = 30
+turn = 800000, alpha = 0.94, T = 0.00
+minCost = 240
+Score = 242.0
+N = 68
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1157
+Score = 1162.0
+N = 16
+turn = 940000, alpha = -0.92, T = 0.00
+minCost = 50
+Score = 51.0
+N = 26
+turn = 820000, alpha = 0.92, T = 0.00
+minCost = 152
+Score = 153.0
+N = 93
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2345
+Score = 2355.0
+N = 84
+turn = 660000, alpha = 0.99, T = 0.00
+minCost = 1998
+Score = 2012.0
+N = 45
+turn = 760000, alpha = 0.97, T = 0.00
+minCost = 516
+Score = 518.0
+N = 94
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 2474
+Score = 2489.0
+N = 57
+turn = 720000, alpha = 0.98, T = 0.00
+minCost = 805
+Score = 806.0
+N = 24
+turn = 840000, alpha = 0.92, T = 0.00
+minCost = 118
+Score = 120.0
+N = 15
+turn = 980000, alpha = 0.69, T = 0.00
+minCost = 47
+Score = 47.0
+N = 73
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1437
+Score = 1443.0
+N = 41
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 384
+Score = 386.0
+N = 67
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1225
+Score = 1229.0
+N = 28
+turn = 780000, alpha = 0.94, T = 0.00
+minCost = 180
+Score = 180.0
+N = 60
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1018
+Score = 1022.0
+N = 14
+turn = 1000000, alpha = 0.51, T = 0.00
+minCost = 39
+Score = 39.0
+N = 65
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1030
+Score = 1035.0
+N = 76
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1565
+Score = 1573.0
+N = 16
+turn = 960000, alpha = -0.65, T = -0.00
+minCost = 55
+Score = 55.0
+N = 45
+turn = 720000, alpha = 0.98, T = 0.00
+minCost = 566
+Score = 570.0
+N = 33
+turn = 740000, alpha = 0.96, T = 0.00
+minCost = 293
+Score = 295.0
+N = 62
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1024
+Score = 1027.0
+N = 11
+turn = 1020000, alpha = -1.00, T = 10000.00
+minCost = 24
+Score = 24.0
+N = 53
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 677
+Score = 679.0
+N = 88
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 2231
+Score = 2239.0
+N = 55
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 831
+Score = 832.0
+N = 51
+turn = 720000, alpha = 0.96, T = 0.00
+minCost = 653
+Score = 658.0
+N = 42
+turn = 760000, alpha = 0.97, T = 0.00
+minCost = 455
+Score = 457.0
+N = 8
+turn = 1020000, alpha = -1.00, T = 10000.00
+minCost = 14
+Score = 14.0
+N = 93
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 2413
+Score = 2418.0
+N = 87
+turn = 580000, alpha = 0.98, T = 0.00
+minCost = 1974
+Score = 1980.0
+N = 20
+turn = 900000, alpha = 0.73, T = 0.00
+minCost = 79
+Score = 80.0
+N = 82
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 1884
+Score = 1895.0
+N = 25
+turn = 820000, alpha = 0.90, T = 0.00
+minCost = 160
+Score = 161.0
+N = 17
+turn = 900000, alpha = 0.45, T = 0.00
+minCost = 62
+Score = 62.0
+N = 57
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 934
+Score = 938.0
+N = 73
+turn = 680000, alpha = 0.99, T = 0.00
+minCost = 1452
+Score = 1457.0
+N = 97
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 2680
+Score = 2692.0
+N = 20
+turn = 920000, alpha = 0.84, T = 0.00
+minCost = 103
+Score = 104.0
+N = 66
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1049
+Score = 1054.0
+N = 48
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 549
+Score = 551.0
+N = 22
+turn = 840000, alpha = 0.89, T = 0.00
+minCost = 120
+Score = 122.0
+N = 60
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 972
+Score = 977.0
+N = 12
+turn = 1000000, alpha = -1.00, T = -10000.00
+minCost = 32
+Score = 32.0
+N = 95
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2372
+Score = 2380.0
+N = 56
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 812
+Score = 818.0
+N = 13
+turn = 1000000, alpha = -1.00, T = 10000.00
+minCost = 31
+Score = 32.0
+N = 58
+turn = 720000, alpha = 0.98, T = 0.00
+minCost = 943
+Score = 950.0
+N = 52
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 627
+Score = 628.0
+N = 90
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2225
+Score = 2234.0
+N = 59
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1020
+Score = 1029.0
+N = 60
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 1020
+Score = 1025.0
+N = 56
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 833
+Score = 837.0
+N = 62
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 957
+Score = 957.0
+N = 59
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 1004
+Score = 1004.0
+N = 14
+turn = 980000, alpha = 0.62, T = 0.00
+minCost = 47
+Score = 47.0
+N = 53
+turn = 720000, alpha = 0.98, T = 0.00
+minCost = 754
+Score = 761.0
+N = 39
+turn = 760000, alpha = 0.95, T = 0.00
+minCost = 345
+Score = 345.0
+N = 66
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1206
+Score = 1212.0
+N = 9
+turn = 1000000, alpha = -1.00, T = -10000.00
+minCost = 14
+Score = 14.0
+N = 81
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1615
+Score = 1620.0
+N = 72
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1429
+Score = 1431.0
+N = 100
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 2954
+Score = 2961.0
+N = 48
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 551
+Score = 555.0
+N = 65
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 1076
+Score = 1081.0
+N = 82
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1748
+Score = 1753.0
+N = 73
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1380
+Score = 1382.0
+N = 18
+turn = 960000, alpha = -0.80, T = 0.00
+minCost = 60
+Score = 60.0
+N = 57
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 833
+Score = 839.0
+N = 72
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1348
+Score = 1350.0
+N = 17
+turn = 920000, alpha = 0.68, T = 0.00
+minCost = 67
+Score = 67.0
+N = 45
+turn = 760000, alpha = 0.97, T = 0.00
+minCost = 536
+Score = 540.0
+N = 91
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2109
+Score = 2113.0
+N = 25
+turn = 840000, alpha = 0.89, T = 0.00
+minCost = 119
+Score = 120.0
+N = 82
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1667
+Score = 1672.0
+N = 60
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 995
+Score = 1000.0
+N = 94
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2339
+Score = 2347.0
+N = 80
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 1651
+Score = 1655.0
+N = 86
+turn = 660000, alpha = 0.99, T = 0.00
+minCost = 2005
+Score = 2015.0
+N = 85
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1874
+Score = 1876.0
+N = 73
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1394
+Score = 1400.0
+N = 48
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 652
+Score = 654.0
+N = 99
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 2937
+Score = 2946.0
+N = 69
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1291
+Score = 1296.0
+N = 81
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 1901
+Score = 1909.0
+N = 69
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1257
+Score = 1259.0
+N = 29
+turn = 820000, alpha = 0.94, T = 0.00
+minCost = 207
+Score = 208.0
+N = 67
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1162
+Score = 1165.0
+N = 85
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 2046
+Score = 2053.0
+N = 94
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2416
+Score = 2427.0
+N = 78
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1672
+Score = 1674.0
+N = 12
+turn = 980000, alpha = -1.00, T = 10000.00
+minCost = 30
+Score = 30.0
+N = 33
+turn = 780000, alpha = 0.96, T = 0.00
+minCost = 240
+Score = 241.0
+N = 47
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 627
+Score = 630.0
+N = 72
+turn = 680000, alpha = 0.99, T = 0.00
+minCost = 1505
+Score = 1509.0
+N = 52
+turn = 740000, alpha = 0.98, T = 0.00
+minCost = 761
+Score = 766.0
+N = 24
+turn = 860000, alpha = 0.91, T = 0.00
+minCost = 127
+Score = 128.0
+N = 46
+turn = 760000, alpha = 0.96, T = 0.00
+minCost = 505
+Score = 507.0
+N = 71
+turn = 680000, alpha = 0.99, T = 0.00
+minCost = 1443
+Score = 1452.0
+N = 94
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2428
+Score = 2439.0
+N = 73
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1517
+Score = 1526.0
+N = 35
+turn = 800000, alpha = 0.95, T = 0.00
+minCost = 297
+Score = 298.0
+N = 72
+turn = 680000, alpha = 0.99, T = 0.00
+minCost = 1437
+Score = 1440.0
+N = 97
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2521
+Score = 2524.0
+N = 68
+turn = 700000, alpha = 0.99, T = 0.00
+minCost = 1260
+Score = 1266.0
+N = 51
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 593
+Score = 599.0
+N = 27
+turn = 840000, alpha = 0.93, T = 0.00
+minCost = 149
+Score = 149.0
+N = 29
+turn = 800000, alpha = 0.96, T = 0.00
+minCost = 205
+Score = 206.0
+N = 61
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 931
+Score = 934.0
+N = 24
+turn = 860000, alpha = 0.88, T = 0.00
+minCost = 123
+Score = 125.0
+N = 90
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 2270
+Score = 2276.0
+N = 29
+turn = 800000, alpha = 0.95, T = 0.00
+minCost = 205
+Score = 206.0
+N = 15
+turn = 960000, alpha = 0.63, T = 0.00
+minCost = 48
+Score = 48.0
+N = 53
+turn = 700000, alpha = 0.97, T = 0.00
+minCost = 687
+Score = 692.0
+N = 52
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 645
+Score = 646.0
+N = 9
+turn = 1040000, alpha = -1.00, T = 10000.00
+minCost = 16
+Score = 16.0
+N = 64
+turn = 680000, alpha = 0.99, T = 0.00
+minCost = 1174
+Score = 1177.0
+N = 16
+turn = 920000, alpha = -0.53, T = -0.00
+minCost = 56
+Score = 56.0
+N = 22
+turn = 840000, alpha = 0.89, T = 0.00
+minCost = 111
+Score = 111.0
+N = 10
+turn = 1020000, alpha = -1.00, T = -10000.00
+minCost = 22
+Score = 22.0
+N = 37
+turn = 740000, alpha = 0.96, T = 0.00
+minCost = 349
+Score = 350.0
+N = 56
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 848
+Score = 854.0
+N = 47
+turn = 720000, alpha = 0.98, T = 0.00
+minCost = 619
+Score = 628.0
+N = 89
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 2045
+Score = 2051.0
+N = 18
+turn = 940000, alpha = 0.80, T = 0.00
+minCost = 80
+Score = 80.0
+N = 73
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1379
+Score = 1392.0
+N = 81
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1799
+Score = 1804.0
+N = 67
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1051
+Score = 1055.0
+N = 16
+turn = 940000, alpha = -1.00, T = 10000.00
+minCost = 49
+Score = 49.0
+N = 37
+turn = 760000, alpha = 0.93, T = 0.00
+minCost = 304
+Score = 305.0
+N = 41
+turn = 760000, alpha = 0.97, T = 0.00
+minCost = 464
+Score = 471.0
+N = 73
+turn = 680000, alpha = 0.99, T = 0.00
+minCost = 1484
+Score = 1492.0
+N = 59
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 909
+Score = 913.0
+N = 84
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1832
+Score = 1837.0
+N = 10
+turn = 1000000, alpha = -1.00, T = -10000.00
+minCost = 22
+Score = 22.0
+N = 63
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1074
+Score = 1079.0
+N = 34
+turn = 760000, alpha = 0.95, T = 0.00
+minCost = 306
+Score = 307.0
+N = 39
+turn = 780000, alpha = 0.95, T = 0.00
+minCost = 340
+Score = 342.0
+N = 100
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2749
+Score = 2755.0
+N = 13
+turn = 940000, alpha = -1.00, T = -10000.00
+minCost = 29
+Score = 29.0
+N = 37
+turn = 760000, alpha = 0.96, T = 0.00
+minCost = 351
+Score = 352.0
+N = 47
+turn = 740000, alpha = 0.98, T = 0.00
+minCost = 552
+Score = 554.0
+N = 10
+turn = 1000000, alpha = -1.00, T = 10000.00
+minCost = 19
+Score = 19.0
+N = 15
+turn = 940000, alpha = 0.66, T = 0.00
+minCost = 47
+Score = 47.0
+N = 32
+turn = 780000, alpha = 0.92, T = 0.00
+minCost = 225
+Score = 225.0
+N = 42
+turn = 760000, alpha = 0.97, T = 0.00
+minCost = 477
+Score = 480.0
+N = 97
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2593
+Score = 2604.0
+N = 92
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2363
+Score = 2368.0
+N = 78
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 1791
+Score = 1797.0
+N = 14
+turn = 1000000, alpha = -0.58, T = 0.00
+minCost = 38
+Score = 38.0
+N = 77
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1490
+Score = 1492.0
+N = 31
+turn = 800000, alpha = 0.94, T = 0.00
+minCost = 210
+Score = 210.0
+N = 99
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2645
+Score = 2651.0
+N = 63
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1079
+Score = 1083.0
+N = 85
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1839
+Score = 1842.0
+N = 51
+turn = 700000, alpha = 0.97, T = 0.00
+minCost = 649
+Score = 649.0
+N = 82
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1850
+Score = 1856.0
+N = 56
+turn = 700000, alpha = 0.97, T = 0.00
+minCost = 893
+Score = 897.0
+N = 18
+turn = 900000, alpha = -0.92, T = 0.00
+minCost = 52
+Score = 52.0
+N = 72
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1372
+Score = 1375.0
+N = 36
+turn = 780000, alpha = 0.95, T = 0.00
+minCost = 286
+Score = 286.0
+N = 33
+turn = 780000, alpha = 0.95, T = 0.00
+minCost = 285
+Score = 286.0
+N = 11
+turn = 1060000, alpha = -1.00, T = 10000.00
+minCost = 25
+Score = 25.0
+N = 21
+turn = 880000, alpha = 0.87, T = 0.00
+minCost = 98
+Score = 100.0
+N = 53
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 752
+Score = 754.0
+N = 29
+turn = 800000, alpha = 0.92, T = 0.00
+minCost = 178
+Score = 178.0
+N = 9
+turn = 1040000, alpha = -1.00, T = -10000.00
+minCost = 18
+Score = 18.0
+N = 69
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1305
+Score = 1308.0
+N = 31
+turn = 800000, alpha = 0.93, T = 0.00
+minCost = 215
+Score = 216.0
+N = 96
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2444
+Score = 2449.0
+N = 21
+turn = 860000, alpha = 0.91, T = 0.00
+minCost = 93
+Score = 94.0
+N = 69
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1248
+Score = 1252.0
+N = 35
+turn = 780000, alpha = 0.93, T = 0.00
+minCost = 269
+Score = 269.0
+N = 75
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1472
+Score = 1477.0
+N = 41
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 396
+Score = 398.0
+N = 91
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2120
+Score = 2131.0
+N = 64
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 1125
+Score = 1132.0
+N = 48
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 593
+Score = 595.0
+N = 35
+turn = 780000, alpha = 0.95, T = 0.00
+minCost = 341
+Score = 344.0
+N = 95
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2359
+Score = 2361.0
+N = 11
+turn = 1040000, alpha = -1.00, T = -10000.00
+minCost = 24
+Score = 24.0
+N = 61
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 1059
+Score = 1062.0
+N = 88
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2071
+Score = 2081.0
+N = 79
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 1622
+Score = 1629.0
+N = 20
+turn = 920000, alpha = 0.84, T = 0.00
+minCost = 92
+Score = 92.0
+N = 14
+turn = 980000, alpha = 0.18, T = 0.00
+minCost = 38
+Score = 38.0
+N = 33
+turn = 780000, alpha = 0.96, T = 0.00
+minCost = 301
+Score = 302.0
+N = 22
+turn = 840000, alpha = 0.93, T = 0.00
+minCost = 118
+Score = 119.0
+N = 32
+turn = 760000, alpha = 0.94, T = 0.00
+minCost = 267
+Score = 268.0
+N = 49
+turn = 720000, alpha = 0.97, T = 0.00
+minCost = 537
+Score = 543.0
+N = 14
+turn = 980000, alpha = -0.98, T = 0.11
+minCost = 34
+Score = 34.0
+N = 55
+turn = 720000, alpha = 0.98, T = 0.00
+minCost = 834
+Score = 840.0
+N = 69
+turn = 680000, alpha = 0.99, T = 0.00
+minCost = 1291
+Score = 1296.0
+N = 71
+turn = 660000, alpha = 0.99, T = 0.00
+minCost = 1319
+Score = 1323.0
+N = 17
+turn = 940000, alpha = 0.77, T = 0.00
+minCost = 70
+Score = 70.0
+N = 76
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1562
+Score = 1564.0
+N = 80
+turn = 620000, alpha = 0.98, T = 0.00
+minCost = 1709
+Score = 1718.0
+N = 43
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 510
+Score = 512.0
+N = 85
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 2081
+Score = 2084.0
+N = 14
+turn = 1000000, alpha = -0.42, T = 0.00
+minCost = 39
+Score = 39.0
+N = 26
+turn = 820000, alpha = 0.93, T = 0.00
+minCost = 154
+Score = 154.0
+N = 63
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 1104
+Score = 1108.0
+N = 81
+turn = 640000, alpha = 0.98, T = 0.00
+minCost = 1676
+Score = 1686.0
+N = 33
+turn = 780000, alpha = 0.94, T = 0.00
+minCost = 277
+Score = 279.0
+N = 61
+turn = 680000, alpha = 0.98, T = 0.00
+minCost = 1065
+Score = 1065.0
+N = 48
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 648
+Score = 653.0
+N = 61
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 1053
+Score = 1055.0
+N = 48
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 625
+Score = 626.0
+N = 28
+turn = 780000, alpha = 0.93, T = 0.00
+minCost = 204
+Score = 204.0
+N = 47
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 579
+Score = 580.0
+N = 26
+turn = 800000, alpha = 0.93, T = 0.00
+minCost = 162
+Score = 162.0
+N = 82
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 1862
+Score = 1863.0
+N = 70
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1291
+Score = 1295.0
+N = 71
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1241
+Score = 1245.0
+N = 97
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2558
+Score = 2565.0
+N = 27
+turn = 820000, alpha = 0.93, T = 0.00
+minCost = 194
+Score = 195.0
+N = 37
+turn = 760000, alpha = 0.97, T = 0.00
+minCost = 373
+Score = 378.0
+N = 64
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 1142
+Score = 1147.0
+N = 74
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1569
+Score = 1570.0
+N = 69
+turn = 660000, alpha = 0.98, T = 0.00
+minCost = 1279
+Score = 1282.0
+N = 51
+turn = 700000, alpha = 0.96, T = 0.00
+minCost = 635
+Score = 638.0
+N = 90
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2288
+Score = 2298.0
+N = 58
+turn = 680000, alpha = 0.97, T = 0.00
+minCost = 809
+Score = 815.0
+N = 78
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 1643
+Score = 1652.0
+N = 32
+turn = 780000, alpha = 0.92, T = 0.00
+minCost = 218
+Score = 220.0
+N = 88
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2112
+Score = 2120.0
+N = 59
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 958
+Score = 964.0
+N = 55
+turn = 700000, alpha = 0.98, T = 0.00
+minCost = 777
+Score = 781.0
+N = 45
+turn = 740000, alpha = 0.96, T = 0.00
+minCost = 497
+Score = 498.0
+N = 75
+turn = 680000, alpha = 0.99, T = 0.00
+minCost = 1583
+Score = 1587.0
+N = 98
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2667
+Score = 2677.0
+N = 53
+turn = 660000, alpha = 0.97, T = 0.00
+minCost = 681
+Score = 687.0
+N = 28
+turn = 800000, alpha = 0.93, T = 0.00
+minCost = 178
+Score = 178.0
+N = 47
+turn = 740000, alpha = 0.98, T = 0.00
+minCost = 591
+Score = 594.0
+N = 47
+turn = 740000, alpha = 0.97, T = 0.00
+minCost = 560
+Score = 562.0
+N = 16
+turn = 920000, alpha = 0.59, T = 0.00
+minCost = 59
+Score = 62.0
+N = 31
+turn = 780000, alpha = 0.96, T = 0.00
+minCost = 241
+Score = 243.0
+N = 9
+turn = 980000, alpha = -1.00, T = -10000.00
+minCost = 15
+Score = 15.0
+N = 24
+turn = 800000, alpha = 0.91, T = 0.00
+minCost = 146
+Score = 146.0
+N = 61
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 1052
+Score = 1057.0
+N = 90
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2140
+Score = 2146.0
+N = 91
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2250
+Score = 2255.0
+N = 63
+turn = 660000, alpha = 0.99, T = 0.00
+minCost = 1079
+Score = 1088.0
+N = 32
+turn = 780000, alpha = 0.94, T = 0.00
+minCost = 277
+Score = 278.0
+N = 71
+turn = 660000, alpha = 0.98, T = 0.03
+minCost = 1235
+Score = 1238.0
+N = 88
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 2273
+Score = 2278.0
+N = 84
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 2051
+Score = 2055.0
+N = 98
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 2845
+Score = 2852.0
+N = 37
+turn = 780000, alpha = 0.95, T = 0.00
+minCost = 324
+Score = 325.0
+N = 52
+turn = 720000, alpha = 0.98, T = 0.00
+minCost = 702
+Score = 706.0

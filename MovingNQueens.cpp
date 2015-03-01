@@ -342,7 +342,7 @@ class MovingNQueens {
 
     score -= cnt;
 
-    if(N >= 80 && goodScore > 0){
+    if(N >= 70 && goodScore > 0){
       //score -= max(abs(queen->y - center.y), abs(queen->x - center.x));
       score -= max(abs(queen->y - queen->originalY), abs(queen->x - queen->originalX));
       //score -= abs(queen->y - queen->originalY) + abs(queen->x - queen->originalX);

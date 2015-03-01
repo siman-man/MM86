@@ -14,7 +14,6 @@
 
 using namespace std;
 typedef long long ll;
-typedef long long ull;
 
 const int MAX_QUEEN = 250;
 const int MAX_SIZE  = 50000;
@@ -22,7 +21,6 @@ const int INF       = INT_MAX;
 const ll  OFFSET    = 30000;
 const int UNDEFINED = -1;
 const double PI = 3.141592653589793;
-map<ull, int> indexList;
 
 ll timeLimit = 9500;
 ll currentTime;
@@ -118,9 +116,6 @@ vector<Edge> G[MAX_QUEEN];
 
 Queen queenList[MAX_QUEEN];
 int N;
-ull MASK = 0;
-int backTrackLine = 10;
-bool edgeInited = false;
 int board[MAX_QUEEN][MAX_QUEEN];
 int cnt = 0;
 int DY[13] = { 0, -1, -1, -1, -1,  0,  0,  1,  1,  1,  1,  0,  0};
@@ -137,15 +132,12 @@ int diagonalDownCnt[MAX_SIZE];
 
 int bestRows[MAX_QUEEN];
 int bestCols[MAX_QUEEN];
-int bestRowsMin[MAX_QUEEN];
-int bestColsMin[MAX_QUEEN];
 int bestScore;
 int goodScore;
 int burnCnt = 0;
 int tryLimit = 200;
 
 vector<int> selectedNodeId(MAX_QUEEN, 0);
-vector<int> positionList;
 
 map<ll, int> queenCheck;
 
@@ -164,13 +156,17 @@ class MovingNQueens {
     int row;
     int col;
 
+    // Ã£ÂÂµÃ£ÂÂ¤Ã£ÂÂºÃ£ÂÂ®Ã¥ÂÂÃ¥Â¾Â
     N = queenRows.size();
+    // Ã£ÂÂÃ£ÂÂ¼Ã£ÂÂÃ£ÂÂ®Ã¥ÂÂÃ¦ÂÂÃ¥ÂÂ
     memset(board, 0, sizeof(board)); 
+    // Ã©ÂÂÃ¨Â¤ÂÃ¥ÂÂÃ¦ÂÂ°Ã£ÂÂªÃ£ÂÂ¹Ã£ÂÂÃ£ÂÂ®Ã¥ÂÂÃ¦ÂÂÃ¥ÂÂ
     memset(horizontalCnt, 0, sizeof(horizontalCnt));
     memset(verticalCnt, 0, sizeof(verticalCnt));
     memset(diagonalUpCnt, 0, sizeof(diagonalUpCnt));
     memset(diagonalDownCnt, 0, sizeof(diagonalDownCnt));
 
+    // Ã£ÂÂ¯Ã£ÂÂ¤Ã£ÂÂ¼Ã£ÂÂ³Ã£ÂÂ®Ã¦ÂÂÃ¥Â Â±Ã£ÂÂ®Ã¥ÂÂÃ¦ÂÂÃ¥ÂÂÃ£ÂÂÃ¨Â¡ÂÃ£ÂÂ
     for(int id = 0; id < N; ++id){
       row = queenRows[id];
       col = queenCols[id];
@@ -187,14 +183,7 @@ class MovingNQueens {
       board[row][col] = 1;
     }
 
-    if(N <= backTrackLine){
-      MASK = (1 << N) - 1;
-    }
-
-    for(int index = 0; index < 20; index++){
-      indexList[(1<<index)] = index;
-    }
-
+    // Ã¥ÂÂÃ£ÂÂ¯Ã£ÂÂ¤Ã£ÂÂ¼Ã£ÂÂ³Ã£ÂÂ®Ã©ÂÂÃ¥Â¿ÂÃ£ÂÂÃ¦Â±ÂÃ£ÂÂÃ£ÂÂ
     center = calcCenterCoord();
 
     fprintf(stderr,"N = %d\n", N);
@@ -226,13 +215,6 @@ class MovingNQueens {
 
       bestRows[id] = queen->y;
       bestCols[id] = queen->x;
-    }
-  }
-
-  void updateBestPositionsMin(){
-    for(int id = 0; id < N; ++id){
-      bestRowsMin[id] = bestRows[id];
-      bestColsMin[id] = bestCols[id];
     }
   }
 
@@ -275,12 +257,16 @@ class MovingNQueens {
     }
   }
 
+  /*
+   * QueenÃ£ÂÂ®Ã§Â§Â»Ã¥ÂÂÃ£ÂÂÃ¨Â¡ÂÃ£ÂÂ
+   */
   void moveQueen(int id, int y, int x){
     Queen *queen = getQueen(id);
     removeQueen(queen->y, queen->x);
     setQueen(id, y, x);
   }
 
+  // Ã£ÂÂ¯Ã£ÂÂ¤Ã£ÂÂ¼Ã£ÂÂ³Ã£ÂÂÃ¨Â¨Â­Ã§Â½Â®
   void setQueen(int id, int y, int x){
     Queen *queen = getQueen(id);
     queen->y = y;
@@ -295,6 +281,7 @@ class MovingNQueens {
     diagonalDownCnt[OFFSET + y + x] += 1;
   }
 
+  // Ã£ÂÂ¯Ã£ÂÂ¤Ã£ÂÂ¼Ã£ÂÂ³Ã£ÂÂ®Ã¥ÂÂÃ©ÂÂ¤
   inline void removeQueen(int y, int x){ 
     ll hash = calcHash(y, x);
     queenCheck[hash] -= 1;
@@ -311,11 +298,12 @@ class MovingNQueens {
     return hash;
   }
 
+  // Ã£ÂÂÃ£ÂÂ¼Ã£ÂÂÃ¥ÂÂ¨Ã¤Â½ÂÃ£ÂÂ®Ã£ÂÂ¹Ã£ÂÂ³Ã£ÂÂ¢Ã¨Â¨ÂÃ§Â®Â
   int calcScoreAll(){
     //fprintf(stderr,"calcScoreAll =>\n");
     int score = 0;
     int cnt = 0;
-    bool success = true;
+    bool success = true;  // Ã¥ÂÂÃ£ÂÂ¯Ã£ÂÂ¤Ã£ÂÂ¼Ã£ÂÂ³Ã£ÂÂÃ©ÂÂÃ¨Â¤ÂÃ£ÂÂÃ£ÂÂ¦Ã£ÂÂÃ£ÂÂªÃ£ÂÂÃ£ÂÂÃ£ÂÂ©Ã£ÂÂÃ£ÂÂÃ£ÂÂ®Ã£ÂÂÃ£ÂÂ©Ã£ÂÂ°
 
     for(int id = 0; id < N; ++id){
       Queen *queen = getQueen(id);  
@@ -350,6 +338,7 @@ class MovingNQueens {
     return score + 100 * success;
   }
 
+  // QueenÃ¥ÂÂÃ¤Â½ÂÃ£ÂÂ®Ã£ÂÂ¹Ã£ÂÂ³Ã£ÂÂ¢Ã¨Â¨ÂÃ§Â®Â
   int calcScoreSingle(int id){
     int score = 0;
     int cnt;
@@ -373,6 +362,7 @@ class MovingNQueens {
     return score + 100 * success;
   }
 
+  // Ã¦ÂÂÃ¥ÂÂÃ£ÂÂ«Ã©ÂÂÃ¥Â¿ÂÃ£ÂÂÃ£ÂÂÃ©ÂÂ¢Ã£ÂÂÃ£ÂÂÃ¦ÂÂ¹Ã¥ÂÂÃ£ÂÂÃ¦Â±ÂºÃ£ÂÂÃ£ÂÂ
   int checkDirection(Queen *queen){
     if(queen->degree != 180){
       return queen->degree / 30;
@@ -391,9 +381,10 @@ class MovingNQueens {
     }
   }
 
+  // Ã¦ÂÂÃ¥ÂÂÃ£ÂÂ«Ã©ÂÂÃ¥Â¿ÂÃ£ÂÂÃ£ÂÂÃ©ÂÂ¢Ã£ÂÂÃ£ÂÂÃ¦ÂÂ¹Ã¥ÂÂÃ£ÂÂÃ¦Â±ÂºÃ£ÂÂÃ£ÂÂ
   int checkDirection16(Queen *queen){
     if(queen->degree != 180){
-      return (int)(queen->degree / 22.5);
+      return (int)queen->degree / 22.5;
     }else{
       if(queen->x > center.x){
         return 0;
@@ -409,6 +400,7 @@ class MovingNQueens {
     }
   }
 
+  // Ã¤Â¸ÂÃ§ÂÂªÃ¦ÂÂÃ¥ÂÂÃ£ÂÂ®Ã¨Â¡ÂÃ¥ÂÂ
   void firstMove(){
     int ny, nx;
 
@@ -450,6 +442,7 @@ class MovingNQueens {
     }
   }
 
+  // Ã¥ÂÂ¨Ã¤Â½ÂÃ£ÂÂÃ§Â§Â»Ã¥ÂÂÃ£ÂÂÃ£ÂÂÃ£ÂÂ
   void moveAllPosition(int direct){
     for(int nodeId = 0; nodeId < N; ++nodeId){
       bestRows[nodeId] += MY[direct];
@@ -457,6 +450,7 @@ class MovingNQueens {
     }
   }
 
+  // Ã¥Â°ÂÃ£ÂÂÃ£ÂÂ Ã£ÂÂÃ¥ÂÂ¨Ã¤Â½ÂÃ£ÂÂÃ¦ÂÂºÃ£ÂÂÃ£ÂÂ
   void littleMoveAll(){
     int direct = xor128() % 8;
 
@@ -470,6 +464,7 @@ class MovingNQueens {
     }
   }
 
+  // Ã¨Â©ÂÃ¤Â¾Â¡Ã£ÂÂÃ¨Â¡ÂÃ£ÂÂÃ¥ÂÂÃ£ÂÂ«Ã¨Â¡ÂÃ£ÂÂÃ¥ÂÂ¦Ã§ÂÂ
   void eachTurnProc(int id){
     //fprintf(stderr,"eachTurnProc =>\n");
     Queen *queen = getQueen(id);
@@ -477,6 +472,7 @@ class MovingNQueens {
     queen->beforeX = queen->x;
   }
 
+  // Ã¨Â¡ÂÃ¥ÂÂÃ£ÂÂ®Ã£ÂÂ­Ã£ÂÂ¼Ã£ÂÂ«Ã£ÂÂÃ£ÂÂÃ£ÂÂ¯
   void rollback(int id){
     //fprintf(stderr,"rollback =>\n");
     Queen *queen = getQueen(id);
@@ -485,30 +481,8 @@ class MovingNQueens {
 
   vector<string> rearrange(vector<int> queenRows, vector<int> queenCols){
     vector<string> ret;
-    bestScore = INT_MIN;
-    goodScore = INT_MIN;
 
     init(queenRows, queenCols);
-
-    if(N <= backTrackLine){
-      backTrack(0, 0, 0, 0);
-      resetAllPosition();
-
-      for(int nodeId = 0; nodeId < N; nodeId++){
-        bestRows[nodeId] = bestRowsMin[nodeId];
-        bestCols[nodeId] = bestColsMin[nodeId];
-      }
-
-      for(int id = 0; id < N; ++id){
-        int nodeId = positionList[id];
-
-        moveQueen(id, bestRows[nodeId], bestCols[nodeId]);
-      }
-
-      bestScore = calcScoreAll() + 10;
-
-      //fprintf(stderr,"bestScore = %d\n", bestScore);
-    }
     directTryLimit();
 
     //fprintf(stderr,"centerY = %d, centerX = %d\n", center.y, center.x);
@@ -522,8 +496,11 @@ class MovingNQueens {
       //fprintf(stderr,"id = %d, dist = %4.1f, degree = %d, direct = %d\n", id, dist, queen->degree, direct);
     }
 
+    // Ã¥ÂÂÃ¦ÂÂÃ§Â§Â»Ã¥ÂÂ
     firstMove();
 
+    bestScore = INT_MIN;
+    goodScore = INT_MIN;
     const ll startTime = getTime();
     const ll endTime = startTime + timeLimit;
     currentTime = startTime;
@@ -542,6 +519,7 @@ class MovingNQueens {
       idB = UNDEFINED;
       idC = UNDEFINED;
 
+      // Ã£ÂÂ©Ã£ÂÂ³Ã£ÂÂÃ£ÂÂ Ã£ÂÂ«IDÃ£ÂÂÃ©ÂÂ¸Ã¦ÂÂ
       int id = xor128() % N;
 
       //assert(id >= 0);
@@ -583,7 +561,6 @@ class MovingNQueens {
       int score = calcScoreAll();
 
       if(bestScore < score){
-        //fprintf(stderr,"update best score: %d\n", score);
         bestScore = score;
         updateBestPositions();
       }
@@ -598,8 +575,7 @@ class MovingNQueens {
         goodScore = score;
         notChangeCnt = 0;
       }else{
-        notChangeCnt++;
-
+        ++notChangeCnt;
         rollback(id);
 
         if(idB != UNDEFINED){
@@ -646,6 +622,7 @@ class MovingNQueens {
 
     resetAllPosition();
     solve();
+    vector<int> positionList;
 
     for(int id = 0; id < N; ++id){
       //fprintf(stderr,"Queen %d -> Node %d\n", id, positionList[id]);
@@ -701,7 +678,7 @@ class MovingNQueens {
         moveQueen(queen->id, bestRows[nodeId], bestCols[nodeId]);
         tryCnt = 0;
       }else{
-        fprintf(stderr,"id = %d, queue size = %lu, tryCnt = %d\n", queen->id, que.size(), tryCnt);
+        //fprintf(stderr,"id = %d, queue size = %lu\n", queen->id, que.size());
         Queen q(queen->id, queen->y, queen->x);
         q.value = OFFSET - 2 * max(abs(queen->y - center.y), abs(queen->x - center.x));
         tryCnt++;
@@ -786,17 +763,14 @@ class MovingNQueens {
     G[to].push_back(edgeB);
   }
 
-  int solve(){
+  void solve(){
     //fprintf(stderr,"solve =>\n");
+    // Ã£ÂÂÃ£ÂÂÃ£ÂÂÃ£ÂÂ³Ã£ÂÂ°Ã£ÂÂ°Ã£ÂÂ©Ã£ÂÂÃ£ÂÂÃ¤Â½ÂÃ¦ÂÂ
     int s = N + N + 1;
     int t = s + 1;
 
     int cost = 0;
     int F = 0;
-
-    for(int i = 0; i <= 2*N; i++){
-      G[i].clear();
-    }
 
     for(int i = 0; i < N; i++){
       Queen *queen = getQueen(i);
@@ -809,12 +783,14 @@ class MovingNQueens {
     }
 
     //fprintf(stderr,"Add Queen Edge =>\n");
+    // Ã¥Â§ÂÃ§ÂÂ¹sÃ£ÂÂ«Ã¥Â¯Â¾Ã£ÂÂÃ£ÂÂ¦QueenÃ£ÂÂ«Ã¨Â¾ÂºÃ£ÂÂÃ¥Â¼ÂµÃ£ÂÂ
     for(int i = 0; i < N; i++){
       addEdge(s, i, 1, 0);
       F += 1;
     }
 
     //fprintf(stderr,"Add Node Edge =>\n");
+    // Ã§ÂµÂÃ§ÂÂ¹tÃ£ÂÂ«Ã¥Â¯Â¾Ã£ÂÂÃ£ÂÂ¦NodeÃ£ÂÂ«Ã¨Â¾ÂºÃ£ÂÂÃ¥Â¼ÂµÃ£ÂÂ
     for(int i = 0; i < N; i++){
       addEdge(N + i, t, 1, 0);
     }
@@ -822,18 +798,16 @@ class MovingNQueens {
 
     int minCost = minCostFlow(s, t, F);
 
-    //fprintf(stderr,"minCost = %d\n", minCost);
-
-    return minCost;
+    fprintf(stderr,"minCost = %d\n", minCost);
   }
 
   int minCostFlow(int s, int t, int f){
     //fprintf(stderr,"minCostFlow =>\n");
     int res = 0;
     int V = 2 * N + 3;
-    int dist[V];
-    int prevv[V];
-    int preve[V];
+    int dist[V];  // Ã¦ÂÂÃ§ÂÂ­Ã¨Â·ÂÃ©ÂÂ¢
+    int prevv[V]; // Ã§ÂÂ´Ã¥ÂÂÃ£ÂÂ®Ã©Â ÂÃ§ÂÂ¹
+    int preve[V]; // Ã§ÂÂ´Ã¥ÂÂÃ£ÂÂ®Ã¨Â¾Âº
 
     while(f > 0){
       for(int i = 0; i < V; i++){
@@ -865,9 +839,11 @@ class MovingNQueens {
       }
 
       if(dist[t] == INF){
+        // Ã£ÂÂÃ£ÂÂÃ¤Â»Â¥Ã¤Â¸ÂÃ¦ÂµÂÃ£ÂÂÃ£ÂÂªÃ£ÂÂ
         return -1;
       }
 
+      // s-tÃ©ÂÂÃ¦ÂÂÃ§ÂÂ­Ã¨Â·Â¯Ã£ÂÂ«Ã¦Â²Â¿Ã£ÂÂ£Ã£ÂÂ¦Ã§ÂÂ®Ã¤Â¸ÂÃ¦ÂÂ¯Ã¦ÂµÂÃ£ÂÂ
       int d = f;
 
       for(int v = t; v != s; v = prevv[v]){
@@ -903,6 +879,7 @@ class MovingNQueens {
     moveQueen(id, queen->originalY, queen->originalX);
   }
 
+  // Ã¥ÂÂ¨Ã£ÂÂ¦Ã£ÂÂ®Ã£ÂÂ¯Ã£ÂÂ¤Ã£ÂÂ¼Ã£ÂÂ³Ã£ÂÂ®Ã¤Â½ÂÃ§Â½Â®Ã£ÂÂÃ¥ÂÂÃ£ÂÂ«Ã¦ÂÂ»Ã£ÂÂ
   void resetAllPosition(){
     for(int id = 0; id < N; ++id){
       Queen *queen = getQueen(id);
@@ -1008,6 +985,7 @@ class MovingNQueens {
     return EvalResult(maxScore, bestY, bestX);
   }
 
+  // Ã£ÂÂ¯Ã£ÂÂ¤Ã£ÂÂ¼Ã£ÂÂ³Ã£ÂÂ®Ã¤Â¸ÂÃ©ÂÂ¨Ã¥ÂºÂ§Ã¦Â¨ÂÃ£ÂÂ®Ã¤ÂºÂ¤Ã¦ÂÂÃ£ÂÂÃ¨Â¡ÂÃ£ÂÂ
   void swapQueen(int idA, int idB){
     if(idA == idB) return;
 
@@ -1029,6 +1007,7 @@ class MovingNQueens {
     }
   }
 
+  // Ã£ÂÂ¯Ã£ÂÂ¤Ã£ÂÂ¼Ã£ÂÂ³Ã£ÂÂ®Ã¤Â¸ÂÃ©ÂÂ¨Ã¥ÂºÂ§Ã¦Â¨ÂÃ£ÂÂ®Ã¤ÂºÂ¤Ã¦ÂÂÃ£ÂÂÃ¨Â¡ÂÃ£ÂÂ
   void swapQueen3(int idA, int idB, int idC){
     if(idA == idB) return;
     if(idA == idC) return;
@@ -1057,6 +1036,9 @@ class MovingNQueens {
     }
   }
 
+  /*
+   * Ã©ÂÂÃ¥Â¿ÂÃ£ÂÂ®Ã¥ÂºÂ§Ã¦Â¨ÂÃ£ÂÂÃ¨ÂªÂ¿Ã£ÂÂ¹Ã£ÂÂ
+   */
   Coord calcCenterCoord(){
     int y = 0;
     int x = 0;
@@ -1079,38 +1061,6 @@ class MovingNQueens {
     stringstream ss;
     ss << i;
     return ss.str();
-  }
-
-  void backTrack(int y, ull left, ull down, ull right){
-    ull bitmap, bit;
-
-    //if(y > 0 && xor128()%100 < 10) return;
-
-    if(y == N){
-      cnt++;
-      //fprintf(stderr,"N = %d, hello world! %d\n", N, cnt);
-      for(int nodeId = 0; nodeId < N; nodeId++){
-        //fprintf(stderr,"nodeId = %d, y = %d, x = %d\n", nodeId, bestRows[nodeId], bestCols[nodeId]);
-      }
-      int score = solve();
-
-      if(bestScore < (100-score)){
-        fprintf(stderr,"update best score! %d\n", score); 
-        bestScore = (100-score);
-        positionList = selectedNodeId;
-        updateBestPositionsMin();
-      }
-    }else{
-      bitmap = MASK & ~(left | down | right);
-
-      while(bitmap){
-        bit = -bitmap & bitmap;
-        bestRows[y] = y - center.y;
-        bestCols[y] = indexList[bit] - center.x;
-        bitmap ^= bit;
-        backTrack(y+1, ((left|bit)<<1), (down|bit), ((right|bit)>>1));
-      }
-    }
   }
 
   void showBoard(){

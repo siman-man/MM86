@@ -342,9 +342,9 @@ class MovingNQueens {
 
     score -= cnt;
 
-    if(success && goodScore > 0){
+    if(N >= 80 && goodScore > 0){
       //score -= max(abs(queen->y - center.y), abs(queen->x - center.x));
-      //score -= max(abs(queen->y - queen->originalY), abs(queen->x - queen->originalX));
+      score -= max(abs(queen->y - queen->originalY), abs(queen->x - queen->originalX));
       //score -= abs(queen->y - queen->originalY) + abs(queen->x - queen->originalX);
     }
 
@@ -417,7 +417,7 @@ class MovingNQueens {
     }
   }
 
-  void randomMove(){
+  void randomSet(){
     for(int id = 0; id < N; ++id){
       int dy = (xor128() % (2*N)) - N;
       int dx = (xor128() % (2*N)) - N;
@@ -547,7 +547,6 @@ class MovingNQueens {
         moveQueen(id, result.y, result.x);
         */
       }else{
-        //warpQueen(id);
         //continue;
         /*
         resetPosition(id);
@@ -591,7 +590,7 @@ class MovingNQueens {
           //newSetQueen();
           //moveAllPosition(xor128()%8);
           //littleMoveAll();
-          //randomMove();
+          //randomSet();
           T = 10000.0;
           burnCnt++;
           notChangeCnt = 0;
@@ -923,8 +922,8 @@ class MovingNQueens {
   }
 
   void warpQueen(int id){
-    int ny = center.y + xor128() % (N/2);
-    int nx = center.x + xor128() % (N/2);
+    int ny = center.y + xor128() % (N);
+    int nx = center.x + xor128() % (N);
 
     moveQueen(id, ny, nx);
   }
@@ -998,7 +997,8 @@ class MovingNQueens {
     int ny, nx;
     map<int, bool> checkList;
 
-    for(int i = 0; i < 5; ++i){
+    int limit = 5;
+    for(int i = 0; i < limit; ++i){
     //for(int i = 0; i < 8; ++i){
       //direct = i;
       direct = xor128() % 8;

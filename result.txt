@@ -1,21 +1,21 @@
 N = 8
-turn = 1020000, alpha = 0.90, T = 0.00
+turn = 1000000, alpha = 0.90, T = 0.00
 minCost = 13, center.y = 1, cneter.x = 2
 Score = 13.0
 N = 41
-turn = 640000, alpha = 0.98, T = 0.00
+turn = 620000, alpha = 0.98, T = 0.00
 minCost = 391, center.y = 5, cneter.x = 5
 Score = 393.0
 N = 18
-turn = 880000, alpha = 0.90, T = 0.00
+turn = 860000, alpha = 0.90, T = 0.00
 minCost = 77, center.y = 1, cneter.x = 2
 Score = 77.0
 N = 89
 turn = 520000, alpha = 0.98, T = 0.00
-minCost = 2093, center.y = 7, cneter.x = 8
-Score = 2100.0
+minCost = 2053, center.y = 7, cneter.x = 8
+Score = 2055.0
 N = 10
-turn = 980000, alpha = 0.90, T = 4304.67
+turn = 960000, alpha = 0.90, T = 3486.78
 minCost = 14, center.y = 2, cneter.x = 2
 Score = 14.0
 N = 56
@@ -23,23 +23,23 @@ turn = 600000, alpha = 0.98, T = 0.00
 minCost = 825, center.y = 4, cneter.x = 5
 Score = 829.0
 N = 11
-turn = 960000, alpha = 0.90, T = 0.00
+turn = 940000, alpha = 0.90, T = 8100.00
 minCost = 19, center.y = 2, cneter.x = 2
 Score = 19.0
 N = 60
-turn = 560000, alpha = 0.99, T = 0.00
+turn = 540000, alpha = 0.99, T = 0.00
 minCost = 913, center.y = 6, cneter.x = 6
 Score = 921.0
 N = 87
-turn = 540000, alpha = 0.99, T = 0.00
-minCost = 2095, center.y = 6, cneter.x = 6
-Score = 2099.0
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2078, center.y = 6, cneter.x = 6
+Score = 2078.0
 N = 33
-turn = 680000, alpha = 0.94, T = 0.00
+turn = 700000, alpha = 0.94, T = 0.00
 minCost = 262, center.y = 4, cneter.x = 3
 Score = 264.0
 N = 64
-turn = 620000, alpha = 0.98, T = 0.00
+turn = 600000, alpha = 0.98, T = 0.00
 minCost = 1121, center.y = 4, cneter.x = 4
 Score = 1126.0
 N = 67
@@ -47,7 +47,7 @@ turn = 580000, alpha = 0.98, T = 0.00
 minCost = 1154, center.y = 6, cneter.x = 6
 Score = 1155.0
 N = 14
-turn = 920000, alpha = 0.90, T = 119.73
+turn = 900000, alpha = 0.90, T = 0.00
 minCost = 40, center.y = 2, cneter.x = 2
 Score = 40.0
 N = 41
@@ -55,27 +55,27 @@ turn = 600000, alpha = 0.99, T = 0.00
 minCost = 382, center.y = 6, cneter.x = 6
 Score = 384.0
 N = 80
-turn = 480000, alpha = 1.00, T = 0.00
-minCost = 1794, center.y = 6, cneter.x = 5
-Score = 1800.0
+turn = 640000, alpha = 0.99, T = 0.00
+minCost = 1772, center.y = 6, cneter.x = 5
+Score = 1774.0
 N = 83
-turn = 500000, alpha = 0.99, T = 0.00
-minCost = 1962, center.y = 5, cneter.x = 5
-Score = 1969.0
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 1965, center.y = 5, cneter.x = 5
+Score = 1971.0
 N = 96
-turn = 560000, alpha = 0.99, T = 0.00
-minCost = 2609, center.y = 5, cneter.x = 6
-Score = 2613.0
+turn = 480000, alpha = 0.99, T = 0.00
+minCost = 2603, center.y = 5, cneter.x = 6
+Score = 2609.0
 N = 95
-turn = 480000, alpha = 0.99, T = 0.00
-minCost = 2630, center.y = 4, cneter.x = 4
-Score = 2635.0
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2620, center.y = 4, cneter.x = 4
+Score = 2624.0
 N = 83
-turn = 480000, alpha = 0.99, T = 0.00
-minCost = 1812, center.y = 8, cneter.x = 8
-Score = 1820.0
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 1782, center.y = 8, cneter.x = 8
+Score = 1789.0
 N = 39
-turn = 620000, alpha = 0.98, T = 0.00
+turn = 600000, alpha = 0.99, T = 0.00
 minCost = 388, center.y = 4, cneter.x = 4
 Score = 390.0
 N = 33
@@ -87,7 +87,7 @@ turn = 740000, alpha = 0.91, T = 0.00
 minCost = 150, center.y = 1, cneter.x = 1
 Score = 151.0
 N = 51
-turn = 580000, alpha = 0.99, T = 0.00
+turn = 560000, alpha = 0.99, T = 0.00
 minCost = 711, center.y = 3, cneter.x = 4
 Score = 715.0
 N = 40
@@ -95,25 +95,25 @@ turn = 720000, alpha = 0.96, T = 0.00
 minCost = 434, center.y = 3, cneter.x = 3
 Score = 438.0
 N = 91
-turn = 520000, alpha = 0.99, T = 0.00
-minCost = 2239, center.y = 7, cneter.x = 7
-Score = 2245.0
+turn = 620000, alpha = 1.00, T = 0.00
+minCost = 2242, center.y = 7, cneter.x = 7
+Score = 2248.0
 N = 13
-turn = 960000, alpha = 0.90, T = 0.00
+turn = 880000, alpha = 0.90, T = 0.00
 minCost = 37, center.y = 2, cneter.x = 2
 Score = 37.0
 N = 80
-turn = 600000, alpha = 0.99, T = 0.00
-minCost = 1858, center.y = 4, cneter.x = 3
-Score = 1863.0
+turn = 620000, alpha = 0.99, T = 0.00
+minCost = 1868, center.y = 4, cneter.x = 3
+Score = 1871.0
 N = 88
-turn = 520000, alpha = 0.98, T = 0.00
-minCost = 2041, center.y = 8, cneter.x = 8
-Score = 2045.0
+turn = 480000, alpha = 0.99, T = 0.00
+minCost = 2014, center.y = 8, cneter.x = 8
+Score = 2019.0
 N = 99
-turn = 460000, alpha = 0.99, T = 0.00
-minCost = 2567, center.y = 10, cneter.x = 9
-Score = 2578.0
+turn = 560000, alpha = 0.99, T = 0.00
+minCost = 2503, center.y = 10, cneter.x = 9
+Score = 2510.0
 N = 36
 turn = 680000, alpha = 0.93, T = 0.00
 minCost = 271, center.y = 5, cneter.x = 6
@@ -127,15 +127,15 @@ turn = 860000, alpha = 0.90, T = 0.00
 minCost = 84, center.y = 3, cneter.x = 3
 Score = 85.0
 N = 18
-turn = 880000, alpha = 0.90, T = 0.00
+turn = 860000, alpha = 0.90, T = 0.05
 minCost = 74, center.y = 2, cneter.x = 2
 Score = 75.0
 N = 70
-turn = 600000, alpha = 0.98, T = 0.00
+turn = 640000, alpha = 0.98, T = 0.00
 minCost = 1359, center.y = 4, cneter.x = 5
 Score = 1364.0
 N = 79
-turn = 460000, alpha = 0.99, T = 0.00
+turn = 480000, alpha = 0.99, T = 0.00
 minCost = 1794, center.y = 4, cneter.x = 4
 Score = 1802.0
 N = 68
@@ -143,7 +143,7 @@ turn = 560000, alpha = 0.98, T = 0.00
 minCost = 1301, center.y = 4, cneter.x = 4
 Score = 1306.0
 N = 43
-turn = 580000, alpha = 0.99, T = 0.00
+turn = 600000, alpha = 0.99, T = 0.00
 minCost = 480, center.y = 4, cneter.x = 4
 Score = 484.0
 N = 56
@@ -159,9 +159,9 @@ turn = 600000, alpha = 0.99, T = 0.00
 minCost = 279, center.y = 6, cneter.x = 6
 Score = 281.0
 N = 81
-turn = 520000, alpha = 0.99, T = 0.00
-minCost = 1770, center.y = 6, cneter.x = 6
-Score = 1779.0
+turn = 580000, alpha = 0.98, T = 0.00
+minCost = 1748, center.y = 6, cneter.x = 6
+Score = 1758.0
 N = 55
 turn = 540000, alpha = 0.99, T = 0.00
 minCost = 831, center.y = 3, cneter.x = 3
@@ -175,19 +175,19 @@ turn = 600000, alpha = 0.97, T = 0.00
 minCost = 857, center.y = 5, cneter.x = 5
 Score = 862.0
 N = 82
-turn = 520000, alpha = 0.99, T = 0.00
-minCost = 1901, center.y = 4, cneter.x = 5
-Score = 1906.0
+turn = 480000, alpha = 0.99, T = 0.00
+minCost = 1896, center.y = 4, cneter.x = 5
+Score = 1899.0
 N = 34
-turn = 660000, alpha = 0.99, T = 0.00
+turn = 640000, alpha = 0.99, T = 0.00
 minCost = 283, center.y = 4, cneter.x = 3
 Score = 283.0
 N = 77
-turn = 580000, alpha = 0.99, T = 0.00
+turn = 620000, alpha = 0.99, T = 0.00
 minCost = 1693, center.y = 4, cneter.x = 4
 Score = 1698.0
 N = 62
-turn = 500000, alpha = 1.00, T = 0.00
+turn = 520000, alpha = 1.00, T = 0.00
 minCost = 969, center.y = 7, cneter.x = 7
 Score = 972.0
 N = 17
@@ -195,7 +195,7 @@ turn = 860000, alpha = 0.90, T = 0.00
 minCost = 69, center.y = 1, cneter.x = 2
 Score = 69.0
 N = 50
-turn = 540000, alpha = 0.99, T = 0.00
+turn = 560000, alpha = 0.99, T = 0.00
 minCost = 700, center.y = 3, cneter.x = 3
 Score = 706.0
 N = 26
@@ -203,31 +203,31 @@ turn = 740000, alpha = 0.92, T = 0.00
 minCost = 158, center.y = 3, cneter.x = 2
 Score = 159.0
 N = 24
-turn = 740000, alpha = 0.90, T = 0.00
+turn = 760000, alpha = 0.90, T = 0.00
 minCost = 130, center.y = 3, cneter.x = 3
 Score = 130.0
 N = 63
-turn = 540000, alpha = 0.99, T = 0.00
+turn = 520000, alpha = 0.99, T = 0.00
 minCost = 984, center.y = 7, cneter.x = 8
 Score = 987.0
 N = 82
-turn = 580000, alpha = 0.98, T = 0.00
-minCost = 1760, center.y = 7, cneter.x = 8
-Score = 1765.0
-N = 81
 turn = 460000, alpha = 0.99, T = 0.00
-minCost = 1702, center.y = 7, cneter.x = 8
-Score = 1707.0
+minCost = 1743, center.y = 7, cneter.x = 8
+Score = 1746.0
+N = 81
+turn = 580000, alpha = 0.98, T = 0.00
+minCost = 1677, center.y = 7, cneter.x = 8
+Score = 1681.0
 N = 86
-turn = 560000, alpha = 0.98, T = 0.00
-minCost = 1923, center.y = 8, cneter.x = 10
-Score = 1927.0
+turn = 580000, alpha = 0.98, T = 0.00
+minCost = 1873, center.y = 8, cneter.x = 10
+Score = 1877.0
 N = 59
 turn = 520000, alpha = 0.99, T = 0.00
 minCost = 860, center.y = 7, cneter.x = 7
 Score = 861.0
 N = 72
-turn = 500000, alpha = 0.99, T = 0.00
+turn = 520000, alpha = 0.99, T = 0.00
 minCost = 1391, center.y = 6, cneter.x = 5
 Score = 1399.0
 N = 44
@@ -235,9 +235,9 @@ turn = 580000, alpha = 0.99, T = 0.00
 minCost = 444, center.y = 6, cneter.x = 7
 Score = 445.0
 N = 92
-turn = 560000, alpha = 0.99, T = 0.00
-minCost = 2460, center.y = 4, cneter.x = 4
-Score = 2468.0
+turn = 600000, alpha = 0.99, T = 0.00
+minCost = 2473, center.y = 4, cneter.x = 4
+Score = 2477.0
 N = 28
 turn = 720000, alpha = 0.92, T = 0.00
 minCost = 193, center.y = 2, cneter.x = 3
@@ -247,27 +247,27 @@ turn = 740000, alpha = 0.94, T = 0.00
 minCost = 121, center.y = 2, cneter.x = 2
 Score = 121.0
 N = 100
-turn = 560000, alpha = 0.99, T = 0.00
-minCost = 2855, center.y = 6, cneter.x = 6
-Score = 2861.0
+turn = 540000, alpha = 0.99, T = 0.00
+minCost = 2846, center.y = 6, cneter.x = 6
+Score = 2859.0
 N = 36
 turn = 680000, alpha = 0.93, T = 0.00
 minCost = 286, center.y = 7, cneter.x = 6
 Score = 287.0
 N = 34
-turn = 680000, alpha = 0.95, T = 0.00
+turn = 660000, alpha = 0.95, T = 0.00
 minCost = 314, center.y = 2, cneter.x = 2
 Score = 318.0
 N = 26
-turn = 760000, alpha = 0.92, T = 0.00
+turn = 720000, alpha = 0.92, T = 0.00
 minCost = 132, center.y = 4, cneter.x = 4
 Score = 133.0
 N = 99
 turn = 580000, alpha = 0.99, T = 0.00
-minCost = 2833, center.y = 5, cneter.x = 5
-Score = 2843.0
+minCost = 2827, center.y = 5, cneter.x = 5
+Score = 2830.0
 N = 17
-turn = 900000, alpha = 0.90, T = 0.01
+turn = 860000, alpha = 0.90, T = 0.00
 minCost = 65, center.y = 2, cneter.x = 2
 Score = 65.0
 N = 40
@@ -275,29 +275,29 @@ turn = 660000, alpha = 0.95, T = 0.00
 minCost = 421, center.y = 3, cneter.x = 3
 Score = 424.0
 N = 35
-turn = 740000, alpha = 0.95, T = 0.00
+turn = 720000, alpha = 0.95, T = 0.00
 minCost = 294, center.y = 4, cneter.x = 3
 Score = 294.0
 N = 17
-turn = 900000, alpha = 0.90, T = 0.00
+turn = 880000, alpha = 0.90, T = 0.00
 minCost = 69, center.y = 1, cneter.x = 2
 Score = 69.0
 N = 29
-turn = 800000, alpha = 0.94, T = 0.00
+turn = 740000, alpha = 0.94, T = 0.00
 minCost = 174, center.y = 3, cneter.x = 4
 Score = 174.0
 N = 64
-turn = 520000, alpha = 1.00, T = 0.00
+turn = 500000, alpha = 1.00, T = 0.00
 minCost = 1145, center.y = 5, cneter.x = 5
 Score = 1148.0
 N = 67
-turn = 540000, alpha = 0.99, T = 0.00
+turn = 520000, alpha = 0.99, T = 0.00
 minCost = 1210, center.y = 5, cneter.x = 6
 Score = 1217.0
 N = 88
-turn = 540000, alpha = 0.99, T = 0.00
-minCost = 2189, center.y = 5, cneter.x = 5
-Score = 2194.0
+turn = 580000, alpha = 0.98, T = 0.00
+minCost = 2202, center.y = 5, cneter.x = 5
+Score = 2206.0
 N = 38
 turn = 680000, alpha = 0.93, T = 0.00
 minCost = 308, center.y = 5, cneter.x = 5
@@ -307,15 +307,15 @@ turn = 600000, alpha = 0.98, T = 0.00
 minCost = 1335, center.y = 4, cneter.x = 4
 Score = 1336.0
 N = 43
-turn = 680000, alpha = 0.96, T = 0.00
+turn = 660000, alpha = 0.96, T = 0.00
 minCost = 440, center.y = 5, cneter.x = 5
 Score = 443.0
 N = 28
-turn = 780000, alpha = 0.94, T = 0.00
+turn = 740000, alpha = 0.94, T = 0.00
 minCost = 174, center.y = 6, cneter.x = 5
 Score = 175.0
 N = 44
-turn = 640000, alpha = 0.98, T = 0.00
+turn = 620000, alpha = 0.98, T = 0.00
 minCost = 454, center.y = 5, cneter.x = 5
 Score = 455.0
 N = 22
@@ -327,71 +327,71 @@ turn = 580000, alpha = 0.98, T = 0.00
 minCost = 974, center.y = 6, cneter.x = 6
 Score = 975.0
 N = 80
-turn = 480000, alpha = 0.99, T = 0.00
-minCost = 1683, center.y = 8, cneter.x = 8
-Score = 1689.0
+turn = 520000, alpha = 0.99, T = 0.00
+minCost = 1652, center.y = 8, cneter.x = 8
+Score = 1658.0
 N = 33
-turn = 680000, alpha = 0.96, T = 0.00
+turn = 640000, alpha = 0.97, T = 0.00
 minCost = 230, center.y = 6, cneter.x = 5
 Score = 232.0
 N = 50
-turn = 640000, alpha = 0.97, T = 0.00
+turn = 620000, alpha = 0.97, T = 0.00
 minCost = 615, center.y = 5, cneter.x = 5
 Score = 616.0
 N = 73
-turn = 540000, alpha = 0.99, T = 0.00
+turn = 520000, alpha = 0.99, T = 0.00
 minCost = 1359, center.y = 7, cneter.x = 8
 Score = 1366.0
 N = 85
-turn = 540000, alpha = 0.98, T = 0.00
-minCost = 1991, center.y = 6, cneter.x = 6
-Score = 1995.0
+turn = 640000, alpha = 1.00, T = 0.00
+minCost = 1982, center.y = 6, cneter.x = 6
+Score = 1987.0
 N = 83
-turn = 460000, alpha = 0.99, T = 0.00
-minCost = 1806, center.y = 8, cneter.x = 8
-Score = 1810.0
+turn = 560000, alpha = 0.98, T = 0.00
+minCost = 1749, center.y = 8, cneter.x = 8
+Score = 1756.0
 N = 65
 turn = 640000, alpha = 0.99, T = 0.00
 minCost = 1170, center.y = 4, cneter.x = 4
 Score = 1171.0
 N = 72
-turn = 540000, alpha = 0.99, T = 0.00
+turn = 520000, alpha = 0.99, T = 0.00
 minCost = 1450, center.y = 5, cneter.x = 4
 Score = 1453.0
 N = 18
-turn = 860000, alpha = 0.90, T = 0.00
+turn = 840000, alpha = 0.90, T = 0.00
 minCost = 60, center.y = 4, cneter.x = 4
 Score = 60.0
 N = 99
-turn = 500000, alpha = 0.99, T = 0.00
-minCost = 2755, center.y = 6, cneter.x = 6
-Score = 2762.0
+turn = 580000, alpha = 0.99, T = 0.00
+minCost = 2734, center.y = 6, cneter.x = 6
+Score = 2742.0
 N = 31
 turn = 660000, alpha = 0.99, T = 0.00
 minCost = 209, center.y = 5, cneter.x = 5
 Score = 209.0
 N = 96
-turn = 600000, alpha = 0.99, T = 0.00
-minCost = 2671, center.y = 5, cneter.x = 4
-Score = 2673.0
+turn = 540000, alpha = 0.99, T = 0.00
+minCost = 2674, center.y = 5, cneter.x = 4
+Score = 2679.0
 N = 29
 turn = 740000, alpha = 0.93, T = 0.00
 minCost = 194, center.y = 3, cneter.x = 3
 Score = 194.0
 N = 24
-turn = 780000, alpha = 0.91, T = 0.00
+turn = 740000, alpha = 0.91, T = 0.00
 minCost = 129, center.y = 3, cneter.x = 3
 Score = 129.0
 N = 76
-turn = 520000, alpha = 0.99, T = 0.00
+turn = 500000, alpha = 0.99, T = 0.00
 minCost = 1647, center.y = 4, cneter.x = 4
 Score = 1652.0
 N = 28
-turn = 740000, alpha = 0.90, T = 0.00
+turn = 720000, alpha = 0.90, T = 0.00
 minCost = 166, center.y = 5, cneter.x = 5
 Score = 166.0
 N = 40
-turn = 700000, alpha = 0.94, T = 0.00
+turn = 680000, alpha = 0.94, T = 0.00
 minCost = 372, center.y = 5, cneter.x = 5
 Score = 372.0
 N = 63

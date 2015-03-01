@@ -22,7 +22,7 @@ const ll  OFFSET    = 30000;
 const int UNDEFINED = -1;
 const double PI = 3.141592653589793;
 
-ll timeLimit = 9500;
+ll timeLimit = 9700;
 ll currentTime;
 
 struct Queen {
@@ -305,7 +305,7 @@ class MovingNQueens {
         success = false;
       }
 
-      score -= cnt;
+      score -= 100 * cnt;
       score -= max(abs(queen->y - center.y), abs(queen->x - center.x));
     }
 

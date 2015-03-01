@@ -17,7 +17,7 @@ end
 
 task :one do
   system("g++ -W -Wall -Wno-sign-compare -O2 -o #{@filename} #{@filename}.cpp")
-  system("time java -jar #{@filename}Vis.jar -seed 8 -novis -exec './#{@filename}'")
+  system("time java -jar #{@filename}Vis.jar -seed 5 -novis -exec './#{@filename}'")
 end
 
 task :two do
@@ -59,11 +59,10 @@ end
 task :select do
   system('rm result.txt')
   system("g++ -W -Wall -Wno-sign-compare -O2 -o #{@filename} #{@filename}.cpp")
-  array = [1, 8, 11, 16, 17, 20, 37, 39, 45, 49, 54, 57, 58, 59, 60, 64, 65, 67, 74, 79, 81, 83, 86, 91, 93, 94, 95, 96, 103, 105, 108, 109, 110, 118, 119, 123, 127, 131, 136, 141, 143, 146, 148, 150, 153, 161, 163, 168, 169, 171, 173, 174, 184, 186, 189, 191, 193, 194, 195, 198, 199]
-  array.each do |num|
+  array = [1, 5, 7, 13, 26, 111, 145, 159, 193, 228, 233, 235, 236, 264, 268, 269, 280, 291, 293, 305, 313, 337, 358, 361, 364, 367, 372, 377, 381, 391, 406, 447, 464, 485, 493, 514, 516, 525, 539, 547, 556, 573, 580, 606, 613, 625, 629, 667, 706, 738, 766, 773, 779, 794, 797, 806, 810, 842, 866, 870, 885, 890, 893, 900, 913, 917, 931, 936, 941, 950, 988]
+  array.take(10).each do |num|
     p num
     system("time java -jar ./#{@filename}Vis.jar -seed #{num} -novis -exec './#{@filename}' >> result.txt")
-    sleep(0.6)
   end
   system("ruby analysis.rb #{array.size}")
 end

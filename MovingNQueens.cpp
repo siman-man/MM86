@@ -194,15 +194,15 @@ class MovingNQueens {
     }else if(N <= 30){
       tryLimit = 700;
     }else if(N <= 40){
-      tryLimit = 1000;
+      tryLimit = 800;
     }else if(N <= 60){
-      tryLimit = 2000;
+      tryLimit = 1000;
     }else if(N <= 80){
-      tryLimit = 3000;
+      tryLimit = 1500;
     }else if(N <= 90){
       tryLimit = 3000;
     }else{
-      tryLimit = 3500;
+      tryLimit = 4000;
     }
   }
 
@@ -567,7 +567,7 @@ class MovingNQueens {
       if(goodScore < score){
         goodScore = score;
         notChangeCnt = 0;
-      }else if(T > 0 && xor128() % 100 < 100.0 * rate){
+      }else if(T > 0 && (xor128() % 100) < 100.0 * rate){
         //fprintf(stderr,"turn = %d, rate = %f\n", turn, rate);
         goodScore = score;
         notChangeCnt = 0;
@@ -944,8 +944,8 @@ class MovingNQueens {
   Coord checkBestCoord(int y, int x, int direct){
     int maxScore = INT_MIN;
     int score;
-    int by;
-    int bx;
+    int by = y;
+    int bx = x;
 
     for(int i = 1; i < N; i++){
       int ny = y + i * MY[direct];

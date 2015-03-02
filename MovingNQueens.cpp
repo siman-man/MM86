@@ -188,7 +188,7 @@ class MovingNQueens {
 
   void directTryLimit(){
     if(N <= 12){
-      tryLimit = 50;
+      tryLimit = 100;
     }else if(N <= 20){
       tryLimit = 100;
     }else if(N <= 30){
@@ -598,7 +598,7 @@ class MovingNQueens {
           if(goodScore < 0){
             //alpha += 0.001;
           }else{
-            alpha = max(0.9, alpha-0.001);
+            alpha = max(0.90, alpha-0.002);
           }
         }
       }
